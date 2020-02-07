@@ -1,0 +1,5 @@
+.list__photo {
+	width: 100px;
+	float: left;
+	display: inline-block;
+}
