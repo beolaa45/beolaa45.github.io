@@ -1,0 +1,21 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding:0;
+}
+.heading__text {
+	text-transform: uppercase;
+	margin-left: 200px; 
+}
+
+.list__photo {
+ width: 100px;
+ display: block;
+}
+a {
+	text-decoration: none;
+	float: left;
+	width: 100px;
+	margin: 10px 20px;
+
+}
