@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    position: relative;
+}
+
+.header {
+
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(51, 51, 49, 0.815),rgba(194, 191, 191, 0.808)), url(img/bg.jpg);
+    background-size: cover;
+
+    position: relative;
+}
+
+
+.header__logo {
+    height: 250px;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.header-text {
+    color: white;
+    font-size: 150px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.navigation__nav {
+    margin-top: 20px;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 300px;
+    z-index: 100;
+}
+
+.navigation__list {
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+.navigation__link  {
+    
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transform: translateY(0);
+    transition: all 0.2s;
+}
+
+.navigation__link:hover {
+    color: yellowgreen;
+    box-shadow: 0 10px 30px black;
+    transform: translateY(-10px);
+    
+}
+
+.section {
+    width: 1000px;
+    margin: 50px auto;
+    
+    
+}
+.header__text-2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    
+}
+.album {
+    width: 1000px;
+    margin: 0 auto;
+}
+.album__list {
+    list-style: none;
+    width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+
+    grid-row-gap: 50px;
+    
+}
+.album__item {
+    
+    padding: 0 0;
+    
+   
+    
+    
+}
+.album__photo:hover {
+    box-shadow: 0 10px 30px  black;
+    transform: translateY(-20px);
+    padding: 0 0;
+    transform: translateY(-10);
+    
+}
+.album__photo {
+    transform: translateY(0);
+    max-width: 200px;
+    transition: transform 0.5s;
+}
