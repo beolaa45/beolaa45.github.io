@@ -1,0 +1,856 @@
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* ----------------------------- CSS scoll bar ----------------------------- */
+
+/* width */
+::-webkit-scrollbar {
+width: 5px;
+height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #c4c4c4; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #757575; 
+}
+
+/* ----------------------------- Left panel ----------------------------- */
+
+.left-panel {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.wrap-check-box {
+    zoom: 1.1;
+    width: 40px;
+    height: 40px;
+    transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+}
+.fa {
+    cursor: pointer;
+}
+
+.modal {
+    max-height: 100%;
+ }
+
+ .modal-tutorial-buttons {
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .btn-sample-curriculum, .btn-upload-curriculum {
+    background-color: #007791;
+    width: 49.5%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 22px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    margin: .5rem 0 1rem 0;
+    border-radius: 2px;
+    cursor: pointer;
+ }
+
+.tutorial-panel {
+    height: 60px;
+    /* font-family: Open Sans; */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    color:  #007791;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.tutorial-icon {
+    margin-right: 10px;
+}
+
+#sectionList {
+    height: calc(100vh - 120px);
+    overflow-y: scroll;
+}
+
+.demo-course {
+    height: calc(100vh - 60px) !important;
+    overflow-y: scroll;
+}
+
+.mediaType {
+    height: 200px !important;
+    color: #464646;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+svg {
+    /* width: 30px !important; */
+    fill: #464646;
+}
+
+.media-type-icon {
+    /* width: 30px !important; */
+}
+
+.media-type-text {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size:  1.6rem;
+    line-height: 40px;
+    font-weight: 300;
+}
+
+.wrap-media-type {
+    margin-bottom: 0 !important;    
+    padding: 20px 0;
+}
+
+.wrap-media-type:first-child {
+    padding: 0;
+}
+
+a {
+    color: #464646;
+}
+
+.lessonNameInput {
+    width: 100%;
+}
+
+.lessons {
+    display: none;
+}
+
+.section:first-child .lessons {
+    display: block;
+}
+
+.lessons .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    background-color: #F7F7F7;
+}
+
+.lesson-menu-icon  {
+    padding: 7px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px;
+    color: #757575;
+}
+
+.lessons .list-group-item:hover  .lesson-menu-icon  {
+    opacity: 1 !important;
+    background-color: #c4c4c468;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.lessons .list-group-item:hover  i  {
+    opacity: 1 !important;
+
+}
+
+.section-menu-icon  {
+    padding: 7px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 5px;
+    color: #757575;
+    font-size: 1.1rem;
+}
+
+.add-lesson-icon {
+
+    padding: 25px; 
+    cursor: pointer;
+
+}
+
+/* Style video controller */
+.video-js button:focus {
+    background-color: inherit !important;
+}
+
+.vjs-control-bar {
+    font-size: 150%;
+}
+
+.add-section-icon {
+
+    padding: 15px; 
+    cursor: pointer;
+
+}
+
+.add-section {
+    background-color: #E8E8E8;
+}
+.add-lesson-input {
+    width: 100%;
+    padding: 0 25px 0 0;
+}
+
+.add-section-input {
+    width: 100%;
+    padding: 0 25px 0 0;
+}
+
+.lesson-name-input {
+    width: 300px;
+    /* padding: 0 10px 0 0; */
+}
+
+.list-group-item .form-control {
+    font-size: 1.1rem !important;
+}
+
+.section-name-input {
+    width: 300px;
+    padding: 0 25px 0 0;
+}
+
+
+.lessons .list-group-item .list-group-item-child  {
+    display:flex;
+    align-items: center;
+
+    padding: 15px 0px 15px 45px;
+    width: calc(100% - 60px);
+    cursor: pointer;
+}
+
+
+
+#sectionList .lesson-title {
+    font-size: 1.1rem;
+  
+}
+
+.lession-icon {
+    font-size: 0.8rem;
+    margin-right: 10px;
+}
+
+#sectionList {
+    border: 1px solid #ccc;
+    margin: 0;
+}
+
+.wrap-section-title {
+    display:flex; 
+    background: #E8E8E8;
+    border-bottom: 1px solid #ccc;
+    align-items:center;
+}
+#sectionList .section-title {
+    background: #E8E8E8;
+    display:flex; 
+    justify-content:space-between;
+    align-items:center;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 15px 0px 15px 25px;
+    color: #464646;
+    cursor: pointer;
+    width: calc(100% - 40px) !important;
+}
+
+.wrap-section-title:hover .section-menu-icon  {
+    opacity: 1 !important;
+    background-color: #c4c4c468;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap-section-title:hover  i  {
+    opacity: 1 !important;
+
+}
+
+.section {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.lesson {
+    border: none;
+}
+
+.select-lesson-menu {
+    cursor: pointer;
+    height: 150px;
+    width: 180px;
+    border: 1px solid #c4c4c4;
+    right: 0px;
+    top: 30px;
+    border-radius: 4px;
+    display: none;
+    background-color: #ffffff;
+    box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.20);
+}
+
+.select-lesson-menu-item {
+    padding: 10px 15px;
+    display: flex;
+    align-items: baseline;
+    font-size: 1.2rem;
+    color: #464646;
+    height: 33%;
+    cursor: pointer;
+}
+
+
+.select-lesson-menu-item:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+
+.select-section-menu {
+    cursor: pointer;
+    width: 220px;
+    border: 1px solid #c4c4c4;
+    right: 0px;
+    top: 30px;
+    border-radius: 4px;
+    display: none;
+    background-color: #ffffff;
+    box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.12), 0px 4px 6px rgba(0, 0, 0, 0.20);
+}
+
+.select-section-menu-item {
+    padding: 10px 15px;
+    display: flex;
+    align-items: baseline;
+    font-size: 1.2rem;
+    color: #464646;
+    height: 33%;
+    cursor: pointer;
+}
+
+
+.select-section-menu-item:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+
+.tablinks {
+    /* height: 75px; */
+    padding: 15px 25px;
+    border: none;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+}
+
+.active {
+    border-bottom: 7px solid #007791;
+    background-color: none ;
+    box-sizing: border-box;
+}
+
+button:focus {
+    outline: none;
+    background-color: #ffffff !important;
+}
+
+.panel-upload {
+    margin: 20px 0;
+    background-color: #c4c4c468;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#newVideoOnlyInfo, #newVideoWithTextInfo, #newFileInfo, #addedFileInfo {
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    position: relative;
+}
+#loadingProgressVideoOnlyText, #loadingProgressVideoWithTextText, #loadingProgressVideoWithTextMultiMediaText, #loadingProgressFileText,
+#loadingProgressAddedFileText {
+    position: absolute;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.upload-info {
+    height: 50px;
+    width: calc(100% - 250px);
+    font-size: 1.4rem;
+    padding-right: 15px;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upload-info > span {
+    font-size: 1.4rem;
+}
+
+.file-uploaded {
+    width: 100%;
+    border: 2px solid #007791;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding: 25px;
+    margin: 1rem 0;
+}
+
+.remove-file-uploaded {
+    color: #007791;
+    cursor: pointer;
+}
+
+.file-uploaded-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.file-uploaded-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.btn-upload-video {
+    height: 50px;
+    width: 250px;
+    border: 2px solid #007791;
+    background-color: #fff;
+    color: #007791;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-remove-video {
+    height: 50px;
+    width: 250px;
+    border: 2px solid #007791;
+    background-color: #fff;
+    color: #007791;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-add-subtitle {
+    height: 50px;
+    width: 250px;
+    border: 2px solid #007791;
+    background-color: #fff;
+    color: #007791;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tabcontent {
+    display: none;
+    padding: 25px;
+    border: 1px solid #ccc;
+}
+
+#loadingProgressVideoOnlyBar, #loadingProgressVideoWithTextBar , #loadingProgressVideoWithTextMultiMediaBar, #loadingProgressFileBar,
+#loadingProgressAddedFileBar {
+    height: 50px;
+    width: 0%;
+    background-color: #4CAF50;
+    /* color: white; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.step-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quiz-detail{
+    padding: 30px 200px;
+}
+
+.btn-custom {
+    border: 2px solid #007791;
+    background-color: #fff;
+    color: #007791;
+}
+
+.btn-check-quiz {
+    border: 2px solid #007791;
+    background-color: #fff;
+    color: #007791;
+    padding: 5px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-center {
+    margin: 30px auto 30px auto;
+}
+
+.btn-action {
+    height: 35px;
+    width: 140px;
+    border-radius: 5px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btn-action-large {
+    height: 50px;
+    width: 250px;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.btns {
+    display: flex;
+}
+
+.title-wrapper {
+    display: flex;
+}
+
+.btn-remove-step {
+    border: 2px solid #E57373;
+    font-weight: 600;
+    background-color: #E57373;
+    color: white;
+}
+
+.video-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    padding: 25px; 
+}
+
+.video-content {
+    width: calc(100%);
+}
+
+
+.step-bar {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow:auto; 
+    box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    border-bottom: 0.5px solid #ccc;
+    height: 60px;
+    /* height: 100%; */
+}
+
+.step-list {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    white-space: nowrap;
+    box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    height: 100%;
+}
+
+.step-list ul {
+    /* height: 60px; */
+    height: 100%;
+}
+
+.step-name {
+    border-right: 0.5px solid #ccc;
+    border-bottom: 0.5px solid #ccc;
+    background-color: #fff;
+    /* height: 60px; */
+    height: 100%;
+    padding: 0px 60px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.step-name a {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.step-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 7px;
+}
+
+.step-active {
+    border-bottom: 7px solid #007791;
+}
+
+.lesson-active {
+    background-color: #81cada !important;
+    
+}
+
+.list-btn {
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-add-step {
+    display: flex;
+    align-items: center;
+    fill: red;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.preview-curriculum {
+    height: 100%;
+}
+
+.preview-curriculum a{
+    background-color: #007791;
+    color: #fff;
+    height: 100%;
+    padding: 0px 35px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    right: 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.quiz-list {
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding: 30px;
+}
+
+.quiz-title {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #757575;
+    cursor: pointer;
+}
+
+.quiz-question {
+    /* width: 1210px; */
+    /* height: 99px; */
+    /* left: 583px; */
+    /* top: 440px; */
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    /* font-weight: 600; */
+    /* padding: 15px 30px; */
+    /* background: #F7F7F8; */
+    /* border: 1px solid #C4C4C4; */
+    /* box-sizing: border-box; */
+    /* border-radius: 5px; */
+}
+
+.quiz-anwser {
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    border-top: 1px solid #C4C4C4;
+    display:flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+.step-name-sort {
+    display:flex;
+    margin: 0;
+}
+
+pre[class*="language-"] {
+    word-wrap: break-word;
+}
+
+code[class*="language-"] {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+[type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 0;
+    border: 2px solid #5a5a5a;
+    border-radius: 1px;
+    margin-top: 3px;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.choice-content textarea {
+    width: 80%;
+}
+
+#curriculumSelect, #subtitleSelect, #uploadSampleCurriculum, #formUploadSubtitleVideoOnly, #formUploadSubtitleVideoText {
+    display: none;
+}
+
+.cke_dialog_ui_input_text {
+    border: 1px solid #bcbcbc !important;
+    margin: 0px !important;
+    height: 28px !important;
+    min-height: 0px !important;
+    transition: none !important;
+    box-sizing: border-box !important;
+
+}
+
+.cke_dialog_ui_input_text:focus {
+    border-bottom: 1px solid #bcbcbc !important;
+    box-shadow: none !important;
+}
+
+.cke_dialog_ui_radio_input, .cke_dialog_ui_checkbox_input {
+    position: static !important;
+    opacity: 1 !important;
+    margin-right: 1px !important;
+}
+
+.upload-curriculum:hover {
+    cursor: pointer;
+}
+
+.curriculum-info {
+    height: 60px;
+    /* font-family: Open Sans; */
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    color:  #007791;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.collapse-btn {
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .quiz-detail {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #sectionList .section-title {
+        font-size: 1.1rem;
+    }
+}

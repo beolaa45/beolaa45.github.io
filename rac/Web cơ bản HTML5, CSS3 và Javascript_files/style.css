@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: #757575;
+    overflow-y: scroll;
+}
+
+.top-menu {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: #34465b;
+}
+
+.nav-item {
+    padding: 0rem 2rem;
+    position: relative;
+}
+
+.nav-item.nav-active:after {
+    position: absolute;
+    content: "";
+    height: 5px; 
+    width: 100%;
+    background-color: white;
+    bottom: 0px;
+    left: 0rem;
+    z-index: 99;
+}
+
+.nav-item a {
+    padding: 0px !important;
+}
+
+.nav-item a:hover {
+    background-color: transparent;
+}
+
+.nav-item:hover:not(.avatar-div) {
+    background-color: #34465b;
+}
+
+.cke_dialog_ui_input_text {
+    border: 1px solid #bcbcbc !important;
+    margin: 0px !important;
+    height: 28px !important;
+    min-height: 0px !important;
+    transition: none !important;
+    box-sizing: border-box !important;
+
+}
+
+.cke_dialog_ui_input_text:focus {
+    border-bottom: 1px solid #bcbcbc !important;
+    box-shadow: none !important;
+}
+
+.cke_dialog_ui_radio_input, .cke_dialog_ui_checkbox_input {
+    position: static !important;
+    opacity: 1 !important;
+    margin-right: 1px !important;
+}

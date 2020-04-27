@@ -1,0 +1,22 @@
+
+$(document).ready(function() {
+    // if (window.screen.width < 576) {
+    //     checkTitleLongerMobile()
+    // }
+})
+
+//check title longer mobile
+function checkTitleLongerMobile() {
+    let lessonTitle = $('.top-nav .lesson-title').text().trim()
+    let newLessonTitle = ''
+    if (lessonTitle.length >= 25) {
+        newLessonTitle = lessonTitle.trim().substring(0, 22) + "..."
+    } else {
+        newLessonTitle = lessonTitle
+    }
+    $('.top-nav .lesson-title').text(newLessonTitle)
+}
+
+// function toggleMenu {
+
+// }
