@@ -82,10 +82,12 @@ function student(str) {
   });
 
   strNew1 = arr.join('');
- 
-    
+  console.log(strNew1)
+
+  document.querySelector('.demo').innerHTML = strNew1;
 }
 
 student(['khanh', 'an', 'huy', 'duy', 'khoa']);
 
-document.querySelector(".demo").textContent = 'hi';
+
+
