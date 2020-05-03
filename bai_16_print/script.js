@@ -125,15 +125,24 @@
 // * * * * *
 // * *   * *
 // *       *
-// j = i + 1; j = a -1 - (i+1)
-//i =3; j= 
-// function printButterfly(a){
-//     let str = ''
-//     for(let i = 0; i < a; i++){
-//         for(let j = 0; j < a; j++){
 
-//             if()
-//         }
-//     }
-// }
+function printButterfly(a){
+    let str = ''
+    for(let i = 0; i < a; i++){
+        for(let j = 0; j < a; j++){
+
+            if((j >  i && j < a - 1 - i && i < a/2) || ( j >= a-i && j < a-(a-i) && i > a/2)){
+                str += ' &nbsp;&nbsp; '
+            }else str += ' * ';
+
+        }
+        str += '<br>'
+    }
+    console.log(str)
+  
+    
+    return str;
+}
+
+document.write(printButterfly(7))
 
