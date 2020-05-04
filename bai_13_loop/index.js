@@ -18,15 +18,15 @@ console.log(bai1(123))
 //Ví dụ: n = 5, kết quả trả về là 5! = 1 * 2 * 3 * 4 * 5 = 120.
 
 function bai2(n){
+  
+    let kq = 1;
 
-    var i = 1;
-    var x = 1
-    while(i <= n){
-        x *= i;
-        i++;
-        
+    for(let i = 1; i <= n; i++){
+        kq *= i
     }
-    return x
+        
+    
+    return kq
 }
 
 console.log(bai2(5))

@@ -6,23 +6,23 @@
 * * *
 * * * *      */
 
-// function printTriangle(n) {
+function printTriangle(n) {
     
-//     var str = '';
+    var str = '';
 
-//     for(let i = 0; i < n; i++){
-//         for(let j = 0; j < n; j++){
+    for(let i = 0; i < n; i++){
+        for(let j = 0; j < n; j++){
 
-//             if(j <= i){
-//                 str += ' * '
-//             }else {
-//                 str += ' '
-//             }
-//         }
-//         str += '<br>'
-//     }
-//     return str
-// }
+            if(j <= i){
+                str += ' * '
+            }else {
+                str += ' '
+            }
+        }
+        str += '<br>'
+    }
+    return str
+}
 
 // document.write(printTriangle(4));
 
@@ -34,25 +34,25 @@
 // *       *
 // * * * * *
 
-// function printEmptyRectangle(a, b){
-//  let str = ''
+function printEmptyRectangle(a, b){
+ let str = ''
 
-//     for(let i = 0; i < a; i++){
+    for(let i = 0; i < a; i++){
 
-//         for(let j = 0 ; j < b; j++){
+        for(let j = 0 ; j < b; j++){
 
-//             if(i > 0 && i < (a -1) && j > 0 && j < b-1) {
-//                 str += '&nbsp;&nbsp; '
-//             }else{
-//                 str += ' * '
-//             }
-//         }
-//         str += '<br>'
-//     }
-//     console.log(str)
-//     return str
+            if(i > 0 && i < (a -1) && j > 0 && j < b-1) {
+                str += '&nbsp;&nbsp; '
+            }else{
+                str += ' * '
+            }
+        }
+        str += '<br>'
+    }
+    console.log(str)
+    return str
     
-// }
+}
 
 // document.write(printEmptyRectangle(3,5));
 
@@ -63,26 +63,25 @@
 // // * * * * *
 // //   * * *
 // //     *
-// // i=0; j=0
-// // i=1; j>= 0+i; j<a-i
 
-// function printSpecialTriangle(a){
-//     let str = '';
 
-//     for(let i = 0; i < a; i++){
-//         for(let j = 0; j < (a*2 -1); j++){
+function printSpecialTriangle(a){
+    let str = '';
 
-//             if( j >= 0 + i && j <= (a*2 -1) - 1 - i ){
-//                 str += ' * '
-//             }else{
-//                 str += ' &nbsp;&nbsp; '
-//             }
-//         }
-//         str += '</br>'
-//     }
-//     console.log(str)
-//     return str;
-// }
+    for(let i = 0; i < a; i++){
+        for(let j = 0; j < (a*2 -1); j++){
+
+            if( j >= 0 + i && j <= (a*2 -1) - 1 - i ){
+                str += ' * '
+            }else{
+                str += ' &nbsp;&nbsp; '
+            }
+        }
+        str += '</br>'
+    }
+    console.log(str)
+    return str;
+}
 
 // document.write(printSpecialTriangle(3))
 
@@ -94,25 +93,24 @@
 // //     *
 // //   *   *
 // // *       *
-// // i=0; j=5;
-// // i=1; j=0+i; j= a-i-1
 
-// function printX(a) {
 
-//     let str = '';
-//     for(let i = 0; i < a; i++){
-//         for(let j = 0; j < a; j++){
+function printX(a) {
 
-//             if(j === 0 + i || j === a - 1 -i ){
-//                 str += ' * '
-//             }else {
-//                 str += ' &nbsp;&nbsp; '
-//             }
-//         }
-//         str += '<br>'
-//     }
-//     return str;
-// }
+    let str = '';
+    for(let i = 0; i < a; i++){
+        for(let j = 0; j < a; j++){
+
+            if(j === 0 + i || j === a - 1 -i ){
+                str += ' * '
+            }else {
+                str += ' &nbsp;&nbsp; '
+            }
+        }
+        str += '<br>'
+    }
+    return str;
+}
 
 // document.write(printX(5))
 
@@ -144,5 +142,5 @@ function printButterfly(a){
     return str;
 }
 
-document.write(printButterfly(7))
+// document.write(printButterfly(101))
 

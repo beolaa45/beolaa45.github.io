@@ -4,7 +4,8 @@
 
 function bai1(num1, num2){
     if(typeof(num1) === "number" && typeof(num2) === "number"){
-      return  Math.max(num1, num2)
+      return document.write(Math.max(num1, num2))
+
     }else return;
 }
 
@@ -16,6 +17,7 @@ console.log(bai1(2,5));
 
 function bai2(num){
     let result = num;
+    
     if(num >= 0){
         if(num === 0 && num === 1){
             return 1;
