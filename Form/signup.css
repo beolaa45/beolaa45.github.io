@@ -1,0 +1,165 @@
+*,
+::after,
+::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: black;
+    position: relative;
+}
+.form {
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    transform: translate(-50%, -50%);
+    text-align: right;
+
+    background-color: white;
+    padding: 20px 30px;
+    display: inline-block;
+    width: 300px;
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    text-align: right;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: royalblue;
+    display: block;
+    text-align: center;
+    user-select: none;
+    margin-bottom: 20px;
+    text-shadow: 3px 4px 10px rgba(0, 0, 0, .2);
+  }
+
+  .group {
+      position: relative;
+      margin-bottom: 20px;
+      display: block;
+
+  }
+
+  .group > label {
+      position: absolute;
+      top: 3px;
+      left: 10px;
+
+      pointer-events: none;
+      font-size: 13px;
+      transition: all .3s linear;
+  }
+
+  .group > input {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid royalblue;
+    width: 100%;
+    font-family: inherit;
+    color: black;
+    font-size: 13px;
+  }
+
+  .group > input:focus + label,
+  .group > input:valid + label {
+      top: -13px;
+      left: 3px;
+      font-size: 10px;
+
+  }
+
+
+
+  .btn {
+    color: white;
+    font-size: 20px;
+    display: block;
+    border: none;
+    padding: 10px 10px;
+    width: 100%;
+    border-radius: 50px;
+    background: linear-gradient(90deg, 
+    rgba(102,125,182,1) 0%,
+     rgba(0,130,200,1) 30%, 
+     rgba(0,130,200,1) 70%, 
+     rgba(102,125,182,1) 100%);
+     margin-bottom: 10px;
+     cursor: pointer;
+  }
+
+.link:link,
+.link:visited {
+ 
+  color: green;
+  
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.group-brith {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    
+}
+
+select {
+    padding: 2px;
+    margin-right: 3px;
+    width: 100%;
+}
+
+.group-name {
+    display: flex;
+    
+}
+
+/* input {
+    width: 100%;
+} */
+
+.box-name {
+    margin-right: 10px;
+}
+
+
+.box-sex {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+.box-radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.box-radio > input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.box-radio > label {
+    font-size: 16px;
+
+}
+
+.icon {
+    position: absolute;
+    font-size: 16px;
+    top: 0;
+    right: 5px;
+    z-index: 100;
+    cursor: pointer;
+}
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="signup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+  <i class="fas fa-eye icon"></i>
+    <form class="form" id="myForm" method='get' action='info.html'>
+        <h1>Sign Up</h1>
+
+        <div class="group-name">
+          <div class="group box-name">
+            <input type="text" name='name' id='name' required>
+            <label for="name">Name</label>
+          </div>
+          <div class="group">
+            <input type="text" name='surname' id='surname' required>
+            <label for="surname">Surname</label>
+          </div>
+          
+        </div>
+          <div class="group">
+            <input type="email" name='email' id='email' required>
+            <label for="email">E-mail</label>
+          </div>
+          <div class="group">
+            <input type="password" name='password'  id='newpassword' required>
+            
+            <label for="newpassword" class="label" >A new password</label>
+            <i class="fas fa-eye icon" id='icon1' onclick="addValue()"></i>
+           
+          </div>
+          <div class="group">
+            <input type="password" name='check-password' id='checkpassword' required>
+            <label for="check-password">Password</label>
+            <i class="fas fa-eye icon" id='icon2' onclick="addValue1()"></i>
+          </div>
+          
+          <div class="group-brith">
+            <select name="date" id="date">
+               
+            </select>
+            <select name="date" id="month">
+                
+            </select>
+            <select name="date" id="year">
+                <option value="1">1996</option>
+            </select>
+          </div>
+          <div class="group">
+            <input type="text" name='title' id='address' required>
+            <label for="title">Address </label>
+          </div>
+
+          <div class="group">
+            <input type="number" name='number' id='number' required>
+            <label for="number">Mobile number</label>
+          </div>
+
+          <div class="box-sex">
+            <div class="box-radio">
+              <input type="radio" name="sex" value="female" id='female'>
+              <label for="female">Female</label>
+            </div>
+            <div class="box-radio">
+              <input type="radio" name="sex" value="male" id='male'>
+              <label for="male">Male</label>
+            </div>
+           
+          </div>
+          
+          <button class="btn" id="btn">SignUp</button>
+        
+  
+        
+          <a href="index.html" class="link">Login?</a>
+
+          <script src="signup.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    </form>
+</body>
+</html>

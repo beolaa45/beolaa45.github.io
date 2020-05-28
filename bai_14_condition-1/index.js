@@ -2,32 +2,34 @@
 //  kiểm tra xem 2 tham số có phải là number không 
 // và tìm ra số lớn nhất trong 2 số đó.
 
-function bai1(num1, num2){
-    if(typeof(num1) === "number" && typeof(num2) === "number"){
-      return document.write(Math.max(num1, num2))
+function bai1(num1, num2) {
+    if (typeof (num1) === "number" && typeof (num2) === "number") {
+        return document.write(Math.max(num1, num2))
 
-    }else return;
+    } else return;
 }
 
-console.log(bai1(2,5));
+console.log(bai1(2, 5));
 
 // Bài 2. Viết 1 hàm dùng để tính giai thừa của 1 số. 
 // Kiểm tra tham số đầu vào phải là 1 số nguyên >= 0, 
 // sau đó tính giai thừa và in ra kết quả.
 
-function bai2(num){
+function bai2(num) {
     let result = num;
-    
-    if(num >= 0){
-        if(num === 0 && num === 1){
+
+    if (num >= 0 && (x - Math.round(x) == 0) && typeof (num) === 'number') {
+        if (num === 0 && num === 1) {
             return 1;
         }
-        
-        while(num > 1){
+
+        while (num > 1) {
 
             num--;
             result *= num;
         }
+    } else {
+        console.log('khong hop le')
     }
     return result;
 }
@@ -38,23 +40,22 @@ console.log(bai2(5));
 // Tạo ra 1 mảng mới chỉ chứa các số chẵn lấy ra từ mảng trên và 
 // sắp xếp theo thứ tự giảm dần.
 
-function bai3(arr){
+function bai3(arr) {
 
     let arrNew = [];
-   arrNew = arr.filter(e => {
-       return e%2 === 0
-});
+    arrNew = arr.filter(e => {
+        return e % 2 === 0
+    });
 
-   return arrNew.sort((a, b) =>{
-    return a-b
-   }
-       
+    return arrNew.sort((a, b) => {
+        return a - b
+    }
+
     );
-
-
 }
 
-console.log(bai3([1,2,5,3,4]));
+
+console.log(bai3([1, 2, 5, 3, 4]));
 
 // Bài 4. Một trang web cho phép người dùng tạo tài khoản. 
 // Hãy viết hàm kiểm tra tính hợp lệ của thông tin người dùng nhập vào. 
@@ -62,22 +63,22 @@ console.log(bai3([1,2,5,3,4]));
 // Giả sử tham số đầu vào là 1 object có dạng như sau 
 // (giá trị của thuộc tính là do người dùng nhập và đều là chuỗi): 
 
-function bai4(obj){
-    
+function bai4(obj) {
+
     let confirm1 = false;
     let arr = [];
-    for( let i of obj.password){
-      arr[i] = obj.password[i] === obj.confirm[i]
+    for (let i of obj.password) {
+        arr[i] = obj.password[i] === obj.confirm[i]
     };
-    if(arr.indexOf(false) === -1 ){
+    if (arr.indexOf(false) === -1) {
         confirm1 = true
-    }else {
+    } else {
         confirm1 = false;
     }
 
-    if(obj.username.length < 20 && obj.username.length > 0 && obj.password.length >= 6 && obj.password.length <= 32 && obj.password.length === obj.confirm.length && confirm1 ){
+    if (obj.username.length < 20 && obj.username.length > 0 && obj.password.length >= 6 && obj.password.length <= 32 && obj.password.length === obj.confirm.length && confirm1) {
         return true
-    }else {
+    } else {
         return false
     }
 }
@@ -86,6 +87,5 @@ console.log(bai4({
     username: "username",
     password: "secret",
     confirm: "secret"
-  }));
+}));
 
-  

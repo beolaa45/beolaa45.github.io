@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    position: relative;
+    
+
+  }
+
+  
+  .form {
+    
+    background-color: white;
+    padding: 20px 20px;
+    display: inline-block;
+   
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+   
+    width: 300px;
+    text-align: right;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: royalblue;
+    display: block;
+    text-align: center;
+    user-select: none;
+    margin-bottom: 20px;
+    text-shadow: 3px 4px 10px rgba(0, 0, 0, .2);
+  }
+
+  .group {
+    position: relative;
+    
+    display: flex;
+    margin-bottom: 10px;
+    padding: 5px 5px;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .group > label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 13px;
+    
+  }
+
+  .group > input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid royalblue;
+    padding: 5px 5px;
+    width: 100%;
+    
+  }
+label {
+  transition: all .5s ease;
+}
+
+input:focus + label,
+input:valid + label {
+  top: -3px;
+  font-size: 10px;
+}
+
+.group-check {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+  }
+
+.text {
+    margin-right: 10px;
+    
+  }
+.checkbox {
+display: inline-block;
+cursor: pointer;
+}
+
+.group button {
+  border: none;
+  padding: 5px 10px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  background-color: dodgerblue;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn {
+  color: white;
+  font-size: 20px;
+  display: block;
+  border: none;
+  padding: 10px 10px;
+  width: 100%;
+  border-radius: 50px;
+  background: linear-gradient(90deg, 
+  rgba(102,125,182,1) 0%,
+   rgba(0,130,200,1) 30%, 
+   rgba(0,130,200,1) 70%, 
+   rgba(102,125,182,1) 100%);
+   margin-bottom: 10px;
+   cursor: pointer;
+}
+.link:link,
+.link:visited {
+ 
+  color: green;
+  text-align: right;
+  display: inline-block;
+  padding: 5px 10px;
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+ 

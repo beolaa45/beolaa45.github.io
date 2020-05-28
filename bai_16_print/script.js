@@ -96,8 +96,9 @@ function printSpecialTriangle(a){
 
 
 function printX(a) {
+    if(Number.isInteger(a) && a > 4){
 
-    let str = '';
+        let str = '';
     for(let i = 0; i < a; i++){
         for(let j = 0; j < a; j++){
 
@@ -109,10 +110,12 @@ function printX(a) {
         }
         str += '<br>'
     }
-    return str;
+    return document.write(str);
+    }else 'không la intege > 4'
+    
 }
 
-// document.write(printX(5))
+// 
 
 
 // Bài 5. Viết function printButterfly(height), với height là số integer > 4 và là số lẻ, in ra hình con bướm có chiều cao bằng height. Ví dụ: 
@@ -125,22 +128,28 @@ function printX(a) {
 // *       *
 
 function printButterfly(a){
-    let str = ''
-    for(let i = 0; i < a; i++){
-        for(let j = 0; j < a; j++){
 
-            if((j >  i && j < a - 1 - i && i < a/2) || ( j >= a-i && j < a-(a-i) && i > a/2)){
-                str += ' &nbsp;&nbsp; '
-            }else str += ' * ';
+    if(Number.isInteger(a) && a > 4 && (a % 2 == 1)){
 
-        }
-        str += '<br>'
-    }
-    console.log(str)
-  
+        let str = ''
+        for(let i = 0; i < a; i++){
+            for(let j = 0; j < a; j++){
     
-    return str;
+                if((j >  i && j < a - 1 - i && i < a/2) || ( j >= a-i && j < a-(a-i) && i > a/2)){
+                    str += ' &nbsp;&nbsp; '
+                }else str += ' * ';
+    
+            }
+            str += '<br>'
+        }
+        console.log(str)
+      
+        
+        return document.write(str);
+    }else return 'không là số integer > 4 và là số lẻ'
+
+   
 }
 
-// document.write(printButterfly(101))
+// 
 
