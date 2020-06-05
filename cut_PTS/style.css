@@ -300,6 +300,11 @@ body {
   font-size: 1.4rem;
   color: black;
 }
+@media (max-width: 768px) {
+  .footer {
+    margin-top: -3rem;
+  }
+}
 .footer__container {
   height: 100%;
 }

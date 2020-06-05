@@ -338,6 +338,10 @@ body {
     font-family: 'Playfair Display', sans-serif;
     font-size: 1.4rem;
     color: black;
+
+    @media (max-width: 768px){
+        margin-top: -3rem;
+    }
     &__container {
         height: 100%;
     }
