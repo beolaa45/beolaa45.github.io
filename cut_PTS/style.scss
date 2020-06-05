@@ -10,6 +10,15 @@ html {
      /* This defines what 1rem is */
     font-size: 62.5%;
      /* //1 rem = 10px; 10px/16px = 62.5% */
+     @media (max-width: 992px){
+       font-size: 50%;
+    }
+
+    @media (max-width: 768px){
+        font-size: 40%;
+    }
+
+    
 
 
 }
@@ -35,14 +44,24 @@ body {
     padding: 5rem 7rem;
     background-color: #fff;
     
-    
+    @media (max-width: 992px){
+        padding: 2rem 5rem;
+    }
+
+    @media (max-width: 768px){
+        padding: 1rem 3rem;
+    }
+
+    @media (max-width: 576px){
+        padding: 1rem 2rem;
+    }
 
 }
 
-.container, .row, [class^='col'] {
-    padding: 0;
-    margin: 0;
-}
+// .container, .row, [class^='col'] {
+//     padding: 0;
+//     margin: 0;
+// }
 // NAVIGATION
 
 .navigation {
@@ -62,8 +81,18 @@ body {
     padding: 0;
     display: flex;
     justify-content: space-between;
-    align-items: baseline
-    
+    align-items: baseline;
+    @media (max-width: 992px){
+        padding: 0;
+    }
+
+    @media (max-width: 768px){
+        padding: 0;
+    }
+
+    @media (max-width: 576px){
+        padding: 0;
+    }
     
 }
 
@@ -178,10 +207,24 @@ body {
         width: 100%;
         margin-bottom: 3rem;
     }
+    &__paragrap {
+
+    }
+}
+
+@media (max-width: 768px) {
+    .section-blog__box {
+        margin: 0 auto 3rem auto;
+    }
+   
 }
 
 .section-blog-2 {
     padding-top: 10rem;
+
+    @media (max-width: 768px) {
+        margin: 0 auto 3rem auto;
+    }
 }
 
 
@@ -241,29 +284,39 @@ body {
         position: absolute;
         top: 0;
         right: 0;
+        
+     
+         @media (max-width: 768px){
+             width: 3rem;
+         }
+
+        @media (max-width: 540px){
+            width: 3rem;
+        }
     }
 }
 
 .box-btn {
     width: 100%;
-    position: relative;
-    height: 160rem;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .btn {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     color: #6f6f6f;
-    display: inline-block;
+    
     border: 1px solid rgba($color: #000000, $alpha: 1.0);
     border-radius: 0;
-    padding: 2.5rem 3.5rem;
+    padding: 2.5rem 3.7rem;
 
-    position: absolute;
-    top: 17rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    margin: 14rem 0;
+     
+    @media (max-width: 540px){
+        padding: 1rem 2rem;
+    }
 }
 
 .footer {
@@ -272,4 +325,57 @@ body {
     margin: 0 auto;
     height: 10rem;
     background-color: #f0f0f0;
+
+    & > .container {
+        margin: 0 auto;
+        max-width: 97.8rem;
+        width: 100%;
+        
+    }
+}
+
+.footer {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 1.4rem;
+    color: black;
+    &__container {
+        height: 100%;
+    }
+
+    &__row {
+        height: 100%;
+    }
+    &__box {
+        
+        
+        
+    }
+
+    &__box-title:not(:last-child) {
+        margin-right: 2rem;
+    }
+
+    & .scocial {
+        
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        &__title {
+            margin-right: 2rem;
+        }
+        &__icon {
+            margin-right: 2rem;
+            font-size: 1.4rem;
+        }
+
+        &__img {
+            @media (max-width: 992px){
+                width: 1.3rem;
+             }
+         
+             
+        }
+    }
 }
