@@ -44,6 +44,13 @@
     src: local('Pattaya'), local('Pattaya-Regular'), url(https://fonts.gstatic.com/s/pattaya/v5/ea8ZadcqV_zkHY-XBcOt9lZE.woff2) format('woff2');
     unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
   }
+
+:root {
+    --color-red: #ED4F4F;
+    --color-grey: #333333;
+    --color-grey-2: #666666;
+}
+
 *,
 *::after,
 *::before {
@@ -56,27 +63,245 @@ html {
     font-size: 62.5%;
 }
 
+@media (max-width: 991px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
 body {
     font-family: 'Roboto','Pattaya', sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
     box-sizing: border-box;
+    color:  var(--color-grey);
 }
 
 @media only screen and (min-width: 768px) {
+    .desktop {
+        display: block ;
+    }
     .mobile {
         display: none;
+
     }
 }
 @media only screen and (max-width: 767px) {
     .mobile {
-        display: block;
+        display: block ;
+    }
+    .desktop {
+        display: none ;
     }
 }
+/*********** CUSTOM ***********/
+.container-coustom {
+    max-width: 114rem;
+    width: 100%;
+    padding:0 15px;
+    margin: 0 auto;
+
+}
+
+/* BUTTOM */
+
+.btn {
+
+}
+
+.btn-red {
+
+}
 
 
+/*********** HEADER *************/
 
-
-.header-right__link {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 9.1rem;
     
 }
+
+.header-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+/* LOGO */
+.logo {
+    display: flex;
+    margin-right: 6rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo__link {
+    
+
+    width: 6.5rem;
+    height: 6rem;
+}
+
+.logo__link img{
+    width: 100%;
+    height: 100%;
+}
+
+.header-left__search {
+    height: 100%;
+    
+    
+}
+.header-left__search-box {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.header-left__form {
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--color-red);
+    padding: .4rem .5rem;
+}
+
+.header-left__input {
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.46rem;
+    line-height: 1.7rem;
+    
+    color: #7D7D7D;
+
+}
+
+.header-left__input:focus {
+    outline: none;
+}
+
+.header-left__link:hover i,
+.header-left__link:active i {
+    color: var(--color-red);
+    cursor: pointer;
+    
+}
+
+.header-left__icon {
+    color: var(--color-grey-2);
+    font-size: 1.8rem;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    vertical-align: baseline;
+}
+
+.header-right__main-menu {
+    height: 100%;
+}
+
+.header-right__list {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    
+    
+}
+
+.header-right__item {
+    height: 100%;
+    margin-right: 2rem;
+
+    display: flex;
+    align-items: center;
+
+}
+
+.header-right__link:link,
+.header-right__link:visited {
+    
+    color: var(--color-grey-2);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+
+    text-decoration: none;
+}
+
+.header-right__link:hover,
+.header-right__link:active {
+    color: var(--color-red)
+}
+
+.header-right__avatar,
+.header-right__cart,
+.header-right__search,
+.header-right__open-draw {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--color-grey-2);
+    cursor: pointer;
+}
+
+.header-right__avatar,
+.header-right__search {
+    margin-right: 2rem;
+}
+
+.header-right__open-draw {
+    margin-left: 2rem;
+}
+@media only screen and (min-width: 768px) {
+    .header-right__search,
+    .header-right__open-draw {
+        margin: 0;
+    }
+
+
+}
+.header-right__icon:hover,
+.header-right__icon:active {
+    color: var(--color-red)
+}
+.header-right__cart {
+    position: relative;
+}
+.header-right__cart::before {
+    position: absolute;
+    content: '3';
+    top: 2.8rem;
+    right: -.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    color: white;
+    background-color: var(--color-red);
+    z-index: 100;
+    font-size: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+

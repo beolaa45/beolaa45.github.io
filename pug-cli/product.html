@@ -6,21 +6,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="./font/fontawesome/css/all.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/reset.css"/>
     <link rel="stylesheet" href="./css/style.css"/>
     <title>Sản Phẩm</title>
   </head>
   <body>
-    <header class="container-coustom">
+    <header class="container-coustom header">
       <div class="header-left">
         <div class="logo"><a class="logo__link" href=""><img src="./img/logo.png" alt="Cake"/></a></div>
-        <div class="header-left__search">
-          <form class="header-left__form" action="#"></form>
-          <input class="header-left__input" type="text" placeholder="Tìm kiếm"/>
-          <button class="btn btn--red">   <i class="fas fa-search header-left__icon"></i></button>
+        <div class="header-left__search desktop">
+          <div class="header-left__search-box">
+            <form class="header-left__form" action="#">
+              <input class="header-left__input" type="text" placeholder="Tìm kiếm..."/><a class="header-left__link"><i class="fas fa-search header-left__icon"></i></a>
+            </form>
+          </div>
         </div>
       </div>
       <div class="header-right">
-        <nav class="header-right__main-menu">
+        <nav class="header-right__main-menu desktop">
           <ul class="header-right__list">
             <li class="header-right__item"><a class="header-right__link" href="">Trang chủ</a></li>
             <li class="header-right__item"> <a class="header-right__link" href="">Sản Phẩm</a></li>
@@ -28,8 +31,10 @@
             <li class="header-right__item"> <a class="header-right__link" href="">Liên Hệ</a></li>
           </ul>
         </nav>
-        <div class="header-right__avatar"><i class="fas fa-user header-right__link"></i></div>
-        <div class="header-right__carts"><i class="fas fa-cart-arrow-down header-right__carts"></i></div>
+        <div class="header-right__avatar"><i class="fas fa-user header-right__icon"></i></div>
+        <div class="header-right__search"><i class="fas fa-search header-right__icon mobile">        </i></div>
+        <div class="header-right__cart"><a class="header-right__link"><i class="fas fa-cart-arrow-down header-right__icon"></i></a></div>
+        <div class="header-right__open-draw"><i class="fas fa-bars mobile">  </i></div>
       </div>
     </header>
     <footer>
