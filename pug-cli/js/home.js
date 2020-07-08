@@ -1,5 +1,7 @@
 $(document).ready(function(){
     console.log("ok")
+
+    /////// BNANER
     $('.bamner-carousell').slick({
         dots: true,
     });

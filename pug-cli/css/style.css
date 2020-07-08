@@ -49,6 +49,7 @@
     --color-red: #ED4F4F;
     --color-grey: #333333;
     --color-grey-2: #666666;
+    --color-white: #FFFFFF
 }
 
 *,
@@ -115,15 +116,7 @@ body {
 
 }
 
-/* BUTTOM */
 
-.btn {
-
-}
-
-.btn-red {
-
-}
 
 
 /*********** HEADER *************/
@@ -412,7 +405,7 @@ header i {
     border: none;
     font-family: "Pattaya";
     font-size: 3rem;
-    text-align: center;
+    text-align: left;
     background-color: wheat;
     color: var(--color-grey-2);
 }
