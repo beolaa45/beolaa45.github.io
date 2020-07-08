@@ -2,24 +2,6 @@ html {
     font-size: 62.5%;
 }
 
-@media (max-width: 991px) {
-    html {
-        font-size: 56.25%;
-    }
-}
-
-@media (max-width: 767px) {
-    html {
-        font-size: 50%;
-    }
-}
-
-@media (max-width: 576px) {
-    html {
-        font-size: 50%;
-    }
-}
-
 body {
     font-family: 'Roboto','Pattaya', sans-serif;
     font-size: 1.6rem;
@@ -31,6 +13,13 @@ body {
 
 .content {
 
+}
+
+.container-custom {
+    max-width: 114rem;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 /* BUTTOM */
@@ -310,9 +299,37 @@ button.slick-prev {
   opacity: 1;
 }
 
+/* BANNER-LIST */
 
+.banner-list {
+    margin-top: 4.8rem;
+}
 
+.banner-list__photo {
+    height: 54rem;
+    background-image: url('../img/banner-list-1.jpg');
+}
 
+.banner-list__photo-2 {
+    height: 25.5rem;
+    background-image: url('../img/banner-list-2.jpg');
+}
+
+.banner-list__photo-box .photo-3-4 {
+    margin-bottom: 3rem;
+}
+
+.banner-list__photo-3 {
+    background-color: red;
+    height: 25.5rem;
+    background-image: url('../img/banner-list-3.jpg');
+}
+
+.banner-list__photo-4 {
+    background-color: red;
+    height: 25.5rem;
+    background-image: url('../img/banner-list-4.jpg');
+}
 
 
 @keyframes outIn {
@@ -328,3 +345,4 @@ button.slick-prev {
         transform: scale(1);
     }
 }
+
