@@ -1,0 +1,97 @@
+.content {
+
+}
+
+/******************* BANNER ************/
+
+.banner {
+    overflow: hidden;
+}
+
+.bamner-carousell {
+    position: relative;
+}
+
+.bamner-carousell_item {
+   
+}
+
+.bamner-carousell_item img {
+    width: 100%;
+}
+
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border: none;
+    width: 5rem;
+    height: 6rem;
+
+    font-size: 2.8rem;
+    color: var(--color-grey-2);
+    z-index: 10;
+    transform: translateY(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s linear;
+    background-color: rgba(0, 0, 0, .2);
+    
+    
+    
+}
+
+.slick-arrow:focus {
+    outline: none;
+}
+
+button.slick-prev {
+    left: 0;
+    
+    
+}
+
+.banner:hover .slick-arrow  {
+    color: var(--color-red);
+    background-color: rgba(0, 0, 0, .5);
+    
+    
+}
+
+.slick-dots {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    list-style: none;
+
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+
+}
+
+.slick-dots li button{
+    width: 10px;
+    height: 10px;
+    border: none;
+    margin: 10px;
+    border-radius: 100%;
+    background-color: var(--color-grey-2);
+    opacity: .4;
+    
+}
+
+.slick-dots li button:focus {
+    outline: none;
+}
+
+.slick-dots li.slick-active button {
+    background-color: var(--color-grey-2);
+    opacity: 1;
+
+}
