@@ -1,5 +1,31 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
 html {
     font-size: 62.5%;
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 37%;
+    }
 }
 
 body {
@@ -9,6 +35,8 @@ body {
     box-sizing: border-box;
     color:  var(--color-grey);
 }
+
+
 
 
 .content {
@@ -304,32 +332,120 @@ button.slick-prev {
 .banner-list {
     margin-top: 4.8rem;
 }
-
+@media (max-width: 576px) {
+    .banner-list {
+        margin-top: 2rem;
+    }
+}
 .banner-list__photo {
     height: 54rem;
     background-image: url('../img/banner-list-1.jpg');
+    background-size: cover;
+    background-position: center;
 }
-
+@media (max-width: 767px) {
+    .banner-list__photo {
+        margin-bottom: 1.5rem;
+    }
+}
 .banner-list__photo-2 {
     height: 25.5rem;
     background-image: url('../img/banner-list-2.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
 }
 
 .banner-list__photo-box .photo-3-4 {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .banner-list__photo-3 {
     background-color: red;
     height: 25.5rem;
     background-image: url('../img/banner-list-3.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .banner-list__photo-4 {
     background-color: red;
     height: 25.5rem;
     background-image: url('../img/banner-list-4.jpg');
+    background-size: cover;
+    background-position: center;
 }
+
+.banner-photo-3 {
+    padding: 0 -15px;
+}
+
+.banner-photo-3 div:first-child {
+    padding-right: 10px;
+}
+.banner-photo-3 div:last-child {
+    padding-left: 10px;
+}
+
+@media (max-width: 767px) {
+    .banner-photo-3 div:first-child {
+        padding-right: 15px;
+        margin-bottom: .7rem;
+    }
+
+    .banner-photo-3 div:last-child {
+        padding-left: 15px;
+    }
+}
+.banner-list__title {
+    font-family: "Pattaya";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4rem;
+    line-height: 5.6rem;
+    background-color: rgba(72, 72, 72, .55);
+    display: block;
+    padding: 2.2rem 0;
+    text-align: center;
+    color: var(--color-white);
+    
+}
+
+.banner-list__title-box {
+    height: 3.3rem;
+}
+
+.banner-list__box-2 {
+    font-family: Pattaya;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4rem;
+    line-height: 5.6rem;
+
+    flex-grow: 1;
+    display: flex;
+    background-color: rgba(72, 72, 72, .55);
+    align-items: flex-end;
+}
+
+.banner-list__box-2 .title{
+    width: 70%;
+    color: var(--color-white);
+    padding: 1.9rem 0rem 1.9rem 3.8rem;
+}
+
+.banner-list__box-2 .quaty {
+    
+    width: 30%;
+    padding: 1.9rem 4.5rem;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 @keyframes outIn {
