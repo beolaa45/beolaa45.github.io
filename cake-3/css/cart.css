@@ -1,0 +1,30 @@
+/* CART LIST */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--color-grey);
+    
+  }
+
+  table, td, th {
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  th {
+    height: 5rem;
+  }
+
+  td {
+      height: 17.6rem;
+  }
+
+  .cart__select {
+      font-weight: bold;
+      font-family: "Roboto";
+  }
+
+  .cart__select i:hover {
+      color: var(--color-red);
+  }
