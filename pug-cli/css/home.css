@@ -363,7 +363,8 @@ button.slick-prev {
 
 .banner-list__photo-3 {
     background-color: red;
-    height: 25.5rem;
+    height: 255px;
+    width: 255px;
     background-image: url('../img/banner-list-3.jpg');
     background-size: cover;
     background-position: center;
@@ -371,15 +372,14 @@ button.slick-prev {
 
 .banner-list__photo-4 {
     background-color: red;
-    height: 25.5rem;
+    height: 255px;
+    
     background-image: url('../img/banner-list-4.jpg');
     background-size: cover;
     background-position: center;
 }
 
-.banner-photo-3 {
-    padding: 0 -15px;
-}
+
 
 .banner-photo-3 div:first-child {
     padding-right: 10px;
@@ -406,7 +406,7 @@ button.slick-prev {
     line-height: 5.6rem;
     background-color: rgba(72, 72, 72, .55);
     display: block;
-    padding: 2.2rem 0;
+    padding: 2.2rem 0rem;
     text-align: center;
     color: var(--color-white);
     

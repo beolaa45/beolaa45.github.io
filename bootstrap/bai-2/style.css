@@ -1,0 +1,69 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    background-color: grey;
+
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 3rem;
+
+    
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+
+    
+}
+.row:last-child {
+    margin-bottom: 0;
+}
+.col {
+    width: 100%;
+    background-color: green;
+    height: 20rem;
+    margin-right: 1.5rem;
+}
+.col:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 768px){
+    .container {
+        width: 100vw;
+        padding: 3rem 2rem 0 2rem;
+    }
+
+    .row {
+        flex-direction: column;
+
+    }
+
+    .col {
+        margin-right: 0;
+    }
+
+    
+
+}
+
+
+

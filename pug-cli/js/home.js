@@ -25,5 +25,6 @@ $(document).ready(function(){
        let widthPhoto3 = $(".js-photo-3").width();
        let heightPhoto3 = widthPhoto3;
        $(".js-photo-3").height(heightPhoto3)
+       console.log(widthPhoto3)
     })
   });
