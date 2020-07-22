@@ -49,6 +49,9 @@ html {
     font-size: 50%;
   }
 }
+a {
+  text-decoration: none !important;
+}
 
 body {
   font-family: "Roboto", "Pattaya", sans-serif;
