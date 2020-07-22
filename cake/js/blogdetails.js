@@ -6,7 +6,6 @@ let blogEmail = $("#email")
 let blogTitle = $("#title")
 let blogNote = $("#note")
 let blogSubmit = $("#sendnote")
-console.log(blogSubmit)
 
 let blogSubmitSuccess = $("button ~ .success")
 
@@ -72,32 +71,8 @@ blogNote.focusout(function() {
     errblogNoteBool = false
 })
 
-blogSubmit.submit(function(e){
-    
-    e.preventDefault()
-    if(errblogNameBool){
-        errblogName.show()
-    }
-    if(errblogEmailBool){
-        errblogEmail.show()
-    }
-    if(errblogTitleBool){
-        errblogTitle.show()
-    }
-    if(errblogNoteBool){
-        errblogNote.show()
-    }
-
-    if(errblogNameBool == false &&
-        errblogEmailBool == false &&
-        errblogTitleBool == false &&
-        errblogNoteBool == false){
-            blogSubmitSuccess.show()
-            return true;
-            
-        }else{
-            return false
-        }
+blogSubmit.submit(function(){
+    if()
 })
 
 })
