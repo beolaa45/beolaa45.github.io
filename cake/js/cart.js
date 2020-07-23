@@ -65,20 +65,20 @@ $(document).ready(function () {
       `;
     });
 
-    console.log(arrHtml);
+    
     table.html(topHtml + arrHtml.join(""));
   }
 
   render(arrList);
 
   $(document).on("click", ".cart__select .fa-minus", function () {
-    console.log("ok");
+    
 
     let index = $(this).closest(".cart__row").data("id");
 
     for (const obj of arrList) {
       if (obj.id === index && obj.amount > 1) {
-        console.log(obj.amount);
+       
         obj["amount"] = obj.amount - 1;
       }
     }
@@ -87,36 +87,36 @@ $(document).ready(function () {
   });
 
   $(document).on("click", ".cart__select .fa-plus", function () {
-    console.log("ok");
+  
 
     let index = $(this).closest(".cart__row").data("id");
 
     for (const obj of arrList) {
       if (obj.id === index) {
-        console.log(obj.amount);
+       
         obj["amount"] = obj.amount + 1;
       }
     }
-    console.log(arrList);
+    
     render(arrList);
   });
 
   $(document).on("click", ".fa-trash-alt", function () {
     let index = $(this).closest(".cart__row").data("id");
-    console.log(index);
+   
 
     let arrNew = arrList.filter((obj) => {
       return obj.id !== index;
     });
     arrList = arrNew;
-    console.log(arrNew);
+    
 
     render(arrList);
   });
 
   $(window).on("load resize", function () {
     let width = $(this).width();
-    console.log(width);
+    
 
     if (width <= 576) {
       $("#cart__table tr .cart__img").css({ display: "none" });

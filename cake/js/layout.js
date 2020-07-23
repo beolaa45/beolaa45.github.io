@@ -18,7 +18,7 @@ $(document).ready(function () {
   });
 
   $(".clone-menu__box").click(function () {
-    console.log("ok");
+    
     $("#clone-menu").removeClass("active");
     $(".header-right__open-draw")
       .find("i")
@@ -172,9 +172,9 @@ $(document).ready(function () {
   let errMatchBool = true;
 
   fullName.focusout(function () {
-    console.log("full");
+   
     let len = $(this).val().trim();
-    console.log(len.length);
+ 
     if (len.length < 2 || len.length > 20) {
       errFullName.html("Họ và Tên có ít nhất 3 kí tự và nhiều nhất 20 kí tự");
       errFullName.show();
@@ -263,7 +263,7 @@ $(document).ready(function () {
       errPasswordSignup.show();
     }
 
-    console.log("dk");
+    
     if (
       errFullNameBool == false &&
       errPhoneBool == false &&
@@ -279,36 +279,36 @@ $(document).ready(function () {
 
   // CHECK ACTIVE PAGES
   if ($("main").hasClass("home")) {
-    console.log("ok");
+    
     $(".home--active").addClass("header-right__link--active");
   }
 
   if ($("main").hasClass("product")) {
-    console.log("ok");
+  
     $(".product--active").addClass("header-right__link--active");
   }
 
   if ($("main").hasClass("details")) {
-    console.log("ok");
+    
     $(".product--active").addClass("header-right__link--active");
   }
 
   if ($("main").hasClass("cart")) {
-    console.log("ok");
+   
     $(".cart--active").addClass("header-right__link--active");
   }
 
   if ($("body .contact").hasClass("contact")) {
-    console.log("ok");
+   
     $(".contact--active").addClass("header-right__link--active");
   }
 
   if ($("body .article").hasClass("article")) {
-    console.log("ok");
+   
     $(".blog--active").addClass("header-right__link--active");
   }
   if ($("body .detail-blog").hasClass("detail-blog")) {
-    console.log("ok");
+   
     $(".blog--active").addClass("header-right__link--active");
   }
 

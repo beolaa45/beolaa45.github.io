@@ -4,7 +4,7 @@ $(document).ready(function () {
   $(".product__section-header").children("span").addClass("isOpen");
   $(".product__section-header").siblings().addClass("isOpen");
   $(".product__section-header").click(function () {
-    console.log("ok1");
+   
     $(this).children("span").toggleClass("isOpen");
     $(this).siblings().toggleClass("isOpen");
   });
@@ -16,7 +16,7 @@ $(document).ready(function () {
 
   $(window).on("load resize", function () {
     let width = $(this).width();
-    console.log(width);
+   
 
     if (width <= 991) {
       $("#product__filter").addClass("isMobile");
@@ -28,7 +28,7 @@ $(document).ready(function () {
   });
 
   $("#product__close p").click(function () {
-    console.log("close");
+   
     $("#product__filter").addClass("isClose");
   });
 });
