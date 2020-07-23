@@ -9,13 +9,13 @@
   font-style: normal;
   font-weight: normal;
   font-size: 1.6rem;
-  line-height: 1.9rem;
+  line-height: 1.5;
 
   color: var(--color-grey);
 }
 
 .detail-blog__infor > * {
-  margin: 2rem;
+  margin-bottom: 2rem;
 }
 
 .infor__heading-secondery {
@@ -36,6 +36,7 @@
   width: 100%;
   display: block;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .infor__photo img {
@@ -136,6 +137,7 @@
   top: 1rem;
   right: 1rem;
   color: var(--color-grey);
+  cursor: pointer;
 }
 
 .sidebar__topic {
@@ -178,6 +180,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-bottom: 2rem;
 }
 
 .sidebar__photo {

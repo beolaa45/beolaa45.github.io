@@ -64,7 +64,7 @@
 }
 
 .details__info > * {
-  margin-bottom: 1.3rem;
+  margin-bottom: 3rem;
 }
 h2.heading__primary {
   font-family: "Roboto";
@@ -78,7 +78,7 @@ h2.heading__primary {
   text-align: center;
   position: relative;
 
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 
 h2.heading__primary::before {

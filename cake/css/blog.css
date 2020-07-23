@@ -32,8 +32,8 @@
 
 .aricle__heading-tertiary {
   font-weight: bold;
-  font-size: 1.8rem;
-  line-height: 2.1rem;
+  font-size: 2rem;
+  line-height: 2.6rem;
   margin-bottom: 1.1rem;
 
   transition: all 0.3s ease-in-out;
@@ -57,8 +57,8 @@
 
 .article__text {
   font-weight: normal;
-  font-size: 1.6rem;
-  line-height: 1.9rem;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
 }
 
 .article__content .row > div {

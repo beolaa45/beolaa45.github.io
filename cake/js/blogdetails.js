@@ -5,7 +5,7 @@ let blogName = $("#name")
 let blogEmail = $("#email")
 let blogTitle = $("#title")
 let blogNote = $("#note")
-let blogSubmit = $("#sendnote")
+let blogSubmit = $("#blogSubmit")
 
 let blogSubmitSuccess = $("button ~ .success")
 
@@ -53,7 +53,7 @@ blogTitle.focusout(function() {
     let str = $(this).val().trim();
     if(str.length < 1){
         errblogTitle.show();
-        return errblogTitleBool = true
+        return errblogTitleBool= true
     }
 
     errblogTitle.hide();
@@ -72,7 +72,7 @@ blogNote.focusout(function() {
 })
 
 blogSubmit.submit(function(){
-    if()
+    return false
 })
 
 })
