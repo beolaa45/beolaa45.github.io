@@ -326,8 +326,5 @@ $(document).ready(function () {
 
   // Animate
 
-  // AOS.init({
-  //   offset: 300,
-  //   duration: 500
-  // });
+  
 });
