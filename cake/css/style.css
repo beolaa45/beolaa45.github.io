@@ -696,6 +696,11 @@ p {
   margin-bottom: 0;
 }
 
+.user__signin:focus,
+.user__btn:focus {
+  outline: none;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
