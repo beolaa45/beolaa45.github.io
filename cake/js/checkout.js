@@ -96,6 +96,7 @@ $(document).ready(function () {
     if (errcheckRadioBool) {
       errcheckRadio.show();
     }
+   
 
     if (
       errcheckNameBool === false &&
@@ -109,4 +110,13 @@ $(document).ready(function () {
       return false;
     }
   });
+
+  // PAY CALC ACTIVE
+  $(".pay__calc").click(function(){
+    $(this).toggleClass("pay__calc--active")
+  })
+  $(".pay__method").click(function(){
+    $(this).toggleClass("pay__method--active")
+  })
+
 });
