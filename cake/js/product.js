@@ -25,10 +25,17 @@ $(document).ready(function () {
 
   $("#product__filter-icon").click(function () {
     $("#product__filter").removeClass("isClose");
+    $(".product__background").css("display","block")
   });
 
   $("#product__close p").click(function () {
    
     $("#product__filter").addClass("isClose");
+    $(".product__background").css("display","none")
   });
+
+  $(".product__background").click(function(){
+    $(this).css("display","none");
+    $("#product__filter").addClass("isClose");
+  })
 });

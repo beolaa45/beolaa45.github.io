@@ -191,10 +191,19 @@
   margin-bottom: 1rem;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
+  line-height: 1.5;
+  font-size: 1.7rem;
 }
 
 .sidebar__box p:first-child:hover {
   color: var(--color-red);
+}
+
+.sidebar__box:last-child{
+  font-size: 1.4rem;
+}
+.sidebar__box i {
+  margin-right: .5rem;
 }
 
 .sidebar__tag a:link,

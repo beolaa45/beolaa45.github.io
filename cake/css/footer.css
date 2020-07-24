@@ -95,7 +95,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 1.6rem;
-  line-height: 1.9rem;
+  line-height: 1.6;
   margin-bottom: 1.8rem;
 }
 
@@ -133,11 +133,12 @@
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 1.9rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: .7rem;
 }
 
 .footer__main-margin {
   margin-bottom: 1.8rem;
+  line-height: 1.5;
 }
 
 .footer__main-link:active,
@@ -161,4 +162,8 @@
   color: var(--color-white);
   padding: 1.5rem 0;
   margin: 0;
+}
+
+.footer__main-link p {
+  margin-bottom: .8rem;
 }

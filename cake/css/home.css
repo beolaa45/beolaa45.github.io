@@ -762,7 +762,7 @@ button.slick-prev {
 .blog__heading {
   font-weight: bold;
   font-size: 2rem;
-  line-height: 2.3rem;
+  line-height: 1.5;
 }
 
 .blog__counter {
@@ -781,7 +781,7 @@ button.slick-prev {
   font-style: normal;
   font-weight: normal;
   font-size: 1.6rem;
-  line-height: 1.9rem;
+  line-height: 1.5;
 }
 
 .blog__box-title > * {

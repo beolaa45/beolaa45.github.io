@@ -27,6 +27,16 @@
   transition: transform 0.3s ease-in-out;
   
 }
+.product__background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-grey-9);
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+}
 
 #product__filter.isMobile.isClose {
   transform: translateX(-100%);
