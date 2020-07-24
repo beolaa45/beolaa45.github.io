@@ -217,8 +217,8 @@ body {
 
 @media (max-width: 576px) {
   .btn--red {
-    font-size: 1.7rem;
-    padding: 0.7rem 1rem;
+    font-size: 1.4rem;
+    padding: 0.3rem .7rem;
   }
 }
 .btn--transtion-1 {
