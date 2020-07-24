@@ -14,6 +14,7 @@
 .details__carousel .slick-slide {
   height: 7.5rem;
   width: 10rem !important;
+  cursor: pointer;
 }
 
 /* the slides */
