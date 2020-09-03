@@ -30,15 +30,18 @@ $(document).ready(function () {
     });
 
     $(".tbody").html(html.join(""));
-
-    $(".table__link-delete").click(function () {
+    let event
+    $(".table__link-delete").click(function (e) {
       let value = $(this).data("value");
-      console.log(value);
+   
       $(".modal-body").html(`<h1>${value}</h1>`);
+      event = e.target.closest("tr")
+      console.log(event)
     });
-    $(".btn-primary").click(function () {
+    $(".btn-primary").click(function (e) {
       let index = +$(".modal-body h1").text();
       console.log(typeof index);
+  
 
       let request = $.ajax({
         url: `${API_ROOT}/users/${index}`,
@@ -46,8 +49,9 @@ $(document).ready(function () {
       });
 
       request.done(function (data) {
-        console.log(data);
-        window.location.reload();
+        event.remove();
+        
+   
       });
     });
   });
