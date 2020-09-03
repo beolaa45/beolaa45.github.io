@@ -39,6 +39,7 @@ body {
 .add:active {
     color: white;
     background-color: #218d3a;
+    text-decoration: none;
 }
 .add i {
     font-size: 2rem;
@@ -103,9 +104,13 @@ table tbody tr td {
 
 .table__link-delete:link,
 .table__link-delete:visited {
-    color: #dc3545!important;
+    color: #dc3545 !important;
     text-decoration: none;
     background-color: transparent;
+}
+
+.table__link-delete {
+    color: #dc3545 !important;
 }
 
 .table__link-delete:hover,
