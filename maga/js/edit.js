@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  let API_ROOT = "http://localhost:3000";
+  let API_ROOT = "https://khanh-quan-li.herokuapp.com";
 
   let id = $(location).attr("search");
   let arr = id.split("=");

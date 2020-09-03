@@ -1,5 +1,5 @@
 console.log(1);
-let API_ROOT = "http://localhost:3000";
+let API_ROOT = "https://khanh-quan-li.herokuapp.com";
 $(".btn-success").click(function () {
   let data = {
     name: $("#name").val(),
