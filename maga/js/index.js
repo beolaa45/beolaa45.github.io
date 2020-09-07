@@ -5,6 +5,8 @@ $(document).ready(function () {
     method: "GET"
   });
 
+
+  
   request.done(function (data) {
     console.log("data", data);
 
