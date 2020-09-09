@@ -13,7 +13,7 @@ const element = ( <main>
         <div className="col left">
           <div className="thumbnail">
             <a href="#">
-              <img src="https://via.placeholder.com/200x150" alt />
+              <img src="https://via.placeholder.com/200x150" alt="" />
             </a>
           </div>
           <div className="detail">
@@ -39,7 +39,7 @@ const element = ( <main>
         <div className="col left">
           <div className="thumbnail">
             <a href="#">
-              <img src="https://via.placeholder.com/200x150" alt />
+              <img src="https://via.placeholder.com/200x150" alt="" />
             </a>
           </div>
           <div className="detail">
