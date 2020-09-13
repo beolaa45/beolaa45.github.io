@@ -1,4 +1,4 @@
-const PRODUCTS = [
+let PRODUCTS = [
   {
     id: 1,
     name: "Product 1",
@@ -17,16 +17,31 @@ const PRODUCTS = [
   },
 ];
 
-let SUMMARY = 0;
+let SUMMARY = {
+  subTotal: null,
+  tax: 0.2,
+  total: null
+};
+
 for (const value of PRODUCTS) {
-  SUMMARY += value.price * value.quantity;
+  SUMMARY = {...SUMMARY, subTotal: SUMMARY.subTotal += value.price * value.quantity}
 }
+SUMMARY = {...SUMMARY, total: SUMMARY.subTotal *(1 - SUMMARY.tax ) }
 console.log(SUMMARY);
 
 const App = (props) => {
 const onChange = (e, id) => {
   console.log(e.target.value, id)
+ let index =  PRODUCTS.findIndex(obj =>  obj.id == id);
+ console.log(index);
+
+ PRODUCTS = [
+   ...PRODUCTS,
   
+ ]
+
+ console.log(PRODUCTS)
+ 
 }
 
  return (

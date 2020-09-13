@@ -49,7 +49,7 @@ function Product(props) {
       </li>
     ))
 
-    console.log(jsx)
+  
   return (
     <ul className="products">
       
