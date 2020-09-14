@@ -1,5 +1,5 @@
 function Product(props) {
-   
+  
 
     let jsx = props.products.map(value => (
         <li key={value.id} className="row">
@@ -25,12 +25,12 @@ function Product(props) {
               type="number"
               className="quantity"
               step={1}
-              defaultValue={value.quantity}
+              value={value.quantity}
                 onChange={(e) =>props.handleChange(e, value.id)}
               
             />
           </div>
-          <div className="remove">
+          <div onClick={() => props.delete(value.id)} className="remove">
             <svg
               version="1.1"
               className="close"

@@ -347,6 +347,17 @@ header .count {
   }
 }
 
+.add-products {
+  position: fixed;
+  left: 10px;
+  bottom: 50px;
+  padding: 9px 10px;
+  background-color: #16cc9b;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+}
+
 /* --- LARGE SCREEN --- */
 @media all and (min-width: 992px) {
   html {

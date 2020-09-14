@@ -6,7 +6,7 @@ function CartHeader(props) {
           <li>{props.title}</li>
           <li>{props.header}</li>
         </ul>
-        <span className="count">3 items in the bag</span>
+        <span className="count">{props.item} items in the bag</span>
       </header>
     )
 }
