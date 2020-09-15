@@ -112,7 +112,7 @@ const App = (props) => {
     if (promo === code) {
       let newSummary = { ...summary };
       newSummary.tax = 0.1;
-      newSummary.total = newSummary.tax * newSummary.subTotal;
+      newSummary.total =(1 - newSummary.tax) * newSummary.subTotal;
       setSummary(newSummary);
     }
   };
