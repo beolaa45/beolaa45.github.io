@@ -4,7 +4,7 @@ var PRODUCTS = [
     name: "Product 1",
     description: "Description 1",
     image: "https://via.placeholder.com/200x150",
-    price: 10,
+    price: 10.4,
     quantity: 2,
   },
   {
