@@ -110,10 +110,10 @@ const App = (props) => {
 
   const onClickPromo = () => {
     if (promo === code) {
-      let newSummary = {...summary};
-      newSummary.tax = 0.1
-      newSummary.total = newSummary.tax * newSummary.subTotal
-      setSummary(newSummary)
+      let newSummary = { ...summary };
+      newSummary.tax = 0.1;
+      newSummary.total = newSummary.tax * newSummary.subTotal;
+      setSummary(newSummary);
     }
   };
   return (
