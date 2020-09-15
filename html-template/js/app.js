@@ -77,7 +77,7 @@ const App = (props) => {
   const handleAdd = () => {
     let newProduct = [...products]
     newProduct.push({
-        id: new Date().getTime,
+        id: new Date().getTime(),
         name: "Product 2",
         description: "Description 2",
         image: "https://via.placeholder.com/200x150",
