@@ -26,7 +26,7 @@ function Product(props) {
               className="quantity"
               step={1}
               value={value.quantity}
-                onChange={(e) =>props.handleChange(e, value.id)}
+              onChange={(e) =>props.handleChange(e, value.id)}
               
             />
           </div>
