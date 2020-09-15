@@ -1,4 +1,10 @@
 function CartHeader(props) {
+  let sum = 0;
+  for(let product of props.item){
+    if(!product.quantity) continue
+    sum += parseInt(product.quantity) 
+  }
+  console.log(props.item)
     return (
         <header className="container">
         <h1>{props.header}</h1>
@@ -6,7 +12,7 @@ function CartHeader(props) {
           <li>{props.title}</li>
           <li>{props.header}</li>
         </ul>
-        <span className="count">{props.item} items in the bag</span>
+        <span className="count">{sum} items in the bag</span>
       </header>
     )
 }

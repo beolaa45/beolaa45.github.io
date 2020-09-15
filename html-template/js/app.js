@@ -118,7 +118,7 @@ const App = (props) => {
   };
   return (
     <main>
-      <CartHeader header="Shopping Cart" title="Home" />
+      <CartHeader item={products} header="Shopping Cart" title="Home" />
       <section className="container">
         <Product
           products={products}
