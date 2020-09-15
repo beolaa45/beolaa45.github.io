@@ -35,13 +35,20 @@ const App = (props) => {
   }
   SUMMARY.total = SUMMARY.subTotal * (1 - SUMMARY.tax);
 
+
   console.log(products);
   const onChange = (e, id) => {
+    let quant = parseInt(e.target.value);
+    if(quant > 99 || quant <= 0){
+      alert("quantity 0 - 99")
+      return;
+    }
+    if(Number.isNaN(quant)) quant = ''
     console.log(e.target.value, id);
     let newProduct = [...products];
     let index = newProduct.findIndex((obj) => obj.id == id);
     console.log(index);
-    let newItem = { ...newProduct[index], quantity: e.target.value };
+    let newItem = { ...newProduct[index], quantity: quant };
     newProduct[index] = newItem;
     setProducts(newProduct);
 
