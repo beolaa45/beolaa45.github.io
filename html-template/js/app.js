@@ -19,31 +19,29 @@ var PRODUCTS = [
 
 var SUMMARY = {
   subTotal: 0,
-  tax: 0.2,
+  tax: 0,
   total: 0,
 };
-
+var code = "Techmaster";
 SUMMARY = { ...SUMMARY, total: SUMMARY.subTotal * (1 - SUMMARY.tax) };
 console.log(SUMMARY);
-
+for (const value of PRODUCTS) {
+  SUMMARY.subTotal += value.price * value.quantity;
+}
+SUMMARY.total = SUMMARY.subTotal * (1 - SUMMARY.tax);
 const App = (props) => {
   const [products, setProducts] = React.useState(PRODUCTS);
   const [summary, setSummary] = React.useState(SUMMARY);
-
-  for (const value of products) {
-    SUMMARY.subTotal += value.price * value.quantity;
-  }
-  SUMMARY.total = SUMMARY.subTotal * (1 - SUMMARY.tax);
-
+  const [promo, setPromo] = React.useState("");
 
   console.log(products);
   const onChange = (e, id) => {
     let quant = parseInt(e.target.value);
-    if(quant > 99 || quant <= 0){
-      alert("quantity 0 - 99")
+    if (quant > 99 || quant <= 0) {
+      alert("quantity 0 - 99");
       return;
     }
-    if(Number.isNaN(quant)) quant = ''
+    if (Number.isNaN(quant)) quant = "";
     console.log(e.target.value, id);
     let newProduct = [...products];
     let index = newProduct.findIndex((obj) => obj.id == id);
@@ -62,7 +60,7 @@ const App = (props) => {
     newSummary.total = newSummary.subTotal * (1 - newSummary.tax);
     setSummary(newSummary);
   };
-///////////////////////delete
+  ///////////////////////delete
   const handleDelete = (id) => {
     console.log(id);
     let newProduct = products.filter((product) => product.id !== id);
@@ -76,23 +74,21 @@ const App = (props) => {
     }
     newSummary.total = newSummary.subTotal * (1 - newSummary.tax);
     setSummary(newSummary);
-
-
   };
 
   ///////////////////add
   const handleAdd = () => {
-    let newProduct = [...products]
+    let newProduct = [...products];
     newProduct.push({
-        id: new Date().getTime(),
-        name: "Product 2",
-        description: "Description 2",
-        image: "https://via.placeholder.com/200x150",
-        price: 20,
-        quantity: 2,
-    })
+      id: new Date().getTime(),
+      name: "Product 2",
+      description: "Description 2",
+      image: "https://via.placeholder.com/200x150",
+      price: 20,
+      quantity: 2,
+    });
 
-    setProducts(newProduct)
+    setProducts(newProduct);
 
     let newSummary = { ...summary };
     newSummary.subTotal = 0;
@@ -102,7 +98,24 @@ const App = (props) => {
     }
     newSummary.total = newSummary.subTotal * (1 - newSummary.tax);
     setSummary(newSummary);
-  }
+  };
+
+  /////////////////promo-code
+
+  const handlePromoCode = (e) => {
+    let code = e.target.value;
+    setPromo(code);
+    console.log(code);
+  };
+
+  const onClickPromo = () => {
+    if (promo === code) {
+      let newSummary = {...summary};
+      newSummary.tax = 0.1
+      newSummary.total = newSummary.tax * newSummary.subTotal
+      setSummary(newSummary)
+    }
+  };
   return (
     <main>
       <CartHeader header="Shopping Cart" title="Home" />
@@ -114,7 +127,11 @@ const App = (props) => {
         />
       </section>
       <section className="container">
-        <Promotion />
+        <Promotion
+          onChange={handlePromoCode}
+          value={promo}
+          onClick={onClickPromo}
+        />
         <Summary data={summary} />
         <div className="checkout">
           <Button />

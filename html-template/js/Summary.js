@@ -5,9 +5,9 @@ function Summary({ data }) {
         <li>
           Subtotal <span>${data.subTotal.toFixed(3)}</span>
         </li>
-        <li>
+        {data.tax ? <li>
           Tax <span>${data.tax}</span>
-        </li>
+        </li> : null}
         <li className="total">
           Total <span>${data.total.toFixed(3)}</span>
         </li>
