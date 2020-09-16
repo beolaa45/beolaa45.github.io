@@ -29,7 +29,7 @@ for (const value of PRODUCTS) {
   SUMMARY.subTotal += value.price * value.quantity;
 }
 SUMMARY.total = SUMMARY.subTotal * (1 - SUMMARY.tax);
-const App = (props) => {
+const App = () => {
   const [products, setProducts] = React.useState(PRODUCTS);
   const [summary, setSummary] = React.useState(SUMMARY);
   const [promo, setPromo] = React.useState("");
@@ -62,18 +62,27 @@ const App = (props) => {
   };
   ///////////////////////delete
   const handleDelete = (id) => {
-    console.log(id);
-    let newProduct = products.filter((product) => product.id !== id);
-    setProducts(newProduct);
-
-    let newSummary = { ...summary };
-    newSummary.subTotal = 0;
-    newSummary.total = 0;
-    for (const value of newProduct) {
-      newSummary.subTotal += value.price * value.quantity;
-    }
-    newSummary.total = newSummary.subTotal * (1 - newSummary.tax);
-    setSummary(newSummary);
+    let txt;
+      let r = confirm("Bạn muốn xóa không!");
+      if (r == true) {
+        txt = "You pressed OK!";
+        console.log(id);
+        let newProduct = products.filter((product) => product.id !== id);
+        setProducts(newProduct);
+    
+        let newSummary = { ...summary };
+        newSummary.subTotal = 0;
+        newSummary.total = 0;
+        for (const value of newProduct) {
+          newSummary.subTotal += value.price * value.quantity;
+        }
+        newSummary.total = newSummary.subTotal * (1 - newSummary.tax);
+        setSummary(newSummary);
+      } else {
+        txt = "You pressed Cancel!";
+      }
+    
+ 
   };
 
   ///////////////////add
