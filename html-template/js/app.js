@@ -114,6 +114,8 @@ const App = (props) => {
       newSummary.tax = 0.1;
       newSummary.total =(1 - newSummary.tax) * newSummary.subTotal;
       setSummary(newSummary);
+    }else{
+      alert("Code hết hạn hoặc sai")
     }
   };
   return (
