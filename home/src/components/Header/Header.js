@@ -34,7 +34,7 @@ function Header(props) {
                   </div>
                   <div className="col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 Header__col">
                     <div className="Header__logo">
-                      master
+                      master123
                     </div>
                   </div>
                   <div className="col-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 Header__col">
