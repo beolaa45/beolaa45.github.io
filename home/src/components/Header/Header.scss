@@ -1,0 +1,57 @@
+@import "../../sass/abstracts/variables";
+.Header{
+    height: 7rem;
+    display: block;
+    
+    background-color: $color-white;
+    &__container{
+        height: 100%;
+    }
+
+    &__navigation{
+        height: 100%; 
+    }
+    &__icon{
+        height: 100%;
+    }
+
+    &__col{
+        height: 100%;
+    }
+
+    &__bars{
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.8rem;
+
+        @media screen and (max-width: 768px) {
+            font-size: 2.5rem;
+          }
+    }
+    &__row{
+        height: 100%;
+    }
+    &__logo{
+       
+        height: 100%;
+        width: 100%;
+        font-size: 2.5rem;
+        font-family: 'Poppins', sans-serif;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        color: $color-black;
+
+        @media screen and (max-width: 768px) {
+            font-size: 3rem;
+          }
+    }
+
+    &__user{
+        height: 100%;
+    }
+}
