@@ -1,0 +1,19 @@
+@import "../../../sass/abstracts/variables";
+.Button{
+    border: none;
+    width: 15rem;
+    height: 5rem;
+
+    &:focus{
+        outline: none;
+    }
+
+    &--black{
+        background-color: rgba($color: $color-black, $alpha: .9);
+        color: $color-white;
+        transition: $transtion-1;
+    }
+    &--black:hover{
+        background-color: rgba($color: $color-black-2, $alpha: .9);
+    }
+}

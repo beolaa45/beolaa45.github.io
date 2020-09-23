@@ -1,0 +1,21 @@
+.Banner{
+    
+    &__box{
+        height: 60rem;
+        width: 100%;
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;
+
+        display: flex;
+        align-items: center;
+        background-color: #cccccc
+    }
+
+    &__content{
+        width: 100%;
+        text-align: center;
+    }
+
+
+}

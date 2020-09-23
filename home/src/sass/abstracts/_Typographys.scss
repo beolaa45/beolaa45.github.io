@@ -1,0 +1,11 @@
+.Heading--tertiary{
+    font-size: 5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+
+    @media screen and (max-width: 575px) {
+        font-size: 4rem;
+      }
+
+}

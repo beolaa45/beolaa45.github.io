@@ -1,21 +1,32 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.scss"
 import {
   Switch,
   Route
 } from "react-router-dom";
-function App() {
+import Layout from './components/Layout/Layout';
+class App extends Component {
 
+ 
 
-  return (
+ render(){
+  let routes = (
     <Switch>
       <Route path="/about" component={About}/>
       <Route path="/" component={Home}/>
     </Switch>
-    
+  )
+  return (
+    <Fragment>
+      <Layout>
+        {routes}
+      </Layout>
+    </Fragment>
   );
+ }
 }
 
 export default App;

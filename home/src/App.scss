@@ -1,5 +1,6 @@
 /* HTML5 display-role reset for older browsers */
 *,
+
 ::before,
 ::after {
   margin: 0;
@@ -29,6 +30,7 @@ body.body {
   line-height: 1.6;
   font-weight: normal;
   box-sizing: border-box;
+  height: 150rem;
 }
 
 .mobile{
@@ -42,3 +44,5 @@ body.body {
         display: none;
       }
 }
+
+@import './sass/abstracts/Typographys';
