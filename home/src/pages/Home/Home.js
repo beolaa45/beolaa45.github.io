@@ -1,11 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import ShippingType from "../../components/ShippingType/ShippingType";
 import Button from "../../components/UI/Button/Button";
 import "./Home.scss";
 function Home(props) {
   return (
     <Fragment>
-      <div className="Banner">
+      <section className="Banner">
         <Container fluid>
           <Row>
             <Col>
@@ -23,7 +24,20 @@ function Home(props) {
             </Col>
           </Row>
         </Container>
-      </div>
+      </section>
+      <section className="Shipping">
+          <Container>
+            <Row>
+              <Col xl={4} lg={4}>
+                <div>
+                  <ShippingType />
+                </div>
+              </Col>
+              <Col xl={4} lg={4}>1</Col>
+              <Col xl={4} lg={4}>1</Col>
+            </Row>
+          </Container>
+      </section>
     </Fragment>
   );
 }
