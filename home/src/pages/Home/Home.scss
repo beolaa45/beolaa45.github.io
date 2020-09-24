@@ -1,46 +1,68 @@
-.Banner{
-    
-    &__box{
-        height: 80rem;
-        width: 100%;
-        background-position: center; 
-        background-repeat: no-repeat; 
-        background-size: cover;
+@import "../../sass/abstracts/variables";
+.Banner {
+    margin-bottom: 3rem;
+  &__box {
+    height: 80rem;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-        display: flex;
-        align-items: center;
-        background-color: #cccccc
-
-        
-       
+    display: flex;
+    align-items: center;
+    background-color: #cccccc;
+  }
+  @media screen and (max-width: 1200px) {
+    &__box {
+      height: 60rem;
     }
-    @media screen and (max-width: 1200px) {
-        &__box{
-            height: 60rem;
-        }
-      }
-    @media screen and (max-width: 992px) {
-        &__box{
-            height: 50rem;
-        }
-      }
-    @media screen and (max-width: 768px) {
-        &__box{
-            height: 40rem;
-        }
-      }
+  }
+  @media screen and (max-width: 992px) {
+    &__box {
+      height: 50rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &__box {
+      height: 40rem;
+    }
+  }
 
-    @media screen and (max-width: 575px) {
-        &__box{
-            height: 26rem;
-        }
-      }
-     
+  @media screen and (max-width: 575px) {
+    &__box {
+      height: 26rem;
+    }
+  }
 
+  &__content {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.Shipping {
+    margin-bottom: 2rem;
     &__content{
         width: 100%;
-        text-align: center;
+        height: 9rem;
     }
+    @media screen and (max-width: $max-md) {
+        &__content{
+            margin-bottom: 2rem;
+        }
+      }
+    
+}
 
+.Category{
+    margin-bottom: 5rem;
+    &__card{
+        width: 100%;
+        height: 21.5rem;
+        overflow: hidden;
 
+        @media screen and (max-width: $max-sm) {
+            margin-bottom: 1.5rem;
+          }
+    }
 }

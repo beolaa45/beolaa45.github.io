@@ -3,6 +3,7 @@
     border: none;
     width: 15rem;
     height: 5rem;
+    font-family: "Poppins", sans-serif;
 
     &:focus{
         outline: none;
@@ -15,5 +16,16 @@
     }
     &--black:hover{
         background-color: rgba($color: $color-black-2, $alpha: .9);
+    }
+
+    &--card{
+        background-color: $color-white;
+        box-shadow: $box-shadow;
+        font-weight: 600;
+        transition: $transtion-1;
+    }
+    &--card:hover{
+        background-color: $color-grey;
+        color: $color-white;
     }
 }
