@@ -5,6 +5,8 @@ import Button from "../../components/UI/Button/Button";
 import { faLifeRing, faRecycle, faUser } from '@fortawesome/free-solid-svg-icons'
 import "./Home.scss";
 import Card from "../../components/Card/Card";
+import Heading from "../../components/Heading/Heading";
+import CardItem from "../../components/CardItem/CardItem";
 function Home(props) {
   return (
     <Fragment>
@@ -19,7 +21,9 @@ function Home(props) {
                 }}
               >
                 <div className="Banner__content">
-                  <h3 className="Heading--tertiary">Decor your home with high-end audio</h3>
+                  <h3 className="Heading--tertiary">
+                    Decor your home with high-end audio
+                  </h3>
                   <Button classN="Button--black">show now</Button>
                 </div>
               </div>
@@ -28,61 +32,106 @@ function Home(props) {
         </Container>
       </section>
       <section className="Shipping">
-          <Container>
-            <Row>
-              <Col xl={4} lg={4} md={12} sm={12} xs={12}>
-                <div className="Shipping__content">
-                  <ShippingType icon={faLifeRing} title="SUPPORT 24/7" subtitle="we support 24 hours a day"/>
-                </div>
-              </Col>
-              <Col xl={4} lg={4} md={12} sm={12} xs={12}>
+        <Container>
+          <Row>
+            <Col xl={4} lg={4} md={12} sm={12} xs={12}>
               <div className="Shipping__content">
-                  <ShippingType icon={faRecycle} title="30 DAYS RETURN" subtitle="you have 30 days to return"/>
-                </div>
-              </Col>
-              <Col xl={4} lg={4} md={12} sm={12} xs={12}>
+                <ShippingType
+                  icon={faLifeRing}
+                  title="SUPPORT 24/7"
+                  subtitle="we support 24 hours a day"
+                />
+              </div>
+            </Col>
+            <Col xl={4} lg={4} md={12} sm={12} xs={12}>
               <div className="Shipping__content">
-                  <ShippingType icon={faUser} title="PAYMENT 100% SECURE" subtitle="Payment 100% Secure"/>
-                </div>
-              </Col>
-            </Row>
-          </Container>
+                <ShippingType
+                  icon={faRecycle}
+                  title="30 DAYS RETURN"
+                  subtitle="you have 30 days to return"
+                />
+              </div>
+            </Col>
+            <Col xl={4} lg={4} md={12} sm={12} xs={12}>
+              <div className="Shipping__content">
+                <ShippingType
+                  icon={faUser}
+                  title="PAYMENT 100% SECURE"
+                  subtitle="Payment 100% Secure"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
       <section className="Category">
-            <Container>
-              <Row>
-                <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-                    <div className="Category__card">
-                      <Card
-                        title="Audio" 
-                        url="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cat15_720x.jpg?v=1582857819"/>
-                    </div>
-                </Col>
-                <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-                <div className="Category__card">
-                      <Card
-                        title="Speaker" 
-                        url="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cat13_720x.jpg?v=1582796459"/>
-                    </div>
-                </Col>
-                <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-                <div className="Category__card">
-                      <Card
-                        title="Hi-end" 
-                        url="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/hi-end_720x.jpg?v=1583147788"/>
-                    </div>
-                </Col>
-              </Row>
-            </Container>
+        <Container>
+          <Row>
+            <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+              <div className="Category__card">
+                <Card
+                  title="Audio"
+                  url="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cat15_720x.jpg?v=1582857819"
+                />
+              </div>
+            </Col>
+            <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+              <div className="Category__card">
+                <Card
+                  title="Speaker"
+                  url="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cat13_720x.jpg?v=1582796459"
+                />
+              </div>
+            </Col>
+            <Col xl={4} lg={4} md={4} sm={12} xs={12}>
+              <div className="Category__card">
+                <Card
+                  title="Hi-end"
+                  url="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/hi-end_720x.jpg?v=1583147788"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
       <section className="BestSeller">
-                <Container>
+        <Container>
+          <Row>
+            <Col>
+              <div className="BestSeller__box">
+                <div className="BestSeller__heading">
+                  <Heading
+                    title="BESTSELLER"
+                    subTitle="Top seller in the week"
+                  />
+                </div>
+                <div className="BestSeller__content">
                   <Row>
-                    <Col>
-                      123
+                    <Col xl={3} lg={3} md={4} sm={6} xs={12}>
+                      <div className="BestSeller__card">
+                        <CardItem
+                          sale
+                          price
+                          title
+                          url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
+                        />
+                      </div>
+                    </Col>
+                    <Col xl={3} lg={3} md={4} sm={6} xs={12}>
+                      2
+                    </Col>
+                    <Col xl={3} lg={3} md={4} sm={6} xs={12}>
+                      2
+                    </Col>
+                    <Col xl={3} lg={3} md={4} sm={6} xs={12}>
+                      3
                     </Col>
                   </Row>
-                </Container>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
     </Fragment>
   );

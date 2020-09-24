@@ -2,7 +2,7 @@ import React from 'react'
 import "./Button.scss"
 function Button({children, classN, style={}, url}) {
     const handleClick = () => {
-
+        console.log("ok")
     }
     let button = ["Button"]
     if(classN) button.push(classN)
