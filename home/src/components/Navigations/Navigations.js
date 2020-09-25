@@ -12,7 +12,7 @@ function Navigations({classN}) {
             <ul className={navigation.join(" ")}>
                <Navigation path="/" exact={true}  name="Home" />
                <Navigation path="/products" name="Products" />
-               <Navigation path="/about" name="About" />
+               <Navigation path="/blog" name="Blog" />
                <Navigation path="/contact" name="Contact" />
             </ul>
         </nav>

@@ -7,6 +7,7 @@ import "./Home.scss";
 import Card from "../../components/Card/Card";
 import Heading from "../../components/Heading/Heading";
 import CardItem from "../../components/CardItem/CardItem";
+import CardBlog from "../../components/CardBlog/CardBlog";
 
 const data = [
   
@@ -66,6 +67,32 @@ const data = [
     url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
   }
 ]
+const data1= [
+  {
+    id:1,
+    time:"February 28, 2020",
+    author:" admin",
+    subTitle:`Sleek, minimalist wireless charging designs to "complement and blend within the home and office".`,
+    title:"Dial and Disc Wireless Chargers home office from Sum",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/articles/elicbog21_540x.jpg?v=1582880175"
+  },
+  {
+    id:2,
+    time:"February 28, 2020",
+    author:" admin",
+    subTitle:`Sleek, minimalist wireless charging designs to "complement and blend within the home and office".`,
+    title:"Dial and Disc Wireless Chargers home office from Sum",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/articles/elicbog21_540x.jpg?v=1582880175"
+  },
+  {
+    id:3,
+    time:"February 28, 2020",
+    author:" admin",
+    subTitle:`Sleek, minimalist wireless charging designs to "complement and blend within the home and office".`,
+    title:"Dial and Disc Wireless Chargers home office from Sum",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/articles/elicbog21_540x.jpg?v=1582880175"
+  }
+]
 function Home(props) {
   document.title = "Home";
   const clickedToCard = () => {
@@ -96,13 +123,28 @@ function Home(props) {
                       </div>
         </Col>
     )
+  });
+
+  let lisBlog = data1.map(item => {
+    return(
+      <Col xl={4} lg={4} md={4} sm={6} xs={12} style={{marginBottom: "3rem"}}>
+      <div className="Blog__list">
+          <CardBlog 
+          time={item.time}
+          author={item.author}
+          subTitle={item.subTitle}
+          title={item.title}
+          url={item.url}
+          />
+      </div>
+    </Col>   
+    )
   })
   return (
     <Fragment>
       <section className="Banner">
         <Container fluid>
           <Row>
-            <Col>
               <div
                 className="Banner__box"
                 style={{
@@ -116,7 +158,6 @@ function Home(props) {
                   <Button classN="Button--black">show now</Button>
                 </div>
               </div>
-            </Col>
           </Row>
         </Container>
       </section>
@@ -211,7 +252,7 @@ function Home(props) {
                     </Col> */}
                     {listCart}
                   </Row>
-                    <div style={{textAlign: "center"}}> 
+                    <div style={{textAlign: "center", marginTop: "2rem"}}> 
                     <Button classN="Button--black" clicked={handleLoadMore} >Load More</Button>
                     </div>
                   
@@ -246,7 +287,7 @@ function Home(props) {
             <Row>
               <Col>
                   <div className="Blog__box" style={{textAlign: "center", marginBottom: "2.5rem"}}>
-                      <div>
+                      <div style={{marginBottom: "3rem"}}>
                       <Heading
                     title="LATES FROM BLOG"
                     subTitle="The freshest and most exciting news"
@@ -254,20 +295,14 @@ function Home(props) {
                       </div>
                   </div>
                   <Row>
-                    <Col xl={4} lg={4} md={4} sm={6} xs={12}>
-                      1
-                    </Col>
-                    <Col xl={4} lg={4} md={4} sm={6} xs={12}>
-                      1
-                    </Col>
-                    <Col xl={4} lg={4} md={4} sm={6} xs={12}>
-                      1
-                    </Col>
-                    
+                    {lisBlog}  
                   </Row>
               </Col>
             </Row>
           </Container>
+      </section>
+      <section className="Footer">
+            
       </section>
     </Fragment>
   );

@@ -1,0 +1,51 @@
+@import "../../sass/abstracts/variables";
+.CardBlog{
+    font-family: "Poppins", sans-serif, 'Libre Baskerville';
+    &__link:link,
+    &__link:visited{
+        text-decoration: none !important;
+        color: $color-black;
+    }
+
+    &__photo{
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+
+    &__image{
+        width: 100%;
+        transition: $transtion-2;
+       
+    }
+
+    &__image:hover{
+        transform: scale(1.2);
+    }
+
+
+    &__content{
+
+    }
+
+    &__time{
+       
+        font-size: 1.46rem;
+        color: $color-grey;
+        margin-bottom: 1rem;
+    }
+
+    &__title{
+        font-size: 1.9rem;
+        font-weight: 600;
+        margin-bottom: .5rem;
+        transition: $transtion-1;
+    }
+
+    &__title:hover{
+        color: $color-red;
+    }
+
+    &subTitle{
+
+    }
+}
