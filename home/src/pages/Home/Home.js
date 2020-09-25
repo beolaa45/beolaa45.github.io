@@ -110,9 +110,9 @@ function Home(props) {
                     <Col xl={3} lg={3} md={4} sm={6} xs={12}>
                       <div className="BestSeller__card">
                         <CardItem
-                          sale
-                          price
-                          title
+                          sale={29}
+                          price={4000}
+                          title="Ysamsung Camera"
                           url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
                         />
                       </div>

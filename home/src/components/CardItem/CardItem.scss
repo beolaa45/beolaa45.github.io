@@ -5,6 +5,7 @@
     -webkit-box-shadow: $box-shadow-2;
     box-shadow: $box-shadow-2;
     transition: $transtion-1;
+    
 
     &:hover{
         -webkit-box-shadow: $box-shadow-3;
@@ -19,6 +20,8 @@
 
         transition: $transtion-2;
         position: relative;
+        margin-bottom: 2rem;
+        
     }
 
     &__photo::before{
@@ -28,7 +31,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 10;
+        z-index: 1;
 
         background-color: rgba($color: #000000, $alpha: 0);
         transition:  $transtion-2;
@@ -42,6 +45,82 @@
         background-size: 110%;
         
     }
+
+    /////////button
+
+    &__button{
+        position: absolute;
+        border: none;
+        background-color: $color-white;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        width: 15rem;
+        height: 4rem;
+
+        border-radius: 50px;
+        transform: translate(-50%, -100%);
+        transition: $transtion-1;
+        opacity: 0;
+        overflow: hidden;
+        padding-top: .7rem;
+        font-family: "Poppins", sans-serif, 'Libre Baskerville';
+        font-size: 1.6rem;
+        font-weight: normal;
+
+        
+    }
+
+    &__button:hover{
+        background-color: $color-black;
+    }
+
+    &:hover &__button{
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    &__view{
+        transform: translateY(0);
+        opacity: 1;
+        transition: $transtion-1;
+     }
+
+    &__button:hover &__view{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    
+    &__button:hover &__icon{
+        transform: translateY(-100%);
+        opacity: 1;
+        color: $color-white;
+    }
+
+    &__icon{
+        opacity: 0;
+        transition: $transtion-1;
+    }
+    ///////sale
+
+    &__sale{
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-red;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: $color-white;
+    }
+
+   
+
+    
 
     &__content{
 
