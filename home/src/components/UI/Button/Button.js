@@ -1,13 +1,10 @@
 import React from 'react'
 import "./Button.scss"
-function Button({children, classN, style={}, url}) {
-    const handleClick = () => {
-        console.log("ok")
-    }
+function Button({children, classN, style={}, url, clicked}) {
     let button = ["Button"]
     if(classN) button.push(classN)
     return (
-        <button onClick={handleClick} className={button.join(" ")} style={style}>
+        <button onClick={clicked} className={button.join(" ")} style={style}>
             {children}
         </button>
     )

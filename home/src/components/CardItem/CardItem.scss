@@ -37,11 +37,11 @@
         transition:  $transtion-2;
     }
 
-    &:hover &__photo::before{
+    &__photo::before:hover{
         background-color: rgba($color: #000000, $alpha: .06);
     }
 
-    &:hover &__photo{
+    &__photo:hover{
         background-size: 110%;
         
     }
@@ -75,7 +75,11 @@
         background-color: $color-black;
     }
 
-    &:hover &__button{
+    &__button:focus{
+        outline: none;
+    }
+
+    &__photo:hover &__button{
         transform: translate(-50%, -50%);
         opacity: 1;
     }
@@ -123,6 +127,37 @@
     
 
     &__content{
+        text-align: center;
+        font-family: "Poppins", sans-serif, 'Libre Baskerville';
 
+        &__link:link,
+        &__link:visited{
+            text-decoration: none;
+        }
+
+        &__box{
+            
+        }
+
+        &__oldPrice{
+            color: $color-grey;
+            margin-right: 1rem;
+        }
+
+        &__price{
+            color: $color-black-2;
+            
+        }
+
+        &__newPrice{
+
+        }
+    }
+
+    &__content > * {
+        margin-bottom: .5rem;
+    }
+    &__content > *:last-child{
+        margin-bottom: 0;
     }
 }

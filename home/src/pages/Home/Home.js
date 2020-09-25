@@ -7,7 +7,64 @@ import "./Home.scss";
 import Card from "../../components/Card/Card";
 import Heading from "../../components/Heading/Heading";
 import CardItem from "../../components/CardItem/CardItem";
+
+const data = [
+  
+  {id: 1,
+    sale: 10,
+    price: 4000,
+    title:"Ysamsung Camera",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
+  },
+  {id: 2,
+    sale: 10,
+    price: 4000,
+    title:"Ysamsung Camera",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
+  },
+  {
+    id: 3,
+    sale: 10,
+    price: 4000,
+    title:"Ysamsung Camera",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
+  },
+  {
+    id: 4,
+    sale: 10,
+    price: 4000,
+    title:"Ysamsung Camera",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
+  }
+]
 function Home(props) {
+  document.title = "Home";
+  const clickedToCard = () => {
+
+  }
+
+  const onQuickView = (e) => {
+      e.preventDefault()
+      console.log("ee")
+  }
+
+  let listCart = data.map((item) => {
+
+    return(
+      <Col xl={3} lg={3} md={4} sm={6} xs={12} key={item.id}>
+                      <div className="BestSeller__card">
+                        <CardItem
+                          clickedToCard={clickedToCard}
+                          onQuickView={onQuickView}
+                          sale={item.sale}
+                          price={item.price}
+                          title={item.title}
+                          url={item.url}
+                        />
+                      </div>
+                    </Col>
+    )
+  })
   return (
     <Fragment>
       <section className="Banner">
@@ -107,25 +164,20 @@ function Home(props) {
                 </div>
                 <div className="BestSeller__content">
                   <Row>
-                    <Col xl={3} lg={3} md={4} sm={6} xs={12}>
+                    {/* <Col xl={3} lg={3} md={4} sm={6} xs={12}>
                       <div className="BestSeller__card">
                         <CardItem
-                          sale={29}
+                          clickedToCard={clickedToCard}
+                          onQuickView={onQuickView}
+                          sale={10}
                           price={4000}
                           title="Ysamsung Camera"
                           url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
                         />
                       </div>
-                    </Col>
-                    <Col xl={3} lg={3} md={4} sm={6} xs={12}>
-                      2
-                    </Col>
-                    <Col xl={3} lg={3} md={4} sm={6} xs={12}>
-                      2
-                    </Col>
-                    <Col xl={3} lg={3} md={4} sm={6} xs={12}>
-                      3
-                    </Col>
+                     
+                    </Col> */}
+                    {listCart}
                   </Row>
                 </div>
               </div>
