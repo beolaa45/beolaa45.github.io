@@ -241,6 +241,34 @@ function Home(props) {
               </Row>
             </Container>
       </section>
+      <section className="Blog">
+          <Container>
+            <Row>
+              <Col>
+                  <div className="Blog__box" style={{textAlign: "center", marginBottom: "2.5rem"}}>
+                      <div>
+                      <Heading
+                    title="LATES FROM BLOG"
+                    subTitle="The freshest and most exciting news"
+                  />
+                      </div>
+                  </div>
+                  <Row>
+                    <Col xl={4} lg={4} md={4} sm={6} xs={12}>
+                      1
+                    </Col>
+                    <Col xl={4} lg={4} md={4} sm={6} xs={12}>
+                      1
+                    </Col>
+                    <Col xl={4} lg={4} md={4} sm={6} xs={12}>
+                      1
+                    </Col>
+                    
+                  </Row>
+              </Col>
+            </Row>
+          </Container>
+      </section>
     </Fragment>
   );
 }
