@@ -56,14 +56,14 @@ body.body {
 }
 
 .mobile{
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 992px) {
         display: none;
       }
       
 }
 
 .desktop{
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $max-md) {
         display: none;
       }
 }

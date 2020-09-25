@@ -36,6 +36,35 @@ const data = [
     title:"Ysamsung Camera",
     url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
   }
+  ,
+  {
+    id: 5,
+    sale: 10,
+    price: 4000,
+    title:"Ysamsung Camera",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
+  },
+  {
+    id: 6,
+    sale: 10,
+    price: 4000,
+    title:"Ysamsung Camera",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
+  },
+  {
+    id: 7,
+    sale: 10,
+    price: 4000,
+    title:"Ysamsung Camera",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
+  },
+  {
+    id: 8,
+    sale: 10,
+    price: 4000,
+    title:"Ysamsung Camera",
+    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
+  }
 ]
 function Home(props) {
   document.title = "Home";
@@ -48,6 +77,9 @@ function Home(props) {
       console.log("ee")
   }
 
+  const handleLoadMore = () => {
+
+  }
   let listCart = data.map((item) => {
 
     return(
@@ -62,7 +94,7 @@ function Home(props) {
                           url={item.url}
                         />
                       </div>
-                    </Col>
+        </Col>
     )
   })
   return (
@@ -179,6 +211,10 @@ function Home(props) {
                     </Col> */}
                     {listCart}
                   </Row>
+                    <div style={{textAlign: "center"}}> 
+                    <Button classN="Button--black" clicked={handleLoadMore} >Load More</Button>
+                    </div>
+                  
                 </div>
               </div>
             </Col>

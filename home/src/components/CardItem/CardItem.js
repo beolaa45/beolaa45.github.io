@@ -11,12 +11,17 @@ function CardItem({url, sale=null, price, title, clickedToCard, onQuickView}) {
         <div className="CardItem">
             <NavLink to='/about'>
             <div className="CardItem__photo" style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url(${url})`}}>
-                <button className="CardItem__button" onClick={onQuickView}>
+                <button className="CardItem__button desktop" onClick={onQuickView}>
                     <p className="CardItem__view">Quick View</p>
                     <p className="CardItem__icon">
                         <FontAwesomeIcon icon={faEye}/>
                     </p>
                    
+                </button>
+                <button className="CardItem__buttonMobile mobile" onClick={onQuickView}>
+                    <p className="CardItem__iconMobile">
+                        <FontAwesomeIcon icon={faEye}/>
+                    </p>
                 </button>
                 {typeof sale == "number" ? <p className="CardItem__sale">
                         -{sale}%

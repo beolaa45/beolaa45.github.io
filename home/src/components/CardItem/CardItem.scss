@@ -2,15 +2,11 @@
 .CardItem{
     height: 100%;
     width: 100%;
-    -webkit-box-shadow: $box-shadow-2;
-    box-shadow: $box-shadow-2;
-    transition: $transtion-1;
     
+    transition: $transtion-1;
+    padding-bottom: 3rem;
 
-    &:hover{
-        -webkit-box-shadow: $box-shadow-3;
-        box-shadow: $box-shadow-3;
-    }
+    
     &__photo{
         height: 100%;
         width: 100%;
@@ -21,7 +17,9 @@
         transition: $transtion-2;
         position: relative;
         margin-bottom: 2rem;
-        
+        height: 27rem;
+        -webkit-box-shadow: $box-shadow-2;
+        box-shadow: $box-shadow-2;
     }
 
     &__photo::before{
@@ -37,8 +35,8 @@
         transition:  $transtion-2;
     }
 
-    &__photo::before:hover{
-        background-color: rgba($color: #000000, $alpha: .06);
+    &__photo:hover::before{
+        background-color: rgba($color: #000000, $alpha: .1);
     }
 
     &__photo:hover{
@@ -105,6 +103,32 @@
         opacity: 0;
         transition: $transtion-1;
     }
+
+    &__buttonMobile{
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        border: none;
+
+        height: 4rem;
+        width: 4rem;
+        box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+        border-radius: 50px;
+        background-color: $color-white;
+        z-index: 10;
+
+    }
+
+    &__buttonMobile:focus{
+        outline: none;
+        
+    }
+
+    &__iconMobile{
+        color: $color-black-2;
+    }
+
+
     ///////sale
 
     &__sale{
