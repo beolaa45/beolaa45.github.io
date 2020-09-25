@@ -221,6 +221,26 @@ function Home(props) {
           </Row>
         </Container>
       </section>
+      <section className="Subscribe">
+            <Container>
+              <Row>
+                <Col>
+                    <div style={{textAlign: "center", marginBottom: "2.5rem"}}>
+                    <Heading
+                    title="SUBSCRIBE OUR NEWSLETTER"
+                    subTitle="Sign up for our newsletter to be updated on the latest designs, exclusive offers, inspiration and tips!"
+                  />
+                    </div>
+                    <div className="Subscribe__box">
+                        <div className="Subscribe__form">
+                          <input type="email" name="home[email]" placeholder="Your email address"  className="Subscribe__input" />
+                          <Button classN="Button--black" style={{borderRadius: "50px", width: "70%"}}>Subscribe</Button>
+                        </div>
+                    </div>
+                </Col>
+              </Row>
+            </Container>
+      </section>
     </Fragment>
   );
 }
