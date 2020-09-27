@@ -110,7 +110,7 @@ function Home(props) {
   let listCart = data.map((item) => {
 
     return(
-      <Col xl={3} lg={3} md={4} sm={6} xs={12} key={item.id}>
+      <Col xl={3} lg={3} md={4} sm={6} xs={12} key={item.id} style={{marginBottom: "2rem"}}>
                       <div className="BestSeller__card">
                         <CardItem
                           clickedToCard={clickedToCard}
@@ -127,7 +127,7 @@ function Home(props) {
 
   let lisBlog = data1.map(item => {
     return(
-      <Col xl={4} lg={4} md={4} sm={6} xs={12} style={{marginBottom: "3rem"}}>
+      <Col xl={4} lg={4} md={4} sm={6} xs={12} style={{marginBottom: "5rem"}} key={item.id}>
       <div className="Blog__list">
           <CardBlog 
           time={item.time}
@@ -301,9 +301,7 @@ function Home(props) {
             </Row>
           </Container>
       </section>
-      <section className="Footer">
-            
-      </section>
+     
     </Fragment>
   );
 }
