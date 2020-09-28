@@ -32,9 +32,20 @@ function Products(props) {
                         </Col>
                         <Col  xl={8} lg={8} md={8} sm={8} xs={12}>
                             <div className="Products__content__list">
-                                <div>
-
+                                <div className="Products__content__list__filter">
+                                    <p className="Products__content__list__filter__sort">Sort by:</p>
+                                    <select className="Products__content__list__filter__select">
+                                        <option value="default" select="selected">Mặc định</option>
+                                        <option value="az">A đến Z</option>
+                                        <option value="za">Z đến A</option>
+                                        <option value="lowHigh">Giá từ thấp đến cao</option>
+                                        <option value="highLow">Giá từ cao đến thấp</option>
+                                    </select>
                                 </div>
+                                <div className="Products__content__list__content">
+                                        
+                                </div>
+
                             </div>
                         </Col>
                     </Row>
