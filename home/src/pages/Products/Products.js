@@ -18,17 +18,23 @@ function Products(props) {
                     </Row>
                 </Container>
             </section>
-            <section className="Products__lits">
+            <section className="Products__content">
                 <Container>
                     <Row>
-                        <Col xl={4} lg={4} md={4} sm={4} xs={12} style={{backgroundColor: "green"}}>
-                            <div className="Products__list__filter">
+                        <Col xl={4} lg={4} md={4} sm={4} xs={12}>
+                            <form className="Products__content__filter">
                                 <Filter title="Categories" subTitle={["camera"]}/>
-                            </div>
+                                <div className="Products__content__filter__box">
+                                        <button className="Products__content__filter__box__submit" >Filter</button>
+                                        <button className="Products__content__filter__box__submit FilterOut" >Filter Out</button>
+                                </div>
+                            </form>
                         </Col>
                         <Col  xl={8} lg={8} md={8} sm={8} xs={12}>
-                            <div className="Products__list__filter">
-1   
+                            <div className="Products__content__list">
+                                <div>
+
+                                </div>
                             </div>
                         </Col>
                     </Row>
