@@ -10,6 +10,7 @@ import {
   Route
 } from "react-router-dom";
 import Layout from './components/Layout/Layout';
+import Detail from './components/Detail/Detail';
 
 class App extends Component {
 
@@ -19,9 +20,10 @@ class App extends Component {
   let routes = (
     <Switch>
       <Route path="/blog" component={About}/>
+      <Route path="/products/:slug" component={Detail}/>
       <Route path="/products" component={Products}/>
       <Route path="/contact" component={Contact}/>
-      <Route path="/" component={Home}/>
+      <Route path="/" exact component={Home}/>
     </Switch>
   )
   return (

@@ -119,6 +119,7 @@ function Home(props) {
                           price={item.price}
                           title={item.title}
                           url={item.url}
+                          id={item.id}
                         />
                       </div>
         </Col>

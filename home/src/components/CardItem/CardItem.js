@@ -5,11 +5,11 @@ import {NavLink} from "react-router-dom"
 
 import "./CardItem.scss";
 import Button from '../UI/Button/Button';
-function CardItem({url, sale=null, price, title, clickedToCard, onQuickView}) {
+function CardItem({url, sale=null, price, title, clickedToCard, onQuickView, id}) {
 
     return (
         <div className="CardItem">
-            <NavLink to='/about'>
+            <NavLink to={`/products/${id}`}>
             <div className="CardItem__photo" style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url(${url})`}}>
                 <button className="CardItem__button desktop" onClick={onQuickView}>
                     <p className="CardItem__view">Quick View</p>
@@ -29,7 +29,7 @@ function CardItem({url, sale=null, price, title, clickedToCard, onQuickView}) {
             </div>
             </NavLink>
             <div className="CardItem__content">
-                <NavLink to="/about" className="CardItem__content__link">
+                <NavLink to={`/products/${id}`} className="CardItem__content__link">
                 <h2 className="Heading--secondary">{title}</h2>
                 </NavLink>
                 <p className="CardItem__content__box">
