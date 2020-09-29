@@ -38,33 +38,33 @@ function Footer(props) {
             <Col xl={3} lg={3} md={3} sm={6} xs={12} className="Footer__col">
                 <div className="Footer__content">
                 <p className="Footer__content__title">Categories</p>
-                <a href="#" className="Footer__content__sub">Men</a>
-                <a href="#" className="Footer__content__sub">Women</a>
-                <a href="#" className="Footer__content__sub">Accessories</a>
-                <a href="#" className="Footer__content__sub">Shoes</a>
-                <a href="#" className="Footer__content__sub">Men</a>
+                <a href="/" className="Footer__content__sub">Men</a>
+                <a href="/" className="Footer__content__sub">Women</a>
+                <a href="/" className="Footer__content__sub">Accessories</a>
+                <a href="/" className="Footer__content__sub">Shoes</a>
+                <a href="/" className="Footer__content__sub">Men</a>
                 </div>
                 
             </Col>
             <Col xl={3} lg={3} md={3} sm={6} xs={12} className="Footer__col">
                 <div className="Footer__content">
                 <p className="Footer__content__title">Infomation</p>
-                <a href="#" className="Footer__content__sub">About Us</a>
-                <a href="#" className="Footer__content__sub">Contact Us</a>
-                <a href="#" className="Footer__content__sub">Terms & Conditions</a>
-                <a href="#" className="Footer__content__sub">Returns & Exchanges</a>
-                <a href="#" className="Footer__content__sub">Shipping & Delivery</a>
+                <a href="/" className="Footer__content__sub">About Us</a>
+                <a href="/" className="Footer__content__sub">Contact Us</a>
+                <a href="/" className="Footer__content__sub">Terms & Conditions</a>
+                <a href="/" className="Footer__content__sub">Returns & Exchanges</a>
+                <a href="/" className="Footer__content__sub">Shipping & Delivery</a>
                 </div>
                 
             </Col>
             <Col xl={3} lg={3} md={3} sm={6} xs={12} className="Footer__col">
                 <div className="Footer__content">
                 <p className="Footer__content__title">Useful links</p>
-                <a href="#" className="Footer__content__sub">Store Location</a>
-                <a href="#" className="Footer__content__sub">Latest News</a>
-                <a href="#" className="Footer__content__sub">My Account</a>
-                <a href="#" className="Footer__content__sub">Size Guides</a>
-                <a href="#" className="Footer__content__sub">FAQs</a>
+                <a href="/" className="Footer__content__sub">Store Location</a>
+                <a href="/" className="Footer__content__sub">Latest News</a>
+                <a href="/" className="Footer__content__sub">My Account</a>
+                <a href="/" className="Footer__content__sub">Size Guides</a>
+                <a href="/" className="Footer__content__sub">FAQs</a>
                 </div>
                 
             </Col>

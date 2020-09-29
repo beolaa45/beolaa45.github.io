@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom'
 import Banner from '../../components/Banner/Banner'
 import Filter from '../../components/Filter/Filter'
 import "./Products.scss";
+import Carousel from "../../components/Carousel/Carousel"
+
 function Products(props) {
 
     return (
@@ -47,6 +49,16 @@ function Products(props) {
                                 </div>
 
                             </div>
+                        </Col>
+                    </Row>
+                    
+                </Container>
+            </section>
+            <section>
+                <Container>
+                    <Row>
+                        <Col >
+                            <Carousel />
                         </Col>
                     </Row>
                 </Container>
