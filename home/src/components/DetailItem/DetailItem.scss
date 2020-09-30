@@ -51,7 +51,15 @@
             color: $color-black;
             font-size: 2rem;
             margin-right: 2rem;
+            transition: $transtion-1;
+
+            &:hover{
+                color: $color-red;
+                transform: translateY(-30%);
+            }
         }
+
+
     }
 
 
