@@ -43,4 +43,18 @@
         background-color: $color-black-2;
         color: $color-white;
     }
+
+    &--detail{
+        height: 4rem;
+        background-color: $color-black;
+        color: $color-white;
+        transition: $transtion-1;
+        border-radius: 50px;
+    }
+
+    &--detail:hover{
+        color: $color-black;
+        background-color: $color-white;
+        border: 1px solid $color-black;
+    }
 }

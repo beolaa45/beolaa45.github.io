@@ -1,0 +1,30 @@
+.Carousel2{
+     .slick-dots{
+
+        top: 0;
+        bottom: auto;
+        left: 0;
+        width: 7rem;
+        padding: 0 !important;
+        
+
+        background-color: transparent !important;
+
+        & > ul {
+            display: flex;
+            flex-direction: column;
+
+            & > li {
+                width: auto;
+                height: auto;
+                margin: 0;
+                opacity: .5;
+
+                &.slick-active{
+                    opacity: 1;
+                }
+            }
+
+        }
+    }
+}

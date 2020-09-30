@@ -10,7 +10,7 @@ import {
   Route
 } from "react-router-dom";
 import Layout from './components/Layout/Layout';
-import Detail from './components/Detail/Detail';
+import Detail from './pages/Detail/Detail';
 
 class App extends Component {
 

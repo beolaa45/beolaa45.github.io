@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
 import Slider from "react-slick";
 import CardItem from "../CardItem/CardItem";
+import Heading from "../Heading/Heading";
 import "./Carousel.scss";
 
 function SampleNextArrow(props) {
@@ -69,8 +70,8 @@ function SampleNextArrow(props) {
       ]
     };
     return (
-      <div>
-        <h2> Single Item</h2>
+      <div className="Carousel">
+       <Heading title="You may also like" />
         <Slider {...settings}>
           <div >
           <CardItem
