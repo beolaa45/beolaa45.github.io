@@ -7,7 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux'
-import {store} from "./store/reducers/index"
+import {store} from "./store/reducers/index";
+  
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ShippingType from "../../components/ShippingType/ShippingType";
 import Button from "../../components/UI/Button/Button";
@@ -9,6 +9,9 @@ import Heading from "../../components/Heading/Heading";
 import CardItem from "../../components/CardItem/CardItem";
 import CardBlog from "../../components/CardBlog/CardBlog";
 import Modal from "../../components/UI/Modal/Modal";
+import * as actions from '../../store/actions/home';
+import { useSelector, useDispatch } from 'react-redux';
+import axios from '../../api/baseApi'
 
 const data = [
   
@@ -95,8 +98,15 @@ const data1= [
   }
 ]
 function Home(props) {
-  const [showItem, setShowItem] = useState(true)
+  const [showItem, setShowItem] = useState(true);
+  const data13   = useSelector(state => state.home);
+  console.log(data13)
+  useEffect(() => {
+      axios.get('/products').then(data => console.log(data))
+  },[])
   document.title = "Home";
+
+
 
   const clickedToCard = () => {
 
