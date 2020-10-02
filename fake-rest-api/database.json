@@ -116,13 +116,14 @@
   "products": [
     {
       "id": 1,
-      "name": "Appetizer - Lobster Phyllo Roll",
-      "images": ["https://robohash.org/animiblanditiisveniam.jpg?size=350x200&set=set1"],
-      "subimages": ["https://robohash.org/animiblanditiisveniam.jpg?size=350x200&set=set1"],
-      "price": 121.99,
+      "name": "Lomo Sanremo Edition",
+      "images": ["https://i.imgur.com/JrH9udG.jpg", "https://i.imgur.com/PAsLFGS.jpg", "https://i.imgur.com/MxSUt53.jpg"],
+      "subimages": ["https://i.imgur.com/PAsLFGS.jpg"],
+      "price": 120,
       "quantity": 20,
       "status": false,
-      "categories": ["camera"]
+      "producer": "Lomo",
+      "categories": ["Camera"]
     }
   ]
 }
