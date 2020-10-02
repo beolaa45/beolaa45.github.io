@@ -33,7 +33,9 @@
     }
 
     &__photo{
-
+       & > img{
+            width: 100%;
+        }
     }
 
     &__boxIcon{

@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
-import { Container, Row, Col, Carousel } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
 import Banner from '../../components/Banner/Banner';
 import Carousel2 from '../../components/Carousel2/Carousel2'
 import DetailItem from '../../components/DetailItem/DetailItem';
-
+import './Detail.scss'
 function Detail(props) {
   
     const {slug} = useParams();
@@ -30,12 +30,12 @@ function Detail(props) {
                 <Container>
                     <Row>
                         <Col  xl={6} lg={6} md={6} sm={12} xs={12}>
-                            <div className="Detail__carousel2">
+                            <div className="Detail__box__carousel2">
                                <Carousel2 />
                             </div>
                         </Col>
                         <Col  xl={6} lg={6} md={6} sm={12} xs={12}>
-                            <div className="Detail__item">
+                            <div className="Detail__box__item">
                                <DetailItem data/>
                             </div>
                         </Col>

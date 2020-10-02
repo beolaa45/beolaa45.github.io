@@ -8,6 +8,7 @@ import Card from "../../components/Card/Card";
 import Heading from "../../components/Heading/Heading";
 import CardItem from "../../components/CardItem/CardItem";
 import CardBlog from "../../components/CardBlog/CardBlog";
+import Modal from "../../components/UI/Modal/Modal";
 
 const data = [
   
@@ -94,15 +95,20 @@ const data1= [
   }
 ]
 function Home(props) {
+  const [showItem, setShowItem] = useState(true)
   document.title = "Home";
+
   const clickedToCard = () => {
 
   }
 
-  const onQuickView = (e) => {
+  const onQuickView = (e,id) => {
       e.preventDefault()
-      console.log("ee")
+      setShowItem(prev => !prev)
+      console.log("ee",id)
+      console.log("ee",e)
   }
+  console.log(showItem)
 
   const handleLoadMore = () => {
 
@@ -114,7 +120,7 @@ function Home(props) {
                       <div className="BestSeller__card">
                         <CardItem
                           clickedToCard={clickedToCard}
-                          onQuickView={onQuickView}
+                          onQuickView={(e) => onQuickView(e, item.id)}
                           sale={item.sale}
                           price={item.price}
                           title={item.title}
@@ -143,6 +149,7 @@ function Home(props) {
   })
   return (
     <Fragment>
+     
       <section className="Banner">
         <Container fluid>
           <Row>
