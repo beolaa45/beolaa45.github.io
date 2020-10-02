@@ -4,7 +4,7 @@ import Header from '../Header/Header'
 import Modal from '../UI/Modal/Modal'
 
 function Layout({children}) {
-    const [showModal, setShowModal] = useState(true);
+    const [showModal, setShowModal] = useState(false);
     const handleShowModal = () => {
         setShowModal(prev => !prev)
     }
