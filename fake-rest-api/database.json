@@ -116,13 +116,55 @@
   "products": [
     {
       "id": 1,
-      "name": "Lomo Sanremo Edition",
+      "title": "Lomo Sanremo Edition",
       "images": ["https://i.imgur.com/JrH9udG.jpg", "https://i.imgur.com/PAsLFGS.jpg", "https://i.imgur.com/MxSUt53.jpg"],
       "price": 120,
-      "quantity": 20,
+      "sale": 20,
+      "status": false,
+      "producer": "Lomo",
+      "categories": ["Camera"]
+    },
+    {
+      "id": 2,
+      "title": "Lomo Sanremo Edition",
+      "images": ["https://i.imgur.com/JrH9udG.jpg", "https://i.imgur.com/PAsLFGS.jpg", "https://i.imgur.com/MxSUt53.jpg"],
+      "price": 120,
+      "sale": 20,
+      "status": false,
+      "producer": "Lomo",
+      "categories": ["Camera"]
+    },
+    {
+      "id": 3,
+      "title": "Lomo Sanremo Edition",
+      "images": ["https://i.imgur.com/JrH9udG.jpg", "https://i.imgur.com/PAsLFGS.jpg", "https://i.imgur.com/MxSUt53.jpg"],
+      "price": 120,
+      "sale": 20,
+      "status": false,
+      "producer": "Lomo",
+      "categories": ["Camera"]
+    },
+    {
+      "id": 4,
+      "title": "Lomo Sanremo Edition",
+      "images": ["https://i.imgur.com/BFg0wgr.jpg","https://i.imgur.com/JrH9udG.jpg", "https://i.imgur.com/PAsLFGS.jpg", "https://i.imgur.com/MxSUt53.jpg"],
+      "price": 120,
+      "sale": 20,
       "status": false,
       "producer": "Lomo",
       "categories": ["Camera"]
     }
+  ],
+  "blog": [
+    {
+      "id": 1,
+      "author": "Admin",
+      "time": "February 28, 2020",
+      "title": "Dial and Disc Wireless Chargers home office from Sum",
+      "subTitle": "Sleek, minimalist wireless charging designs to 'complement and blend within the home and office'.",
+      "images": []
+    }
   ]
 }
+
+
