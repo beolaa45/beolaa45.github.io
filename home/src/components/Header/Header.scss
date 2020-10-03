@@ -49,6 +49,16 @@
         @media screen and (max-width: 768px) {
             font-size: 3rem;
           }
+
+       
+    }
+
+    &__link:link,
+    &__link:visited,
+    &__link:active,
+    &__link:hover{
+        color: $color-black !important;
+        text-decoration: none;
     }
 
     &__user{

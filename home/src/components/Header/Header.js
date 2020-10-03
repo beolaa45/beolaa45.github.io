@@ -9,6 +9,7 @@ import {faBars} from "@fortawesome/free-solid-svg-icons"
 import "./Header.scss"
 import BackDrop from '../UI/BackDrop/BackDrop';
 import SideDrawer from '../Navigations/SideDrawer/SideDrawer';
+import { Link } from 'react-router-dom';
 
 function Header(props) {
 
@@ -34,7 +35,7 @@ function Header(props) {
                   </div>
                   <div className="col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 Header__col">
                     <div className="Header__logo">
-                      master
+                     <Link className="Header__link" to="/"> master</Link>
                     </div>
                   </div>
                   <div className="col-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 Header__col">
