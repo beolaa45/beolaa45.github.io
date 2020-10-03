@@ -358,9 +358,33 @@ header .count {
   color: white;
 }
 
+.Overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0, .5);
+  z-index: 3;
+}
+
+.Modal {
+  position: fixed;
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* --- LARGE SCREEN --- */
 @media all and (min-width: 992px) {
   html {
     font-size: 16px;
+    
   }
 }

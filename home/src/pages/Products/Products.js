@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { useLocation } from 'react-router-dom'
 import Banner from '../../components/Banner/Banner'
 import Filter from '../../components/Filter/Filter'
 import "./Products.scss";

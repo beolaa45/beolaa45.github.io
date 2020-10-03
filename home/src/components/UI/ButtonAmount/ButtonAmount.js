@@ -6,7 +6,7 @@ function ButtonAmount({plus, minus, amount, style}) {
     return (
         <div className="ButtonAmount" style={{style}}>
             <FontAwesomeIcon icon={faMinus}  className="ButtonAmount__icon"/>
-            <input className="ButtonAmount__amount"  value={1}/>
+            <input className="ButtonAmount__amount"  defaultValue={1}/>
             <FontAwesomeIcon icon={faPlus} className="ButtonAmount__icon"/>
         </div>
     )

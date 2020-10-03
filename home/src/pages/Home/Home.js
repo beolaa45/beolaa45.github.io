@@ -9,9 +9,10 @@ import Heading from "../../components/Heading/Heading";
 import CardItem from "../../components/CardItem/CardItem";
 import CardBlog from "../../components/CardBlog/CardBlog";
 import Modal from "../../components/UI/Modal/Modal";
-import * as actions from '../../store/actions/home';
+import * as actions from '../../store/actions/index';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from '../../api/baseApi'
+import { toSlug } from "../../components/utiliti/utility";
 
 
 const data1= [
@@ -47,7 +48,7 @@ function Home() {
   const dispatch = useDispatch()
   useEffect(() => {
       
-      dispatch(actions.start())
+      dispatch(actions.homeInit())
   },[])
   document.title = "Home";
 
@@ -83,6 +84,7 @@ function Home() {
                             title={item.title}
                             url={item.images[0]}
                             id={item.id}
+                            link={`products/${toSlug(item.title)}`}
                           />
                         </div>
           </Col>

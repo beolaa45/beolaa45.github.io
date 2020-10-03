@@ -33,6 +33,7 @@ const App = () => {
   const [products, setProducts] = React.useState(PRODUCTS);
   const [summary, setSummary] = React.useState(SUMMARY);
   const [promo, setPromo] = React.useState("");
+  const [modal, setModal] = React.useState(false)
 
   console.log(products);
   const onChange = (e, id) => {
@@ -65,7 +66,7 @@ const App = () => {
     let txt;
       let r = confirm("Bạn muốn xóa không!");
       if (r == true) {
-        txt = "You pressed OK!";
+        
         console.log(id);
         let newProduct = products.filter((product) => product.id !== id);
         setProducts(newProduct);
@@ -79,7 +80,7 @@ const App = () => {
         newSummary.total = newSummary.subTotal * (1 - newSummary.tax);
         setSummary(newSummary);
       } else {
-        txt = "You pressed Cancel!";
+        
       }
     
  
@@ -129,6 +130,9 @@ const App = () => {
   };
   return (
     <main>
+      <Modal show={modal}>
+        <Comfrim />
+      </Modal>
       <CartHeader item={products} header="Shopping Cart" title="Home" />
       <section className="container">
         <Product
@@ -137,7 +141,7 @@ const App = () => {
           handleChange={onChange}
         />
       </section>
-      <section className="container">
+      {products.length > 0 ? <section className="container">
         <Promotion
           onChange={handlePromoCode}
           value={promo}
@@ -147,10 +151,11 @@ const App = () => {
         <div className="checkout">
           <Button />
         </div>
-      </section>
+      </section> : null}
       <div onClick={handleAdd} className="add-products">
         ADD PRODUCTS
       </div>
+     
     </main>
   );
 };

@@ -1,14 +1,12 @@
 import React, { Fragment } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 import Banner from '../../components/Banner/Banner';
 import Carousel2 from '../../components/Carousel2/Carousel2'
 import DetailItem from '../../components/DetailItem/DetailItem';
 import './Detail.scss'
 function Detail(props) {
-  
-    const {slug} = useParams();
-    console.log(slug)
+    let {state: {id}} = useLocation();
     return (
        
         <Fragment>
@@ -24,7 +22,7 @@ function Detail(props) {
                 </Container>
             </section>
             <div>
-            Quiz detail {slug}
+            Quiz detail {id}
             </div>
             <section className="Detail__box">
                 <Container>

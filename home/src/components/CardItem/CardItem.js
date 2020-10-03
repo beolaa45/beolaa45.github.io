@@ -1,15 +1,20 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
-import {NavLink} from "react-router-dom"
+import {NavLink,} from "react-router-dom"
 
 import "./CardItem.scss";
 import Button from '../UI/Button/Button';
-function CardItem({url, sale=null, price, title, clickedToCard, onQuickView, id}) {
+function CardItem({url, sale, price, title, clickedToCard, onQuickView, id, link}) {
 
     return (
         <div className="CardItem">
-            <NavLink to={`/products/${id}`}>
+            <NavLink to={
+                {
+                    pathname: link,
+                    state: { id: `${id}`}
+                }
+            } >
             <div className="CardItem__photo" style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)), url(${url})`}}>
                 <button className="CardItem__button desktop" onClick={onQuickView}>
                     <p className="CardItem__view">Quick View</p>

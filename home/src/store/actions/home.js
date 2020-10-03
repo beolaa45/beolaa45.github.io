@@ -26,7 +26,7 @@ export const homeShowModal = (id) => {
     }
 }
 
-export const start = () => {
+export const homeInit = () => {
     return dispatch => { 
         dispatch(homeStart())
         axios.get("/products")

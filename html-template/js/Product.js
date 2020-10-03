@@ -44,5 +44,5 @@ function Product(props) {
     </li>
   ));
 
-  return <ul className="products">{props.products.length > 0 ? jsx : <p style={{fontSize: "20px", color: "red"}}>Không có sản phẩm trong giỏ</p>}</ul>;
+  return <ul className="products">{props.products.length > 0 ? jsx : <p style={{fontSize: "20px", color: "red", textAlign: "center"}}>Không có sản phẩm trong giỏ</p>}</ul>;
 }
