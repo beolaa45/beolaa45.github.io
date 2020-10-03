@@ -23,7 +23,7 @@ function CardItem({url, sale=null, price, title, clickedToCard, onQuickView, id}
                         <FontAwesomeIcon icon={faEye}/>
                     </p>
                 </button>
-                {typeof sale == "number" ? <p className="CardItem__sale">
+                {sale ? <p className="CardItem__sale">
                         -{sale}%
                     </p> : null }
             </div>

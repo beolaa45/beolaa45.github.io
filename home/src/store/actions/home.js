@@ -19,12 +19,18 @@ export const homeFail = (error) => {
     }
 }
 
+export const homeShowModal = (id) => {
+    return{
+        type: actionTypes.FETCH_HOME_SHOW_MODAL,
+        id
+    }
+}
+
 export const start = () => {
     return dispatch => { 
         dispatch(homeStart())
         axios.get("/products")
         .then(data => {
-            console.log(data);
             dispatch(homeSuccess(data))
         })
         .catch(error => dispatch(homeFail(error)))

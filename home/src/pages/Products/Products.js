@@ -23,7 +23,7 @@ function Products(props) {
             <section className="Products__content">
                 <Container>
                     <Row>
-                        <Col xl={4} lg={4} md={4} sm={4} xs={12}>
+                        <Col xl={4} lg={4} md={4} sm={4} xs={12} >
                             <form className="Products__content__filter">
                                 <Filter title="Categories" subTitle={["camera"]}/>
                                 <div className="Products__content__filter__box">

@@ -23,7 +23,7 @@ export default class AppendDots extends Component {
         </div>
       ),
       customPaging: i => (
-        <div
+        <div className="Carousel2__thumbai"
           style={{
             width: "100%",
             color: "blue",
@@ -45,15 +45,7 @@ export default class AppendDots extends Component {
           <div>
             <h3>3</h3>
           </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
+        
         </Slider>
       </div>
     );

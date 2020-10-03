@@ -13,64 +13,7 @@ import * as actions from '../../store/actions/home';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from '../../api/baseApi'
 
-const data = [
-  
-  {id: 1,
-    sale: 10,
-    price: 4000,
-    title:"Ysamsung Camera",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-  },
-  {id: 2,
-    sale: 10,
-    price: 4000,
-    title:"Ysamsung Camera",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-  },
-  {
-    id: 3,
-    sale: 10,
-    price: 4000,
-    title:"Ysamsung Camera",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-  },
-  {
-    id: 4,
-    sale: 10,
-    price: 4000,
-    title:"Ysamsung Camera",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-  }
-  ,
-  {
-    id: 5,
-    sale: 10,
-    price: 4000,
-    title:"Ysamsung Camera",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-  },
-  {
-    id: 6,
-    sale: 10,
-    price: 4000,
-    title:"Ysamsung Camera",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-  },
-  {
-    id: 7,
-    sale: 10,
-    price: 4000,
-    title:"Ysamsung Camera",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-  },
-  {
-    id: 8,
-    sale: 10,
-    price: 4000,
-    title:"Ysamsung Camera",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-  }
-]
+
 const data1= [
   {
     id:1,
@@ -97,12 +40,14 @@ const data1= [
     url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/articles/elicbog21_540x.jpg?v=1582880175"
   }
 ]
-function Home(props) {
-  const [showItem, setShowItem] = useState(true);
-  const data13   = useSelector(state => state.home);
-  console.log(data13)
+function Home() {
+ 
+  const dataBestSeller = useSelector(state => state.home.data);
+  
+  const dispatch = useDispatch()
   useEffect(() => {
-      axios.get('/products').then(data => console.log(data))
+      
+      dispatch(actions.start())
   },[])
   document.title = "Home";
 
@@ -114,33 +59,37 @@ function Home(props) {
 
   const onQuickView = (e,id) => {
       e.preventDefault()
-      setShowItem(prev => !prev)
       console.log("ee",id)
       console.log("ee",e)
+      dispatch(actions.homeShowModal(id))
   }
-  console.log(showItem)
+
 
   const handleLoadMore = () => {
-
+      
   }
-  let listCart = data.map((item) => {
+  let listCart;
+  if(dataBestSeller){
+    listCart = dataBestSeller.data.map((item) => {
 
-    return(
-      <Col xl={3} lg={3} md={4} sm={6} xs={12} key={item.id} style={{marginBottom: "2rem"}}>
-                      <div className="BestSeller__card">
-                        <CardItem
-                          clickedToCard={clickedToCard}
-                          onQuickView={(e) => onQuickView(e, item.id)}
-                          sale={item.sale}
-                          price={item.price}
-                          title={item.title}
-                          url={item.url}
-                          id={item.id}
-                        />
-                      </div>
-        </Col>
-    )
-  });
+      return(
+        <Col xl={3} lg={3} md={4} sm={6} xs={12} key={item.id} style={{marginBottom: "2rem"}}>
+                        <div className="BestSeller__card">
+                          <CardItem
+                            clickedToCard={clickedToCard}
+                            onQuickView={(e) => onQuickView(e, item.id)}
+                            sale={item.sale}
+                            price={item.price}
+                            title={item.title}
+                            url={item.images[0]}
+                            id={item.id}
+                          />
+                        </div>
+          </Col>
+      )
+    });
+  }
+ 
 
   let lisBlog = data1.map(item => {
     return(

@@ -29,7 +29,7 @@ function Detail(props) {
             <section className="Detail__box">
                 <Container>
                     <Row>
-                        <Col  xl={6} lg={6} md={6} sm={12} xs={12}>
+                        <Col  xl={6} lg={6} md={6} sm={12} xs={12} style={{overflowX: "hidden"}}>
                             <div className="Detail__box__carousel2">
                                <Carousel2 />
                             </div>
