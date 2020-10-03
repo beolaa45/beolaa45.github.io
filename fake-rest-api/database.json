@@ -122,7 +122,8 @@
       "sale": 20,
       "status": false,
       "producer": "Lomo",
-      "categories": ["Camera"]
+      "categories": ["Camera"],
+      "quanlity": 1
     },
     {
       "id": 2,
@@ -132,7 +133,8 @@
       "sale": 20,
       "status": false,
       "producer": "Lomo",
-      "categories": ["Camera"]
+      "categories": ["Camera"],
+      "quanlity": 1
     },
     {
       "id": 3,
@@ -142,7 +144,8 @@
       "sale": 20,
       "status": false,
       "producer": "Lomo",
-      "categories": ["Camera"]
+      "categories": ["Camera"],
+      "quanlity": 1
     },
     {
       "id": 4,
@@ -152,7 +155,8 @@
       "sale": 20,
       "status": false,
       "producer": "Lomo",
-      "categories": ["Camera"]
+      "categories": ["Camera"],
+      "quanlity": 1
     }
   ],
   "blog": [
@@ -162,7 +166,8 @@
       "time": "February 28, 2020",
       "title": "Dial and Disc Wireless Chargers home office from Sum",
       "subTitle": "Sleek, minimalist wireless charging designs to 'complement and blend within the home and office'.",
-      "images": []
+      "images": [],
+      "quanlity": 1
     }
   ]
 }
