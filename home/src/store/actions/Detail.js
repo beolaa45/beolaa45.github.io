@@ -21,8 +21,29 @@ export const detailFail = (error) => {
     }
 }
 
+export const detaiOnChangeQuanlity = (quanlity) => {
+    return{
+        type: actionTypes.FETCH_DETAIL_ON_CHANGE_QUANLITY,
+        quanlity
+    }
+}
+
+export const detailPlusQuanlity = () => {
+    return{
+        type: actionTypes.FETCH_DETAIL_PLUS_QUANLITY
+    }
+}
+
+export const detailMiunsQuanlity = () => {
+    return{
+        type: actionTypes.FETCH_DETAIL_MIUNS_QUANLITY
+    }
+}
 export const detailInit = (id) => {
     return dispatch => {
-
+        dispatch(detailStart())
+        axios.get('/products/' + id)
+        .then(data => dispatch(detailSuccess(data.data)))
+        .catch(error => dispatch(detailFail(error)))
     }
 }

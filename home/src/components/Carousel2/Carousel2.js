@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
-import CardItem from "../CardItem/CardItem";
 import Image from "../UI/Image/Image";
 import "./Carousel2.scss"
-export default class AppendDots extends Component {
-  render() {
+const Carousel2 = ({data}) =>  {
+  if(!data) return null
     const settings = {
       dots: true,
       infinite: true,
@@ -29,25 +28,26 @@ export default class AppendDots extends Component {
             color: "blue",
           }}
         >
-           <Image url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic3_0_540x.jpg?v=1582861099"/>
+           <Image url={`${data.images[i]}`}/>
         </div>
       )
     };
+    let renderItem = data.images.map((url,index) => {
+      return(
+        <div key={index}>
+          <Image url={`${url}`}/>
+       </div>
+      )
+    })
     return (
       <div className="Carousel2">
         <Slider {...settings}>
-          <div>
-            <Image url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic3_0_540x.jpg?v=1582861099"/>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
+         {renderItem}
         
         </Slider>
       </div>
     );
-  }
+  
 }
+
+export default Carousel2

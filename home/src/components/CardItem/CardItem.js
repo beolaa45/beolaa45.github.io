@@ -34,7 +34,12 @@ function CardItem({url, sale, price, title, clickedToCard, onQuickView, id, link
             </div>
             </NavLink>
             <div className="CardItem__content">
-                <NavLink to={`/products/${id}`} className="CardItem__content__link">
+                <NavLink to={
+                {
+                    pathname: link,
+                    state: { id: `${id}`}
+                }
+            } className="CardItem__content__link">
                 <h2 className="Heading--secondary">{title}</h2>
                 </NavLink>
                 <p className="CardItem__content__box">

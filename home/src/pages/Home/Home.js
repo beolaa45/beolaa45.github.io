@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ShippingType from "../../components/ShippingType/ShippingType";
 import Button from "../../components/UI/Button/Button";
@@ -8,10 +8,9 @@ import Card from "../../components/Card/Card";
 import Heading from "../../components/Heading/Heading";
 import CardItem from "../../components/CardItem/CardItem";
 import CardBlog from "../../components/CardBlog/CardBlog";
-import Modal from "../../components/UI/Modal/Modal";
+
 import * as actions from '../../store/actions/index';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from '../../api/baseApi'
 import { toSlug } from "../../components/utiliti/utility";
 
 
