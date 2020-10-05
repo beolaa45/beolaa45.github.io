@@ -6,7 +6,7 @@ import {NavLink,} from "react-router-dom"
 import "./CardItem.scss";
 import Button from '../UI/Button/Button';
 function CardItem({url, sale, price, title, clickedToCard, onQuickView, id, link}) {
-
+console.log(typeof sale)
     return (
         <div className="CardItem">
             <NavLink to={
@@ -43,9 +43,9 @@ function CardItem({url, sale, price, title, clickedToCard, onQuickView, id, link
                 <h2 className="Heading--secondary">{title}</h2>
                 </NavLink>
                 <p className="CardItem__content__box">
-                    {typeof sale == "number" ? <del className="CardItem__content__oldPrice">${price}.00</del>
+                    { sale !== 0 ? <del className="CardItem__content__oldPrice">${price}.00</del>
                     : <span className="CardItem__content__Price">${price}.00</span>}
-                    {typeof sale == "number" ? <span className="CardItem__content__newPrice">${price * (100 - sale) / 100}.00</span> : null}
+                    { sale !== 0 ? <span className="CardItem__content__newPrice">${price * (100 - sale) / 100}.00</span> : null}
                 </p>
                 <Button clicked={clickedToCard} classN="Button--addToCard">Add To Card</Button>
                 

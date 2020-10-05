@@ -1,12 +1,57 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import Banner from '../../components/Banner/Banner'
 import Filter from '../../components/Filter/Filter'
 import "./Products.scss";
 import Carousel from "../../components/Carousel/Carousel"
+import CardItem from '../../components/CardItem/CardItem';
+import { useSelector, useDispatch } from 'react-redux';
+import {toSlug} from '../../components/utiliti/utility';
+import * as actions from '../../store/actions/index'
+import Spinnerr from '../../components/UI/Spinner/Spinner';
 
 function Products(props) {
+    let dataProducts = useSelector(state => state.products.data);
+    let loading = useSelector(state => state.products.loading);
+    let dispatch = useDispatch()
+    console.log(dataProducts)
+    const clickedToCard = () => {
 
+    } 
+
+    const onQuickView = (e, id) => {
+        e.preventDefault()
+    }
+
+    useEffect(() => {
+       dispatch(actions.productsInit())
+    }, [])
+
+    let renderProduct;
+    if(dataProducts){
+        renderProduct = dataProducts.map(item => {
+            return(
+                <Col  xl={4} lg={4} md={4} sm={6} xs={12} key={item.id} style={{marginBottom: "3rem"}}>
+                <div >
+                    <CardItem 
+                        clickedToCard={clickedToCard}
+                        onQuickView={(e) => onQuickView(e, item.id)}
+                        sale={item.sale}
+                        price={item.price}
+                        title={item.title}
+                        url={item.images[0]}
+                        id={item.id}
+                        link={`products/${toSlug(item.title)}`}                                 
+                    />
+               </div>
+               </Col>
+            )
+        })
+    }
+
+    if(loading){
+        renderProduct = <Spinnerr style={{height: "30rem",  width: "100%", textAlign: "center"}} />
+    }
     return (
         <Fragment>
             <section className="Products__banners">
@@ -22,7 +67,7 @@ function Products(props) {
             <section className="Products__content">
                 <Container>
                     <Row>
-                        <Col xl={4} lg={4} md={4} sm={4} xs={12} >
+                        <Col xl={3} lg={3} md={3} sm={3} xs={12} >
                             <form className="Products__content__filter">
                                 <Filter title="Categories" subTitle={["camera"]}/>
                                 <div className="Products__content__filter__box">
@@ -31,7 +76,7 @@ function Products(props) {
                                 </div>
                             </form>
                         </Col>
-                        <Col  xl={8} lg={8} md={8} sm={8} xs={12}>
+                        <Col  xl={9} lg={9} md={9} sm={9} xs={12}>
                             <div className="Products__content__list">
                                 <div className="Products__content__list__filter">
                                     <p className="Products__content__list__filter__sort">Sort by:</p>
@@ -44,7 +89,9 @@ function Products(props) {
                                     </select>
                                 </div>
                                 <div className="Products__content__list__content">
-                                        
+                                    <Row>
+                                        {renderProduct}
+                                    </Row>                  
                                 </div>
 
                             </div>

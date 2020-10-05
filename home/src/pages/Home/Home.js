@@ -61,8 +61,6 @@ function Home() {
 
   const onQuickView = (e,id) => {
       e.preventDefault()
-      console.log("ee",id)
-      console.log("ee",e)
      dispatch(actions.modalShowItemInit(id))
   }
 

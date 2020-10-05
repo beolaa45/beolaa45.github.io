@@ -41,6 +41,7 @@ function Detail(props) {
 
     useEffect(() => {
         dispatch(actions.detailInit(id))
+        window.scrollTo(0, 0);
     },[])
     let renderDetaiItem;
     if(dataDetail){
