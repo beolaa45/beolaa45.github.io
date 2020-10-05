@@ -1,24 +1,31 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Carousel2 from "../Carousel2/Carousel2";
-import DetailItem from "../DetailItem/DetailItem"
+import DetailItem from "../DetailItem/DetailItem";
+import Spinnerr from "../UI/Spinner/Spinner";
 import "./ModalItem.scss";
-function ModalItem() {
-    return (
-        <div className="ModalItem">
-            <Container>
-                <Row>
-                    <Col xl={6} lg={6} md={6} sm={12} xs={12} >
-                        <Carousel2 />
-                    </Col>
-                    <Col xl={6} lg={6} md={6} sm={12} xs={12} >
-                        <DetailItem />
-                    </Col>
-                </Row>
-            </Container>
-        </div>
-    )
+function ModalItem({ dataModal, loadingShowModal }) {
+  console.log(dataModal, loadingShowModal);
+  let renderItem;
+  if (dataModal) {
+    renderItem = (
+      <Container>
+        <Row>
+          <Col xl={6} lg={6} md={6} sm={12} xs={12}>
+            <Carousel2 data={dataModal} />
+          </Col>
+          <Col xl={6} lg={6} md={6} sm={12} xs={12}>
+            <DetailItem data={dataModal} />
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+  if (loadingShowModal) {
+    renderItem = <Spinnerr />;
+  }
+
+  return <div className="ModalItem">{renderItem}</div>;
 }
 
-export default ModalItem
-
+export default ModalItem;

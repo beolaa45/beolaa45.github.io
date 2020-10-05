@@ -19,10 +19,37 @@ export const homeFail = (error) => {
     }
 }
 
-export const homeShowModal = (id) => {
+export const modalShowItemStart = () => {
     return{
-        type: actionTypes.FETCH_HOME_SHOW_MODAL,
-        id
+        type: actionTypes.FETCH_HOME_MODAL_ITEM_START
+    }
+}
+
+export const modalShowItemFail = (error) => {
+    return{
+       type: actionTypes.FETCH_HOME_MODAL_ITEM_FAIL,
+       error: error
+    }
+}
+
+export const modalShowItemSuccess = (data) => {
+    return{
+        type: actionTypes.FETCH_HOME_MODAL_ITEM_SUCCESS,
+        data
+    }
+}
+
+export const modalShowItemTurnOffModal = () => {
+    return{
+        type: actionTypes.FETCH_HOME_TURN_OFF_MODAL
+    }
+}
+export const modalShowItemInit = (id) => {
+    return dispatch => {
+        dispatch(modalShowItemStart())
+        axios.get('/products/' + id)
+        .then(data => dispatch(modalShowItemSuccess(data)))
+        .catch(error => dispatch(modalShowItemFail(error)))
     }
 }
 

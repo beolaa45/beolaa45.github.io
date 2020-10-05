@@ -8,11 +8,11 @@ import Card from "../../components/Card/Card";
 import Heading from "../../components/Heading/Heading";
 import CardItem from "../../components/CardItem/CardItem";
 import CardBlog from "../../components/CardBlog/CardBlog";
-
 import * as actions from '../../store/actions/index';
 import { useSelector, useDispatch } from 'react-redux';
 import { toSlug } from "../../components/utiliti/utility";
-
+import Modal from '../../components/UI/Modal/Modal';
+import ModalItem from '../../components/ModalItem/ModalItem'
 
 const data1= [
   {
@@ -43,7 +43,9 @@ const data1= [
 function Home() {
  
   const dataBestSeller = useSelector(state => state.home.data);
-  
+  const showModalItem = useSelector(state => state.home.showModal);
+  const dataModal = useSelector(state => state.home.dataModal);
+  const loadingShowModal = useSelector(state => state.home.loadingShowModal)
   const dispatch = useDispatch()
   useEffect(() => {
       
@@ -61,7 +63,11 @@ function Home() {
       e.preventDefault()
       console.log("ee",id)
       console.log("ee",e)
-      dispatch(actions.homeShowModal(id))
+     dispatch(actions.modalShowItemInit(id))
+  }
+
+  const turnOffModal = () => {
+      dispatch(actions.modalShowItemTurnOffModal())
   }
 
 
@@ -70,7 +76,7 @@ function Home() {
   }
   let listCart;
   if(dataBestSeller){
-    listCart = dataBestSeller.data.map((item) => {
+    listCart = dataBestSeller.map((item) => {
 
       return(
         <Col xl={3} lg={3} md={4} sm={6} xs={12} key={item.id} style={{marginBottom: "2rem"}}>
@@ -109,7 +115,10 @@ function Home() {
   })
   return (
     <Fragment>
-     
+       <Modal show={showModalItem} clicked={turnOffModal}>
+                 <p></p>
+                 <ModalItem loadingShowModal={loadingShowModal} dataModal={dataModal} />
+            </Modal>
       <section className="Banner">
         <Container fluid>
           <Row>

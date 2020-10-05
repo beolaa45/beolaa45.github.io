@@ -43,7 +43,7 @@ export const detailInit = (id) => {
     return dispatch => {
         dispatch(detailStart())
         axios.get('/products/' + id)
-        .then(data => dispatch(detailSuccess(data.data)))
+        .then(data => dispatch(detailSuccess(data)))
         .catch(error => dispatch(detailFail(error)))
     }
 }

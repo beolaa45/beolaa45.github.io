@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect } from 'react'
-import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import {  useLocation } from 'react-router-dom'
 import Banner from '../../components/Banner/Banner';
 import Carousel2 from '../../components/Carousel2/Carousel2'
 import DetailItem from '../../components/DetailItem/DetailItem';
 import * as actions from '../../store/actions/index'
+import Spinner from '../../components/UI/Spinner/Spinner'
 import './Detail.scss'
 function Detail(props) {
     let {state: {id}} = useLocation();
@@ -66,7 +67,7 @@ function Detail(props) {
     if(loading){
         renderDetaiItem = (
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "40rem"}}>
-                 <Spinner variant="primary"  style={{width: "4rem", height: "4rem", fontSize: "2rem"}} animation="border" />
+                <Spinner />
             </div>
         )
     }

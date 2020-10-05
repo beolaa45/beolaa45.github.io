@@ -1,13 +1,12 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
-function Spinner({style}) {
+import { Spinner } from 'react-bootstrap'
+function Spinnerr({style}) {
     return (
-        <div>
-            <FontAwesomeIcon icon={faSpinner} style={style} spin />
-        </div>
+        <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100%",...style}}>
+        <Spinner variant="primary"  style={{width: "4rem", height: "4rem", fontSize: "2rem"}} animation="border" />
+   </div>
     )
 }
 
-export default Spinner
+export default Spinnerr
 

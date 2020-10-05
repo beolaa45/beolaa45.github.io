@@ -2,9 +2,9 @@ import axios from "axios"
  const instance = axios.create({
     baseURL: 'https://master-maste.herokuapp.com',
   });
-  axios.defaults.headers.post['Content-Type'] = 'application/json';
+  instance.defaults.headers.post['Content-Type'] = 'application/json';
   
-  axios.interceptors.response.use(function (response) {
+  instance.interceptors.response.use(function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
     if(response && response.data){
