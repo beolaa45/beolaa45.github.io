@@ -33,13 +33,11 @@ function Products(props) {
     const onChangeQuanlity = (e) => {
         let quanlity = e.target.value
         if(!quanlity) {
-            quanlity = ''
+            quanlity = ""
         }else{
             quanlity = parseInt(e.target.value)
             if(quanlity === 0 || Number.isNaN(quanlity) || quanlity >= 100) return;
         }
-       
-
         dispatch(actions.productsOnChangeQuanlity(quanlity))
     }
 
