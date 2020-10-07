@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useRef } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import {  useLocation } from 'react-router-dom'
@@ -13,13 +13,13 @@ function Detail(props) {
     let dataDetail = useSelector(state => state.detail.data);
     let loading = useSelector(state => state.detail.loading)
     let dispatch = useDispatch()
-    console.log(dataDetail)
    
+
    
     const onChangeQuanlity = (e) => {
         let quanlity = e.target.value
         if(!quanlity) {
-            quanlity = ''
+            quanlity = 0
         }else{
             quanlity = parseInt(e.target.value)
             if(quanlity === 0 || Number.isNaN(quanlity) || quanlity >= 100) return;
@@ -36,15 +36,21 @@ function Detail(props) {
     const minusQuanlity = () => {
         dispatch(actions.detailMiunsQuanlity())
     }
-
+  
+ 
     useEffect(() => {
         dispatch(actions.detailInit(id))
-        window.scrollTo(0, 0);
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+
     },[])
+
     let renderDetaiItem;
     if(dataDetail){
         renderDetaiItem = (
-            <section className="Detail__box">
+            <section className="Detail__box" >
             <Container>
                 <Row>
                     <Col  xl={6} lg={6} md={6} sm={12} xs={12} style={{overflowX: "hidden"}}>

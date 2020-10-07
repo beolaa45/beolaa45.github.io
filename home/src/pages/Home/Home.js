@@ -21,23 +21,23 @@ const data1= [
     author:" admin",
     subTitle:`Sleek, minimalist wireless charging designs to "complement and blend within the home and office".`,
     title:"Dial and Disc Wireless Chargers home office from Sum",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/articles/elicbog21_540x.jpg?v=1582880175"
+    url:"https://i.imgur.com/hdk9VOT.jpg"
   },
   {
     id:2,
     time:"February 28, 2020",
     author:" admin",
-    subTitle:`Sleek, minimalist wireless charging designs to "complement and blend within the home and office".`,
-    title:"Dial and Disc Wireless Chargers home office from Sum",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/articles/elicbog21_540x.jpg?v=1582880175"
+    subTitle:`These 3-in-1 headphones can snap together and turn into a wireless speaker.`,
+    title:"The Headphones Can Translate 11 Languages Wireless Speaker",
+    url:"https://i.imgur.com/PpR64sW.jpg"
   },
   {
     id:3,
     time:"February 28, 2020",
     author:" admin",
-    subTitle:`Sleek, minimalist wireless charging designs to "complement and blend within the home and office".`,
-    title:"Dial and Disc Wireless Chargers home office from Sum",
-    url:"https://cdn.shopify.com/s/files/1/0332/6420/5963/articles/elicbog21_540x.jpg?v=1582880175"
+    subTitle:`Microsoft’s Top Secret Surface Headphones Project Revealed`,
+    title:"Microsoft unveils the cool grey, minimalist voice-controlled Surface Headphones.",
+    url:"https://i.imgur.com/94kpTQY.jpg"
   }
 ]
 function Home() {
@@ -71,7 +71,7 @@ function Home() {
   const onChangeQuanlity = (e) => {
     let quanlity = e.target.value
     if(!quanlity) {
-        quanlity = ""
+        quanlity = 0
     }else{
         quanlity = parseInt(e.target.value)
         if(quanlity === 0 || Number.isNaN(quanlity) || quanlity >= 100) return;

@@ -6,9 +6,12 @@ function CardBlog({title, subTitle, time, author, url}) {
     return (
   
         <div className="CardBlog">
-            <NavLink to="/blog" className="CardBlog__link">
-            <div className="CardBlog__photo">
-                <img src={url} alt={title}  className="CardBlog__image" />
+            <NavLink to="/blog" className="CardBlog__link" >
+            <div className="CardBlog__box">
+            <div className="CardBlog__photo" style={{backgroundImage: `url(${url})`, height: "25rem", width: "100%"}}>
+            </div>
+           
+               
             </div>
             <div className="CardBlog__content">
                 <p className="CardBlog__time">By <span>{author}</span> on <span>{time}</span></p>

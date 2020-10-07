@@ -5,20 +5,26 @@
     &__link:visited{
         text-decoration: none !important;
         color: $color-black;
-    }
+        overflow: hidden;
 
-    &__photo{
+        
+    }
+    &__box{
         overflow: hidden;
         margin-bottom: 1rem;
     }
 
-    &__image{
-        width: 100%;
-        transition: $transtion-2;
+    &__photo{
+      
        
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: scale(1);
+        transition: $transtion-2;
+        background-position: center
     }
 
-    &__image:hover{
+    &__photo:hover{
         transform: scale(1.2);
     }
 

@@ -25,7 +25,7 @@ function DetailItem({data, onChangeQuanlity, plus, minus, link}) {
             with denim and white kicks for a stylish sporty vibe.
             </p>
             <div className="DetailItem__button">
-                <ButtonAmount plus={plus} minus={minus} value={data.quanlity} onChange={onChangeQuanlity}/>
+                <ButtonAmount plus={plus} minus={minus} value={data.quanlity === 0 ? '' : data.quanlity} onChange={onChangeQuanlity}/>
                 <Button classN="Button--detail" >Add To Cart </Button>
             </div>
             <div className="DetailItem__photo">
