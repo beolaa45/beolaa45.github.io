@@ -14,7 +14,17 @@ import { Link } from 'react-router-dom';
 function Header(props) {
 
   const [show, setShow] = useState(false)
+  const clickedUser = () => {
 
+  }
+
+  const clickedBasket = () => {
+    
+  }
+
+  const clickedSearch = () => {
+    
+  }
   const handleShowBackDrop = () => {
     setShow(prevState => !prevState)
   }
@@ -40,7 +50,10 @@ function Header(props) {
                   </div>
                   <div className="col-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 Header__col">
                     <div className="Header__user">
-                      <UserAction />
+                      <UserAction 
+                        clickedUser={clickedUser} 
+                        clickedBasket={clickedBasket} 
+                        clickedSearch={clickedSearch}/>
                     </div>
                   </div>
               </div>

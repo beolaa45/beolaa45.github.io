@@ -18,6 +18,5 @@ function Banner({url, title, page}) {
     )
 }
 
-
 export default Banner
 

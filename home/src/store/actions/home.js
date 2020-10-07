@@ -63,3 +63,22 @@ export const homeInit = () => {
         .catch(error => dispatch(homeFail(error)))
     }
 }
+
+export const homeOnChangeQuanlity = (quanlity) => {
+    return{
+        type: actionTypes.FETCH_HOME_ON_CHANGE_QUANLITY,
+        quanlity
+    }
+}
+
+export const homePlusQuanlity = () => {
+    return{
+        type: actionTypes.FETCH_HOME_PLUS_QUANLITY
+    }
+}
+
+export const  homeMiunsQuanlity = () => {
+    return{
+        type: actionTypes.FETCH_HOME_MIUNS_QUANLITY
+    }
+}

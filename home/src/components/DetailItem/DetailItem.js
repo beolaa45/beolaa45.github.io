@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import * as actions from "../../store/actions/index";
 import { NavLink } from 'react-router-dom'
 import { toSlug } from '../utiliti/utility'
-function DetailItem({data, onChangeQuanlity, plus, minus}) {
+function DetailItem({data, onChangeQuanlity, plus, minus, link}) {
     
     if(!data) return null;
     return (
@@ -40,12 +40,12 @@ function DetailItem({data, onChangeQuanlity, plus, minus}) {
                 <a href="/"><FontAwesomeIcon className="DetailItem__boxIcon__icon" icon={faEnvelope}/></a>
                 <a href="/"><FontAwesomeIcon className="DetailItem__boxIcon__icon" icon={faYoutube}/></a>
             </div>
-            <NavLink to={{
+            {link ?<NavLink className="DetailItem__viewDetails" to={{
                 pathname: `products/${toSlug(data.title)}`,
                 state: { id: `${data.id}`}
             }}>
                 View full details 
-            </NavLink>
+            </NavLink>:null}
         </div>
     )
 }

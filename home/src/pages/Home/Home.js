@@ -68,7 +68,24 @@ function Home() {
       dispatch(actions.modalShowItemTurnOffModal())
   }
 
+  const onChangeQuanlity = (e) => {
+    let quanlity = e.target.value
+    if(!quanlity) {
+        quanlity = ""
+    }else{
+        quanlity = parseInt(e.target.value)
+        if(quanlity === 0 || Number.isNaN(quanlity) || quanlity >= 100) return;
+    }
+    dispatch(actions.homeOnChangeQuanlity(quanlity))
+}
 
+const plusQuanlity = () => {
+    dispatch(actions.homePlusQuanlity())
+}
+
+const minusQuanlity = () => {
+    dispatch(actions.homeMiunsQuanlity())
+}
   const handleLoadMore = () => {
       
   }
@@ -115,7 +132,7 @@ function Home() {
     <Fragment>
        <Modal show={showModalItem} clicked={turnOffModal}>
                  <p></p>
-                 <ModalItem link={true} loadingShowModal={loadingShowModal} dataModal={dataModal} />
+                 <ModalItem plus={plusQuanlity} minus={minusQuanlity} onChangeQuanlity={onChangeQuanlity} link={true} loadingShowModal={loadingShowModal} dataModal={dataModal} />
             </Modal>
       <section className="Banner">
         <Container fluid>

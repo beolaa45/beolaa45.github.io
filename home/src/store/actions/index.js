@@ -1,3 +1,3 @@
-export {homeInit, modalShowItemInit, modalShowItemTurnOffModal } from './home'
+export {homeInit, modalShowItemInit, modalShowItemTurnOffModal, homeMiunsQuanlity, homePlusQuanlity, homeOnChangeQuanlity } from './home'
 export { detailInit, detaiOnChangeQuanlity, detailPlusQuanlity, detailMiunsQuanlity} from './Detail';
 export { productsInit, productsShowModal, productsTurnOffModal, productsItemModalInit, productsOnChangeQuanlity, productsPlusQuanlity, productsMiunsQuanlity } from './products'

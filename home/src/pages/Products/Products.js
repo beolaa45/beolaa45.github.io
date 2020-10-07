@@ -86,7 +86,7 @@ function Products(props) {
         <Fragment>
              <Modal show={showModalItem} clicked={turnOffModal}>
                  <p></p>
-                 <ModalItem plus={plusQuanlity} minus={minusQuanlity} onChangeQuanlity={onChangeQuanlity} loadingShowModal={loadingShowModal} dataModal={dataModal} />
+                 <ModalItem link={true} plus={plusQuanlity} minus={minusQuanlity} onChangeQuanlity={onChangeQuanlity} loadingShowModal={loadingShowModal} dataModal={dataModal} />
             </Modal>
             <section className="Products__banners">
                 <Container fluid>

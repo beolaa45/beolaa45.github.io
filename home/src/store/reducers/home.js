@@ -33,6 +33,36 @@ const modalShowItemTurnOffModal = (state) => {
 const modalShowItemSuccess = (state, action) => {
     return immutableObject(state, {dataModal: action.data, loadingShowModal: false})
 }
+
+const homeOnChangeQuanlity = (state, action) => {
+    return immutableObject(state, {
+        dataModal: {
+            ...state.dataModal,
+            quanlity: action.quanlity
+        }
+    })
+}
+
+const homePlusQuanlity = (state) => {
+    console.log("ok")
+    return immutableObject(state, {
+        dataModal: {
+            ...state.dataModal,
+            quanlity: state.dataModal.quanlity + 1
+        }
+    })
+}
+
+const homeMinusQuanlity = (state) => {
+    console.log("ok")
+    if(state.dataModal.quanlity <= 1 || state.dataModal.quanlity > 100) return state
+    return immutableObject(state, {
+        dataModal: {
+            ...state.dataModal,
+            quanlity: state.dataModal.quanlity - 1
+        }
+    })
+}
 const reducer = (state = initalState, action) => {
     switch (action.type) {
         case actionTypes.FETCH_HOME_START:
@@ -47,6 +77,12 @@ const reducer = (state = initalState, action) => {
             return modalShowItemSuccess(state, action)
         case actionTypes.FETCH_HOME_TURN_OFF_MODAL:
             return modalShowItemTurnOffModal(state)
+        case actionTypes.FETCH_HOME_MIUNS_QUANLITY:
+            return homeMinusQuanlity(state)
+        case actionTypes.FETCH_HOME_PLUS_QUANLITY:
+            return homePlusQuanlity(state)
+        case actionTypes.FETCH_HOME_ON_CHANGE_QUANLITY:
+            return homeOnChangeQuanlity(state, action)
         default:
             
             return state
