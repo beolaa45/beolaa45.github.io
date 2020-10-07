@@ -115,7 +115,7 @@ function Home() {
     <Fragment>
        <Modal show={showModalItem} clicked={turnOffModal}>
                  <p></p>
-                 <ModalItem loadingShowModal={loadingShowModal} dataModal={dataModal} />
+                 <ModalItem link={true} loadingShowModal={loadingShowModal} dataModal={dataModal} />
             </Modal>
       <section className="Banner">
         <Container fluid>

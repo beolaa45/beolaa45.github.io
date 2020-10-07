@@ -7,6 +7,8 @@ import { faEnvelope,  } from '@fortawesome/free-solid-svg-icons'
 import "./DetailItem.scss";
 import { useDispatch } from 'react-redux';
 import * as actions from "../../store/actions/index";
+import { NavLink } from 'react-router-dom'
+import { toSlug } from '../utiliti/utility'
 function DetailItem({data, onChangeQuanlity, plus, minus}) {
     
     if(!data) return null;
@@ -38,6 +40,12 @@ function DetailItem({data, onChangeQuanlity, plus, minus}) {
                 <a href="/"><FontAwesomeIcon className="DetailItem__boxIcon__icon" icon={faEnvelope}/></a>
                 <a href="/"><FontAwesomeIcon className="DetailItem__boxIcon__icon" icon={faYoutube}/></a>
             </div>
+            <NavLink to={{
+                pathname: `products/${toSlug(data.title)}`,
+                state: { id: `${data.id}`}
+            }}>
+                View full details 
+            </NavLink>
         </div>
     )
 }
