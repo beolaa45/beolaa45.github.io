@@ -4,7 +4,7 @@ import Carousel2 from "../Carousel2/Carousel2";
 import DetailItem from "../DetailItem/DetailItem";
 import Spinnerr from "../UI/Spinner/Spinner";
 import "./ModalItem.scss";
-function ModalItem({ dataModal, loadingShowModal }) {
+function ModalItem({ dataModal, loadingShowModal, plus, minus, onChangeQuanlity }) {
   console.log(dataModal, loadingShowModal);
   let renderItem;
   if (dataModal) {
@@ -15,7 +15,7 @@ function ModalItem({ dataModal, loadingShowModal }) {
             <Carousel2 data={dataModal} />
           </Col>
           <Col xl={6} lg={6} md={6} sm={12} xs={12}>
-            <DetailItem data={dataModal} />
+            <DetailItem  plus={plus} minus={minus} onChangeQuanlity={onChangeQuanlity} data={dataModal} />
           </Col>
         </Row>
       </Container>

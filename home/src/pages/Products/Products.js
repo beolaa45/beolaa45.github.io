@@ -9,11 +9,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import {toSlug} from '../../components/utiliti/utility';
 import * as actions from '../../store/actions/index'
 import Spinnerr from '../../components/UI/Spinner/Spinner';
+import Modal from '../../components/UI/Modal/Modal';
+import ModalItem from '../../components/ModalItem/ModalItem';
 
 function Products(props) {
     let dataProducts = useSelector(state => state.products.data);
     let loading = useSelector(state => state.products.loading);
-    let dispatch = useDispatch()
+    let dispatch = useDispatch();
+    let showModalItem = useSelector(state => state.products.showModal);
+    let loadingShowModal = useSelector(state => state.products.loadingModal)
+    let dataModal = useSelector(state => state.products.dataModal);
+    console.log(dataModal)
     console.log(dataProducts)
     const clickedToCard = () => {
 
@@ -21,12 +27,38 @@ function Products(props) {
 
     const onQuickView = (e, id) => {
         e.preventDefault()
+        dispatch(actions.productsItemModalInit(id))
+    }
+
+    const onChangeQuanlity = (e) => {
+        let quanlity = e.target.value
+        if(!quanlity) {
+            quanlity = ''
+        }else{
+            quanlity = parseInt(e.target.value)
+            if(quanlity === 0 || Number.isNaN(quanlity) || quanlity >= 100) return;
+        }
+       
+
+        dispatch(actions.productsOnChangeQuanlity(quanlity))
+    }
+
+    const plusQuanlity = () => {
+        dispatch(actions.productsPlusQuanlity())
+    }
+
+    const minusQuanlity = () => {
+        dispatch(actions.productsMiunsQuanlity())
     }
 
     useEffect(() => {
        dispatch(actions.productsInit())
     }, [])
+    const turnOffModal = () => {
+        dispatch(actions.productsTurnOffModal())
+    }
 
+    
     let renderProduct;
     if(dataProducts){
         renderProduct = dataProducts.map(item => {
@@ -54,6 +86,10 @@ function Products(props) {
     }
     return (
         <Fragment>
+             <Modal show={showModalItem} clicked={turnOffModal}>
+                 <p></p>
+                 <ModalItem plus={plusQuanlity} minus={minusQuanlity} onChangeQuanlity={onChangeQuanlity} loadingShowModal={loadingShowModal} dataModal={dataModal} />
+            </Modal>
             <section className="Products__banners">
                 <Container fluid>
                     <Row>

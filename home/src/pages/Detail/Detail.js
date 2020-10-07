@@ -31,12 +31,10 @@ function Detail(props) {
 
     const plusQuanlity = () => {
         dispatch(actions.detailPlusQuanlity())
-        console.log("plus")
     }
 
     const minusQuanlity = () => {
         dispatch(actions.detailMiunsQuanlity())
-        console.log("minus")
     }
 
     useEffect(() => {
