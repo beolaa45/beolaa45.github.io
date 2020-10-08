@@ -21,6 +21,7 @@ function Products(props) {
     let dataModal = useSelector(state => state.products.dataModal);
     console.log(dataModal)
     console.log(dataProducts)
+   
     const clickedToCard = () => {
 
     } 
@@ -101,7 +102,7 @@ function Products(props) {
             <section className="Products__content">
                 <Container>
                     <Row>
-                        <Col xl={3} lg={3} md={3} sm={3} xs={12} >
+                        <Col xl={3} lg={3} md={12} sm={12} xs={12} >
                             <form className="Products__content__filter">
                                 <Filter title="Categories" subTitle={["camera"]}/>
                                 <div className="Products__content__filter__box">
@@ -110,7 +111,7 @@ function Products(props) {
                                 </div>
                             </form>
                         </Col>
-                        <Col  xl={9} lg={9} md={9} sm={9} xs={12}>
+                        <Col  xl={9} lg={9} md={12} sm={12} xs={12}>
                             <div className="Products__content__list">
                                 <div className="Products__content__list__filter">
                                     <p className="Products__content__list__filter__sort">Sort by:</p>
@@ -129,6 +130,9 @@ function Products(props) {
                                 </div>
 
                             </div>
+                        </Col>
+                        <Col xl={12} lg={12} md={12} sm={12} xs={12}>
+
                         </Col>
                     </Row>
                     

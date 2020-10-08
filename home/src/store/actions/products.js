@@ -69,7 +69,10 @@ export const productsItemModalInit = (id) => {
         dispatch(productsItemModalStart())
         dispatch(productsShowModal())
         axios.get('/products/' + id)
-        .then(data => dispatch(productsItemModalSuccess(data)))
+        .then(data =>{ 
+            dispatch(productsItemModalSuccess(data))
+                
+        })
         .catch(error => dispatch(productsItemModalFail(error)))
     }
 }

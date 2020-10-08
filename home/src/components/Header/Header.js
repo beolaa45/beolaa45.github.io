@@ -10,16 +10,19 @@ import "./Header.scss"
 import BackDrop from '../UI/BackDrop/BackDrop';
 import SideDrawer from '../Navigations/SideDrawer/SideDrawer';
 import { Link } from 'react-router-dom';
+import Navigations from '../Navigations/Navigations'
 
 function Header(props) {
 
   const [show, setShow] = useState(false)
+  const [showBasket, setShowBasket] = useState(false)
+ 
   const clickedUser = () => {
 
   }
 
   const clickedBasket = () => {
-    
+    setShowBasket(prev => !prev)
   }
 
   const clickedSearch = () => {
@@ -31,7 +34,14 @@ function Header(props) {
     return (
       <Fragment>
          <BackDrop  show={show} clicked={handleShowBackDrop}/>
-         <SideDrawer show={show} />
+         <SideDrawer show={show} >
+         <Navigations classN="Navigations__list--siderdrawer"/>
+         </SideDrawer>
+
+         <BackDrop  show={showBasket} clicked={clickedBasket}/>
+         <SideDrawer classN="SideDrawer--basket" show={showBasket} >
+                
+         </SideDrawer>
       <header className="Header">
           <div className="container Header__container">
               <div className="row  Header__row">
