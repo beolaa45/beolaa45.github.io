@@ -64,6 +64,7 @@ function Products(props) {
     let _sort = "id";
     let _order = "desc";
     let _limit = "8"
+    
 
     const handleSelect = (e) => {
         let value = e.target.value
@@ -116,7 +117,8 @@ function Products(props) {
                     <Row>
                         <Col xl={3} lg={3} md={12} sm={12} xs={12} >
                             <form className="Products__content__filter">
-                                <Filter title="Categories" subTitle={["camera"]}/>
+                                <Filter title="Categories" subTitle={["Camera", "Speaker", "Laptop"]}/>
+                                <Filter title="Price" subTitle={["$0 - $50", "$50 - $100", "$100 - $150"]}/>
                                 <div className="Products__content__filter__box">
                                         <button className="Products__content__filter__box__submit" >Filter</button>
                                         <button className="Products__content__filter__box__submit FilterOut" >Filter Out</button>
