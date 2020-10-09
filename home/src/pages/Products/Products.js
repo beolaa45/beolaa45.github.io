@@ -52,11 +52,23 @@ function Products(props) {
 
     useEffect(() => {
        dispatch(actions.productsInit())
+       window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
     }, [])
     const turnOffModal = () => {
         dispatch(actions.productsTurnOffModal())
     }
+    let _sort = "id";
+    let _order = "desc";
+    let _limit = "8"
 
+    const handleSelect = (e) => {
+        let value = e.target.value
+        console.log(value)
+    }
     
     let renderProduct;
     if(dataProducts){
@@ -115,12 +127,12 @@ function Products(props) {
                             <div className="Products__content__list">
                                 <div className="Products__content__list__filter">
                                     <p className="Products__content__list__filter__sort">Sort by:</p>
-                                    <select className="Products__content__list__filter__select">
+                                    <select id="selectValue" onClick={handleSelect} className="Products__content__list__filter__select">
                                         <option value="default" select="selected">Mặc định</option>
-                                        <option value="az">A đến Z</option>
-                                        <option value="za">Z đến A</option>
-                                        <option value="lowHigh">Giá từ thấp đến cao</option>
-                                        <option value="highLow">Giá từ cao đến thấp</option>
+                                        <option value="title-asc">A đến Z</option>
+                                        <option value="title-desc">Z đến A</option>
+                                        <option value="price-asc">Giá từ thấp đến cao</option>
+                                        <option value="price-desc">Giá từ cao đến thấp</option>
                                     </select>
                                 </div>
                                 <div className="Products__content__list__content">
