@@ -14,8 +14,9 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
-   align-items: center;
-
+   align-items: center; 
+   position: relative;
+   
    &__title{
        font-size: 2.5rem;
        font-weight: 600;

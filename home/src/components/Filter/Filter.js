@@ -2,9 +2,9 @@ import React from 'react'
 import { toLowerCase } from '../utiliti/utility'
 import "./Filter.scss"
 function Filter({title, subTitle}) {
-    let render = subTitle.map(value => {
+    let render = subTitle.map((value, index) => {
         return(
-            <div className="Filter__group">
+            <div className="Filter__group" key={index}>
             <input id={toLowerCase(value)} name={toLowerCase(value)} value={toLowerCase(value)} className="Filter__group__checkbox" type="checkbox" />
             <label htmlFor={toLowerCase(value)} className="Filter__group__label">{value}</label>
         </div>

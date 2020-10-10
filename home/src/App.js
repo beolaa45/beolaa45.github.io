@@ -11,6 +11,8 @@ import {
 } from "react-router-dom";
 import Layout from './components/Layout/Layout';
 import Detail from './pages/Detail/Detail';
+import Cart from './pages/Cart/Cart';
+import CheckOut from './pages/CheckOut/CheckOut';
 
 class App extends Component {
 
@@ -23,6 +25,8 @@ class App extends Component {
       <Route path="/products/:slug" component={Detail}/>
       <Route path="/products" component={Products}/>
       <Route path="/contact" component={Contact}/>
+      <Route path="/cart" component={Cart}/>
+      <Route path="/checkout" component={CheckOut}/>
       <Route path="/" exact component={Home}/>
     </Switch>
   )

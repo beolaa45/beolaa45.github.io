@@ -1,0 +1,58 @@
+@import "../../sass/abstracts/variables";
+.Cart{
+
+    &__content{
+
+        &__list{
+
+            &__header{
+
+            }
+
+            &__items{
+               
+                &__details{
+                    
+                    &__link{
+                      transition: $transtion-1;
+                        & > div {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            color: $color-red !important;
+                            &__photo{
+
+                            }
+    
+                            &__content{
+                               
+                                &__title{
+                                   
+                                    &:hover{
+                                       
+                                    }
+                                }
+    
+                                &__content{
+    
+                                }
+                            }
+                        }
+                        &:hover,
+                        &:active {
+                            text-decoration: none;
+                           
+                        }
+                    }
+                }
+
+
+            }
+
+
+        }
+    }
+
+    
+}
+

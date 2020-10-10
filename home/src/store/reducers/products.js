@@ -72,6 +72,7 @@ const productsMinusQuanlity = (state) => {
         }
     })
 }
+
 const reducer = (state = initalState, action) => {
     switch (action.type) {
         case actionTypes.FETCH_PRODUCTS_START:

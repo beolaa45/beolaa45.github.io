@@ -24,8 +24,7 @@ const productsFail = (error) => {
 export const productsInit = () => {
     return dispatch => {
         dispatch(productsStart())
-        
-        axios.get('/products?_start=0&_limit=8')
+        axios.get('/products?_start=0&_limit=9')
         .then((data) =>  dispatch(productsSuccess(data)))
         .catch(error => dispatch(productsFail(error)))
     }
@@ -96,3 +95,9 @@ export const  productsMiunsQuanlity = () => {
     }
 }
 
+export const productsSortStart = (data) => {
+    return {
+        type: actionTypes.FETCH_PRODUCTS_SORT,
+        data
+    }
+}

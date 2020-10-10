@@ -20,6 +20,11 @@ time, mark, audio, video
   padding: 0;
   box-sizing: inherit;
 }
+
+a:link,
+a:visited{
+    color: $color-black;
+}
 ul{
     list-style: none;
 }

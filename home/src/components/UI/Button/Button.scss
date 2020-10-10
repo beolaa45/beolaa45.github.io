@@ -56,5 +56,31 @@
         color: $color-black;
         background-color: $color-white;
         border: 1px solid $color-black;
+        
     }
+
+    &--viewCart{
+        width: 100%;
+        border-radius: 50px;
+        transition: $transtion-1;
+        font-size: 1.8rem;
+        letter-spacing: .6rem;
+    }
+
+    &--checkOut{
+        width: 100%;
+        border-radius: 50px;
+       color: $color-white;
+        background-color: $color-black;
+        transition: $transtion-1;
+        font-size: 1.8rem;
+        letter-spacing: .6rem;
+        &:hover{
+            color: $color-black;
+            background-color: $color-white;
+            border: 3px solid $color-black;
+        }
+    }
+
+    
 }
