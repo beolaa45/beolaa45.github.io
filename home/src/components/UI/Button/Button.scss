@@ -65,6 +65,7 @@
         transition: $transtion-1;
         font-size: 1.8rem;
         letter-spacing: .6rem;
+        text-transform: uppercase;
     }
 
     &--checkOut{
@@ -75,10 +76,11 @@
         transition: $transtion-1;
         font-size: 1.8rem;
         letter-spacing: .6rem;
+        text-transform: uppercase;
         &:hover{
             color: $color-black;
             background-color: $color-white;
-            border: 3px solid $color-black;
+            border: 2px solid $color-black;
         }
     }
 

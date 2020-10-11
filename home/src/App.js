@@ -12,7 +12,7 @@ import {
 import Layout from './components/Layout/Layout';
 import Detail from './pages/Detail/Detail';
 import Cart from './pages/Cart/Cart';
-import CheckOut from './pages/CheckOut/CheckOut';
+import CheckOut from './pages/Checkout/Checkout';
 
 class App extends Component {
 

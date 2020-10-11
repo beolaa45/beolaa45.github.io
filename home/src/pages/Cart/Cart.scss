@@ -1,58 +1,107 @@
 @import "../../sass/abstracts/variables";
 .Cart{
-
+    
     &__content{
+        padding: 8rem 0;
+        &__table{
+           width: 100%;
 
-        &__list{
+           &__head{
+            font-size: 2.2rem;
+            font-weight: 600;
+           
 
-            &__header{
+               &__tr{
+                
+                & > th{
+                    padding: 1rem 0;
+                    border-bottom: 1px solid $color-black;
+                }
+                
+               }
+           }
 
+           &__body{
+
+            &__td{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: auto;
+              
             }
 
-            &__items{
-               
-                &__details{
-                    
-                    &__link{
-                      transition: $transtion-1;
-                        & > div {
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            color: $color-red !important;
-                            &__photo{
+            &  td {
+                border-bottom: 1px solid $color-black;
+            }
+            &__box{
+                display: inline-block;
+            }
 
-                            }
-    
-                            &__content{
-                               
-                                &__title{
-                                   
-                                    &:hover{
-                                       
-                                    }
-                                }
-    
-                                &__content{
-    
-                                }
-                            }
-                        }
-                        &:hover,
-                        &:active {
-                            text-decoration: none;
-                           
-                        }
-                    }
+            &__link:link,
+            &__link:visited{
+                text-decoration: none;
+                transition: $transtion-1;
+            }
+
+            &__link:hover,
+            &__link:active{
+
+                color: $color-red;
+            }
+
+            &__total{
+                font-weight: 600;
+            }
+           }
+        }
+
+        &__checkout{
+            padding: 5rem 0;
+            &__note{
+
+                & > * {
+                    margin-bottom: 1rem;
+                }
+                &__title{
+
                 }
 
-
+                &__textarea{
+                    width: 100%;
+                    padding: 1rem;
+                }
             }
 
+            &__coupon{
+                & > p{
+                    margin-bottom: 1rem;
+                }
 
+                & > input{
+                    padding: 0 1rem;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            &__content{
+                text-align: right;
+
+                & > * {
+                    margin-bottom: 1.5rem;
+                }
+
+                & > p{
+                    font-weight: 600;
+                    font-size: 2rem;
+                }
+
+                &__inputGroup{
+                    & > input {
+                        margin-right: 1rem;
+                    }
+                }
+            }
         }
     }
-
-    
 }
-
