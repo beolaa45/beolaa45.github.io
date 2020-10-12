@@ -1,5 +1,4 @@
 import * as actionTypes from "../actions/actionTypes"
-
 import { immutableObject } from '../actions/uilities'
 let initalState = {
     data: null,

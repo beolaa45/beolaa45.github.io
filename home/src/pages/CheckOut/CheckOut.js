@@ -27,7 +27,7 @@ function CheckOut(props) {
                             <input className="Checkout__form__input" placeholder="Full name"/>
                             <input className="Checkout__form__input" placeholder="Adress"/>
                             <input className="Checkout__form__input" placeholder="City"/>
-                            <select className="Checkout__form__select" size={1} autoComplete="shipping country" data-backup="country" className="field__input field__input--select" aria-required="true" name="checkout[shipping_address][country]" id="checkout_shipping_address_country" placeholder="Country/Region"><option data-code="IN" value="India">India</option>
+                            <select className="Checkout__form__select" size={1} autoComplete="shipping country" data-backup="country"  aria-required="true" name="checkout[shipping_address][country]" id="checkout_shipping_address_country" placeholder="Country/Region"><option data-code="IN" value="India">India</option>
   <option data-code="VN" selected="selected" value="Vietnam">Vietnam</option>
   <option data-code="SA" value="Saudi Arabia">Saudi Arabia</option>
   <option data-code="PK" value="Pakistan">Pakistan</option>

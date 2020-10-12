@@ -2,11 +2,20 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import {NavLink,} from "react-router-dom"
-
+import * as actions from "../../store/actions/index"
 import "./CardItem.scss";
 import Button from '../UI/Button/Button';
+import Spinnerr from '../UI/Spinner/Spinner';
+import { useSelector, useDispatch } from 'react-redux';
 function CardItem({url, sale, price, title, clickedToCard, onQuickView, id, link}) {
-console.log(typeof sale)
+let dispatch = useDispatch();
+let newId = id
+let loading = useSelector(state => state.cart.loading)
+console.log(loading)
+const addToCard = (e, id) => {
+    console.log("id", id)
+    dispatch(actions.cartInit(id))
+}
     return (
         <div className="CardItem">
             <NavLink to={
@@ -47,7 +56,10 @@ console.log(typeof sale)
                     : <span className="CardItem__content__Price">${price}.00</span>}
                     { sale !== 0 ? <span className="CardItem__content__newPrice">${price * (100 - sale) / 100}.00</span> : null}
                 </p>
-                <Button clicked={clickedToCard} classN="Button--addToCard">Add To Card</Button>
+              
+                <Button clicked={(e) => addToCard(e, id)} classN="Button--addToCard">
+                    
+                    Add To Card</Button>
                 
                 
             </div>

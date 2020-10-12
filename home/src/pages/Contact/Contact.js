@@ -75,7 +75,7 @@ function Contact(props) {
                 <div className="Contact__box__location__box">
                   <FontAwesomeIcon
                     className="Contact__box__location__box__icon"
-                    icon={faMapMarkedAlt}
+                    icon={faEnvelopeOpenText}
                   />
                   <div className="Contact__box__location__box__infor">
                     <p>Email</p>
@@ -98,6 +98,7 @@ function Contact(props) {
                 <div className="map__photo">
                   <div style={{ width: "100%" }}>
                     <iframe
+                    title="aaa"
                       width="100%"
                       height={600}
                       frameBorder={0}

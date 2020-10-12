@@ -38,7 +38,7 @@ function Cart(props) {
                   <tr>
                     <td className="Cart__content__table__body__td">
                       <div>
-                        <img style={{width: "100%"}} src="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic8_0_120x.jpg?v=1582874107" />
+                        <img style={{width: "100%"}} alt="" src="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic8_0_120x.jpg?v=1582874107" />
                       </div>
                       <div className="Cart__content__table__body__box">
                         <p>
@@ -95,7 +95,7 @@ function Cart(props) {
                           Check Out
                       </Button>
                       <div>
-                          <img title="" style={{width: "100%"}} src="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cart_image_500x.png?v=1585021052"/>
+                          <img alt="" style={{width: "100%"}} src="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cart_image_500x.png?v=1585021052"/>
                       </div>
                     </div>
                   </Col>

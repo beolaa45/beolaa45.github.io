@@ -41,7 +41,7 @@ const data1= [
   }
 ]
 function Home() {
- 
+ console.log( )
   const dataBestSeller = useSelector(state => state.home.data);
   const showModalItem = useSelector(state => state.home.showModal);
   const dataModal = useSelector(state => state.home.dataModal);

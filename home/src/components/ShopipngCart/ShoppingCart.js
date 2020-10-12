@@ -22,7 +22,7 @@ function ShoppingCart({wanningChecked, data, closeBasket, viewCart, checkOut, ch
       <div className="ShoppingCart__item">
         <div className="ShoppingCart__item__photo">
           <img
-            title=""
+            alt=""
             src="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic8_0_120x.jpg?v=1582874107"
           />
         </div>
