@@ -4,8 +4,14 @@ import Carousel2 from "../Carousel2/Carousel2";
 import DetailItem from "../DetailItem/DetailItem";
 import Spinnerr from "../UI/Spinner/Spinner";
 import "./ModalItem.scss";
-function ModalItem({ dataModal, loadingShowModal, plus, minus, onChangeQuanlity, link }) {
-  console.log(dataModal, loadingShowModal);
+function ModalItem({
+  dataModal,
+  loadingShowModal,
+  plus,
+  minus,
+  onChangeQuanlity,
+  link,
+}) {
   let renderItem;
   if (dataModal) {
     renderItem = (
@@ -15,14 +21,20 @@ function ModalItem({ dataModal, loadingShowModal, plus, minus, onChangeQuanlity,
             <Carousel2 data={dataModal} />
           </Col>
           <Col xl={6} lg={6} md={6} sm={12} xs={12}>
-            <DetailItem link={link}  plus={plus} minus={minus} onChangeQuanlity={onChangeQuanlity} data={dataModal} />
+            <DetailItem
+              link={link}
+              plus={plus}
+              minus={minus}
+              onChangeQuanlity={onChangeQuanlity}
+              data={dataModal}
+            />
           </Col>
         </Row>
       </Container>
     );
   }
   if (loadingShowModal) {
-    renderItem = <Spinnerr style={{height: "60vh"}}/>;
+    renderItem = <Spinnerr style={{ height: "60vh" }} />;
   }
 
   return <div className="ModalItem">{renderItem}</div>;

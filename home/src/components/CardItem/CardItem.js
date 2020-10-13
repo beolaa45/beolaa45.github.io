@@ -9,11 +9,11 @@ import Spinnerr from '../UI/Spinner/Spinner';
 import { useSelector, useDispatch } from 'react-redux';
 function CardItem({url, sale, price, title, clickedToCard, onQuickView, id, link}) {
 let dispatch = useDispatch();
-let newId = id
+
 let loading = useSelector(state => state.cart.loading)
-console.log(loading)
+
 const addToCard = (e, id) => {
-    console.log("id", id)
+  
     dispatch(actions.cartInit(id))
 }
     return (

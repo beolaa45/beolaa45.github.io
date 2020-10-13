@@ -32,7 +32,7 @@ function DetailItem({data, onChangeQuanlity, plus, minus, link}) {
                 <img src="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cart_image_600x.png?v=1585021052"/>
             </div>
             <p>SKU: N/A</p>
-            <p>Categories: {data.categories.join(', ')}</p>
+            <p>Categories: {data?.categories}</p>
             <div className="DetailItem__boxIcon">
                 <a href="/"><FontAwesomeIcon className="DetailItem__boxIcon__icon" icon={faFacebookF}/></a>
                 <a href="/"><FontAwesomeIcon className="DetailItem__boxIcon__icon" icon={faTwitter}/></a>

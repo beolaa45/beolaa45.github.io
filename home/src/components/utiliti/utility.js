@@ -7,3 +7,8 @@ export const toSlug = (title) => {
 export const toLowerCase = (str) => {
     return str.toLowerCase()
 }
+
+export const toFix = (number) => {
+    return "$"+ parseFloat(number).toFixed(2);
+}
+

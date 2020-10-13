@@ -53,7 +53,7 @@ const productsOnChangeQuanlity = (state, action) => {
 }
 
 const productsPlusQuanlity = (state) => {
-    console.log("ok")
+
     return immutableObject(state, {
         dataModal: {
             ...state.dataModal,
@@ -63,7 +63,7 @@ const productsPlusQuanlity = (state) => {
 }
 
 const productsMinusQuanlity = (state) => {
-    console.log("ok")
+   
     if(state.dataModal.quanlity <= 1 || state.dataModal.quanlity > 100) return state
     return immutableObject(state, {
         dataModal: {

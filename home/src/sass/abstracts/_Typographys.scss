@@ -1,6 +1,6 @@
 @import "./variables";
-.Heading--secondary{
-  font-family: "Poppins", sans-serif, 'Libre Baskerville';
+.Heading--secondary {
+  font-family: "Poppins", sans-serif, "Libre Baskerville";
   font-size: 1.8rem;
   font-weight: 600;
   color: $color-black;
@@ -9,17 +9,16 @@
   transition: $transtion-1;
 }
 
-.Heading--secondary:hover{
+.Heading--secondary:hover {
   color: $color-red;
 }
-.Heading--tertiary{
-    font-size: 5rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+.Heading--tertiary {
+  font-size: 5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 
-    @media screen and (max-width: 575px) {
-        font-size: 3.5rem;
-      }
-
+  @media screen and (max-width: 575px) {
+    font-size: 3.5rem;
+  }
 }

@@ -1,17 +1,8 @@
+import React from "react";
+import "./BackDrop.scss";
 
-
-import React from 'react'
-import "./BackDrop.scss"
-
-
-function BackDrop({show, clicked}) {
-    console.log(show)
-    return (
-       show ? <div className="BackDrop" onClick={clicked}/> : null
-    )
+function BackDrop({ show, clicked }) {
+  return show ? <div className="BackDrop" onClick={clicked} /> : null;
 }
 
-
-
-export default BackDrop
-
+export default BackDrop;

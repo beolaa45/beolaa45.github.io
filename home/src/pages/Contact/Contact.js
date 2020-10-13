@@ -92,13 +92,19 @@ function Contact(props) {
           <Row>
             <Col>
               <div>
-                <h2 style={{fontWeight: "600", marginBottom: "2rem", fontSize: "2.2rem"}}>
+                <h2
+                  style={{
+                    fontWeight: "600",
+                    marginBottom: "2rem",
+                    fontSize: "2.2rem",
+                  }}
+                >
                   Map
                 </h2>
                 <div className="map__photo">
                   <div style={{ width: "100%" }}>
                     <iframe
-                    title="aaa"
+                      title="aaa"
                       width="100%"
                       height={600}
                       frameBorder={0}
