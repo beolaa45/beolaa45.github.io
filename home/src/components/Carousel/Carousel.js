@@ -7,7 +7,7 @@ import { toFix, toSlug } from "../utiliti/utility";
 import "./Carousel.scss";
 
 function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
+    const { className, style, onClick  } = props;
     return (
       <div
         className={className}
@@ -28,7 +28,6 @@ function SampleNextArrow(props) {
     );
   }
  const SimpleSlider = ({api, data}) => {
-  console.log(data?.splice(-4))
     const settings = {
       dots: false,
       infinite: true,
@@ -75,7 +74,7 @@ function SampleNextArrow(props) {
         <div key={item.id}>
         <CardItem
           // clickedToCard
-          // onQuickView
+      
           sale={item.sale}
           price={item.price}
           title={item.title}

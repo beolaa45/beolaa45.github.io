@@ -11,6 +11,8 @@ import * as actions from "../../store/actions/index";
 import Spinnerr from "../../components/UI/Spinner/Spinner";
 import Modal from "../../components/UI/Modal/Modal";
 import ModalItem from "../../components/ModalItem/ModalItem";
+import Button from "../../components/UI/Button/Button";
+import { render } from "react-dom";
 
 function Products(props) {
   let dataProducts = useSelector((state) => state.products.data);
@@ -19,7 +21,28 @@ function Products(props) {
   let showModalItem = useSelector((state) => state.products.showModal);
   let loadingShowModal = useSelector((state) => state.products.loadingModal);
   let dataModal = useSelector((state) => state.products.dataModal);
+ let totalItem = localStorage.getItem("x-total-count")
+ let page = Math.ceil(totalItem/8)
+ let renderButton = [];
+ let _sort = "id";
+ let _order = "desc";
+ let _limit = "8";
+ let _page = '1'
 
+ 
+
+ const handleSelect = (e) => {
+   let value = e.target.value;
+ };
+ const  selectPage = (i) => {
+    _page = i
+
+ }
+
+ 
+ for(let i = 1; i <= page; i++){
+ renderButton.push(<Button classN={ _page == i ? "Button--page active" : "Button--page"} onClick={() => selectPage(i)}>{i}</Button>)
+ }
   const clickedToCard = () => {};
 
   const onQuickView = (e, id) => {
@@ -56,13 +79,7 @@ function Products(props) {
   const turnOffModal = () => {
     dispatch(actions.productsTurnOffModal());
   };
-  let _sort = "id";
-  let _order = "desc";
-  let _limit = "8";
 
-  const handleSelect = (e) => {
-    let value = e.target.value;
-  };
 
   let renderProduct;
   if (dataProducts) {
@@ -166,10 +183,17 @@ function Products(props) {
                 </div>
                 <div className="Products__content__list__content">
                   <Row>{renderProduct}</Row>
+                  <Row>
+                      <Col>
+                      <div style={{textAlign: "center"}}>
+                       {renderButton && renderButton}
+                      </div>
+                       
+                      </Col>
+                  </Row>
                 </div>
               </div>
             </Col>
-            <Col xl={12} lg={12} md={12} sm={12} xs={12}></Col>
           </Row>
         </Container>
       </section>
@@ -177,7 +201,7 @@ function Products(props) {
         <Container>
           <Row>
             <Col>
-              <Carousel data={dataProducts}/>
+              <Carousel data={dataProducts && dataProducts} />
             </Col>
           </Row>
         </Container>

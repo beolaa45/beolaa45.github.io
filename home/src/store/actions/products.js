@@ -1,6 +1,7 @@
 import * as actionTypes from "./actionTypes";
 import axios from "../../api/baseApi";
 
+///PRODUCT ITEM
 const productsStart = () => {
   return {
     type: actionTypes.FETCH_PRODUCTS_START,
@@ -16,7 +17,7 @@ const productsSuccess = (data) => {
 
 const productsFail = (error) => {
   return {
-    type: actionTypes.FETCH_PRODUCTS_SUCCESS,
+    type: actionTypes.FETCH_PRODUCTS_FAIL,
     error,
   };
 };
@@ -30,7 +31,7 @@ export const productsInit = () => {
       .catch((error) => dispatch(productsFail(error)));
   };
 };
-
+/////SHOWMODAL AND ITEM
 export const productsItemModalStart = () => {
   return {
     type: actionTypes.FETCH_PRODUCTS_MODAL_ITEM_START,
@@ -62,6 +63,8 @@ export const productsTurnOffModal = () => {
     type: actionTypes.FETCH_PRODUCTS_TURN_OFF_MODAL,
   };
 };
+
+
 
 export const productsItemModalInit = (id) => {
   return (dispatch) => {
@@ -101,3 +104,10 @@ export const productsSortStart = (data) => {
     data,
   };
 };
+
+
+///////SELECT PAGE
+
+export const productSelectPage = (data) => {
+
+}

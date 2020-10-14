@@ -16,6 +16,7 @@ const productsStart = (state, action) => {
 }
 
 const productsSuccess = (state, action) => {
+    console.log("123")
     return immutableObject(state, {loading: false, data: action.data})
 }
 
