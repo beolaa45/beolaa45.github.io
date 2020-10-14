@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Carousel } from "react-bootstrap";
+
 import Slider from "react-slick";
 import CardItem from "../CardItem/CardItem";
 import Heading from "../Heading/Heading";
+import { toFix, toSlug } from "../utiliti/utility";
 import "./Carousel.scss";
 
 function SampleNextArrow(props) {
@@ -26,8 +27,8 @@ function SampleNextArrow(props) {
       />
     );
   }
- const SimpleSlider = ({api}) => {
-
+ const SimpleSlider = ({api, data}) => {
+  console.log(data?.splice(-4))
     const settings = {
       dots: false,
       infinite: true,
@@ -69,70 +70,27 @@ function SampleNextArrow(props) {
         }
       ]
     };
+    let render = data?.map(item => {
+      return(
+        <div key={item.id}>
+        <CardItem
+          // clickedToCard
+          // onQuickView
+          sale={item.sale}
+          price={item.price}
+          title={item.title}
+          url={item.images[0]}
+          id={item.id}
+          link={`products/${toSlug(item.title)}`}
+      />
+        </div>
+      )
+    })
     return (
       <div className="Carousel">
        <Heading title="You may also like" />
         <Slider {...settings}>
-          <div >
-          <CardItem
-            // clickedToCard
-            // onQuickView
-            sale={10}
-            price={4000}
-            title="Ysamsung Camera"
-            url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-        />
-          </div>
-          <div >
-          <CardItem
-            // clickedToCard
-            // onQuickView
-            sale={10}
-            price={4000}
-            title="Ysamsung Camera"
-            url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-        />
-          </div>
-          <div >
-          <CardItem
-            // clickedToCard
-            // onQuickView
-            sale={10}
-            price={4000}
-            title="Ysamsung Camera"
-            url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-        />
-          </div>
-          <div >
-          <CardItem
-            // clickedToCard
-            // onQuickView
-            sale={10}
-            price={4000}
-            title="Ysamsung Camera"
-            url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-        />
-          </div>
-          <div >
-          <CardItem
-            // clickedToCard
-            // onQuickView
-            sale={10}
-            price={4000}
-            title="Ysamsung Camera"
-            url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-        />
-          </div>
-          <div >
-          <CardItem
-            // clickedToCard
-            // onQuickView
-            sale={10}
-            price={4000}
-            title="Ysamsung Camera"
-            url="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic1_0_360x.jpg?v=1582872621"
-        />
-          </div>
+          {render}
         </Slider>
       </div>
     );

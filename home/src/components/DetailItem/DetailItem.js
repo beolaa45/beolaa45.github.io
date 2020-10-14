@@ -10,7 +10,11 @@ import * as actions from "../../store/actions/index";
 import { NavLink } from 'react-router-dom'
 import { toSlug } from '../utiliti/utility'
 function DetailItem({data, onChangeQuanlity, plus, minus, link}) {
-    
+    const dispatch = useDispatch()
+    const addToCard = (e, id) => {
+  
+        dispatch(actions.cartInit(id))
+    }
     if(!data) return null;
     return (
         <div className="DetailItem">
@@ -26,10 +30,10 @@ function DetailItem({data, onChangeQuanlity, plus, minus, link}) {
             </p>
             <div className="DetailItem__button">
                 <ButtonAmount plus={plus} minus={minus} value={data.quanlity === 0 ? '' : data.quanlity} onChange={onChangeQuanlity}/>
-                <Button classN="Button--detail" >Add To Cart </Button>
+                <Button clicked={(e) => addToCard(e, data.id)} classN="Button--detail" >Add To Cart </Button>
             </div>
             <div className="DetailItem__photo">
-                <img src="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cart_image_600x.png?v=1585021052"/>
+                <img alt="" src="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cart_image_600x.png?v=1585021052"/>
             </div>
             <p>SKU: N/A</p>
             <p>Categories: {data?.categories}</p>

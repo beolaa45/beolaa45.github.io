@@ -129,14 +129,10 @@ function Products(props) {
         <Container>
           <Row>
             <Col xl={3} lg={3} md={12} sm={12} xs={12}>
-              <form className="Products__content__filter">
+              <form className="Products__content__filter" >
                 <Filter
                   title="Categories"
                   subTitle={["Camera", "Speaker", "Laptop"]}
-                />
-                <Filter
-                  title="Price"
-                  subTitle={["$0 - $50", "$50 - $100", "$100 - $150"]}
                 />
                 <div className="Products__content__filter__box">
                   <button className="Products__content__filter__box__submit">
@@ -181,7 +177,7 @@ function Products(props) {
         <Container>
           <Row>
             <Col>
-              <Carousel />
+              <Carousel data={dataProducts}/>
             </Col>
           </Row>
         </Container>

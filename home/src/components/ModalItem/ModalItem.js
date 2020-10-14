@@ -12,6 +12,7 @@ function ModalItem({
   onChangeQuanlity,
   link,
 }) {
+  console.log(dataModal)
   let renderItem;
   if (dataModal) {
     renderItem = (

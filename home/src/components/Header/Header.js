@@ -20,6 +20,7 @@ function Header(props) {
   let [wanningChecked, setWanningChecked] = useState(null);
   let data = useSelector((state) => state.cart.data);
   let basket = 0;
+  console.log(data)
   data.map((item) => {
     basket += item.quanlity;
   });
@@ -71,7 +72,7 @@ function Header(props) {
       <BackDrop show={showBasket} clicked={clickedBasket} />
       <SideDrawer classN="SideDrawer--basket" show={showBasket}>
         <ShoppingCart
-          data
+          data={data}
           closeBasket={closeBasket}
           viewCart={viewCart}
           checkOut={checkOut}

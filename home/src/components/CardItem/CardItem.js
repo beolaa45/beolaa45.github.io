@@ -7,11 +7,12 @@ import "./CardItem.scss";
 import Button from '../UI/Button/Button';
 import Spinnerr from '../UI/Spinner/Spinner';
 import { useSelector, useDispatch } from 'react-redux';
+import { toFix } from '../utiliti/utility'
 function CardItem({url, sale, price, title, clickedToCard, onQuickView, id, link}) {
 let dispatch = useDispatch();
 
 let loading = useSelector(state => state.cart.loading)
-
+let newPrice = price * (100 - sale) / 100
 const addToCard = (e, id) => {
   
     dispatch(actions.cartInit(id))
@@ -52,9 +53,9 @@ const addToCard = (e, id) => {
                 <h2 className="Heading--secondary">{title}</h2>
                 </NavLink>
                 <p className="CardItem__content__box">
-                    { sale !== 0 ? <del className="CardItem__content__oldPrice">${price}.00</del>
-                    : <span className="CardItem__content__Price">${price}.00</span>}
-                    { sale !== 0 ? <span className="CardItem__content__newPrice">${price * (100 - sale) / 100}.00</span> : null}
+                    { sale !== 0 ? <del className="CardItem__content__oldPrice">{toFix(price)}</del>
+                    : <span className="CardItem__content__Price">{toFix(price)}</span>}
+                    {sale !== 0 ? <span className="CardItem__content__newPrice">{toFix(newPrice)}</span> : null}
                 </p>
               
                 <Button clicked={(e) => addToCard(e, id)} classN="Button--addToCard">

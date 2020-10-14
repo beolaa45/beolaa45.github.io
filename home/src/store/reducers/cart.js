@@ -14,40 +14,39 @@ const cartStart = (state) => {
 
 const cartSuccess = (state, action) => {
   let newState;
-  let fag = true;
+
   let newData = [...state?.data];
-  for (let i = 0; i < newData?.length; i++) {
-    if (newData[i].id !== action.data.id) {
-      fag = false;
+  if (newData.length) {
+    for (let i = 0; i < newData?.length; i++) {
+      if (newData[i].id !== action.data.id) {
+        newState = immutableObject(state, {
+          loading: false,
+          data: state.data.concat([action.data]),
+        });
 
-      newState = immutableObject(state, {
-        loading: false,
-        data: state.data.concat([action.data]),
-      });
+        localStorage.setItem("cart", JSON.stringify(newState));
+      } else {
+        newData[i] = {
+          ...newData[i],
+          quanlity: newData[i].quanlity + action.data.quanlity,
+        };
 
-      localStorage.setItem("cart", JSON.stringify(newState));
-    } else {
-      newData[i] = {
-        ...newData[i],
-        quanlity: newData[i].quanlity + action.data.quanlity,
-      };
-
-      localStorage.setItem(
-        "cart",
-        JSON.stringify({ data: newData, loading: false })
-      );
-      return { data: newData, loading: false };
+        localStorage.setItem(
+          "cart",
+          JSON.stringify({ data: newData, loading: false })
+        );
+        return { data: newData, loading: false };
+      }
     }
-  }
-
-  if (fag && !localStorage.getItem("cart")) {
-    fag = false;
+  } else {
     newState = immutableObject(state, {
       loading: false,
       data: state.data.concat([action.data]),
     });
     localStorage.setItem("cart", JSON.stringify(newState));
+   
   }
+
   return newState;
 };
 
