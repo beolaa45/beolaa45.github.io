@@ -26,8 +26,8 @@ export const cartInit = (id) => {
     axios.get("/products/" + id).then((data) => {
         console.log(data)
       dispatch(cartSuccess(data));
-    });
-    //    .catch(error => cartFail(error))
+    })
+     .catch(error => cartFail(error))
   };
 };
 
