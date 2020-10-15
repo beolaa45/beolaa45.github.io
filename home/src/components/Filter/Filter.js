@@ -1,11 +1,14 @@
 import React from 'react'
 import { toLowerCase } from '../utiliti/utility'
 import "./Filter.scss"
-function Filter({title, subTitle}) {
+function Filter({title, subTitle, onChange}) {
     let render = subTitle.map((value, index) => {
         return(
-            <div className="Filter__group" key={index}>
-            <input id={toLowerCase(value)} name={toLowerCase(value)} value={toLowerCase(value)} className="Filter__group__checkbox" type="checkbox" />
+           index === 0 ? <div className="Filter__group" key={index}>
+            <input onChange={onChange} id={toLowerCase(value)} name="categories" defaultChecked  value={toLowerCase(value)} className="Filter__group__checkbox" type="radio" />
+            <label htmlFor={toLowerCase(value)} className="Filter__group__label">{value}</label>
+        </div> : <div className="Filter__group" key={index}>
+            <input onChange={onChange} id={toLowerCase(value)} name="categories"  value={toLowerCase(value)} className="Filter__group__checkbox" type="radio" />
             <label htmlFor={toLowerCase(value)} className="Filter__group__label">{value}</label>
         </div>
         )

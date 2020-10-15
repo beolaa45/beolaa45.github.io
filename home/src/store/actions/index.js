@@ -20,6 +20,7 @@ export {
   productsOnChangeQuanlity,
   productsPlusQuanlity,
   productsMiunsQuanlity,
+  productsSortInit
 } from "./products";
 export {
   cartInit,

@@ -16,7 +16,6 @@ const productsStart = (state, action) => {
 }
 
 const productsSuccess = (state, action) => {
-    console.log("123")
     return immutableObject(state, {loading: false, data: action.data})
 }
 
@@ -73,6 +72,13 @@ const productsMinusQuanlity = (state) => {
         }
     })
 }
+const productsSortStart = (state) => {
+    return immutableObject(state, {loading: true})
+}
+const productsSortSuccess = (state, action) => {
+   
+    return immutableObject(state, {loading: false, data: action.data})
+}
 
 const reducer = (state = initalState, action) => {
     switch (action.type) {
@@ -98,6 +104,11 @@ const reducer = (state = initalState, action) => {
             return productsPlusQuanlity(state)
         case actionTypes.FETCH_PRODUCTS_ON_CHANGE_QUANLITY:
             return productsOnChangeQuanlity(state, action)
+        case actionTypes.FETCH_PRODUCTS_SORT_START:
+            return productsSortStart(state, action)
+        case actionTypes.FETCH_PRODUCTS_SORT_SUCCESS:
+            console.log("ok")
+            return productsSortSuccess(state, action)
         default:
             return state
             

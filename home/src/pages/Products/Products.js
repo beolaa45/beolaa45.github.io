@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Banner from "../../components/Banner/Banner";
 import Filter from "../../components/Filter/Filter";
@@ -12,37 +12,129 @@ import Spinnerr from "../../components/UI/Spinner/Spinner";
 import Modal from "../../components/UI/Modal/Modal";
 import ModalItem from "../../components/ModalItem/ModalItem";
 import Button from "../../components/UI/Button/Button";
-import { render } from "react-dom";
-
-function Products(props) {
+import { useHistory } from "react-router-dom";
+import queryString from "querystring";
+var likeProducts = [ {
+    "id": 1,
+    "title": "Lomo Sanremo Edition",
+    "images": ["https://i.imgur.com/JrH9udG.jpg", "https://i.imgur.com/PAsLFGS.jpg", "https://i.imgur.com/MxSUt53.jpg"],
+    "price": 120,
+    "sale": 20,
+    "status": false,
+    "producer": "Lomo",
+    "categories": "Camera",
+    "quanlity": 1
+  },
+  {
+    "id": 2,
+    "title": "Beats Solo3 Wireless",
+    "images": ["https://i.imgur.com/d4FAl7i.jpg", "https://i.imgur.com/dxK88Px.jpg", "https://i.imgur.com/65d518e.jpg","https://i.imgur.com/NCfPfbp.jpg"],
+    "price": 100,
+    "sale": 0,
+    "status": false,
+    "producer": "Lomo",
+    "categories": "Speaker",
+    "quanlity": 1
+  },
+  {
+    "id": 3,
+    "title": "Ysamsung Camera",
+    "images": ["https://i.imgur.com/SM3VuHR.jpg", "https://i.imgur.com/SrVWY5F.jpg", "https://i.imgur.com/umasxMr.jpeg"],
+    "price": 100,
+    "sale": 0,
+    "status": false,
+    "producer": "Samsung",
+    "categories": "Camera",
+    "quanlity": 1
+  },
+  {
+    "id": 4,
+    "title": "Ygoogle Speaker",
+    "images": ["https://i.imgur.com/4mZgEYM.jpg","https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic4_1_720x.jpg?v=1582862216"],
+    "price": 120,
+    "sale": 0,
+    "status": false,
+    "producer": "Google",
+    "categories": "Speaker",
+    "quanlity": 1
+  },
+  {
+    "id": 5,
+    "title": "Ybeoplay H9i",
+    "images": ["https://i.imgur.com/7u8na5o.jpg","https://i.imgur.com/aIy3zgS.jpg", "https://i.imgur.com/2I8FVNh.jpg"],
+    "price": 150,
+    "sale": 29,
+    "status": false,
+    "producer": "Google",
+    "categories": "Speaker",
+    "quanlity": 1
+  },
+  {
+    "id": 6,
+    "title": "YApple MacBook",
+    "images": ["https://i.imgur.com/iJbjLaJ.jpg","https://i.imgur.com/iJbjLaJ.jpg", "https://i.imgur.com/jU5hrDm.jpg"],
+    "price": 130,
+    "sale": 0,
+    "status": false,
+    "producer": "apple",
+    "categories": "Laptop",
+    "quanlity": 1
+  }]
+function Products() {
   let dataProducts = useSelector((state) => state.products.data);
   let loading = useSelector((state) => state.products.loading);
   let dispatch = useDispatch();
+  let history = useHistory();
   let showModalItem = useSelector((state) => state.products.showModal);
   let loadingShowModal = useSelector((state) => state.products.loadingModal);
   let dataModal = useSelector((state) => state.products.dataModal);
- let totalItem = localStorage.getItem("x-total-count")
- let page = Math.ceil(totalItem/8)
- let renderButton = [];
- let _sort = "id";
- let _order = "desc";
- let _limit = "8";
- let _page = '1'
 
- 
+  let totalItem = localStorage.getItem("x-total-count");
+  let page = Math.ceil(totalItem / 8);
+  let renderButton = [];
 
- const handleSelect = (e) => {
-   let value = e.target.value;
- };
- const  selectPage = (i) => {
-    _page = i
+  let query = {
+    categories_like: "",
+    _sort: "id",
+    _order: "desc",
+    _limit: "9",
+    _page: 1,
+  };
 
- }
+  const handleSelect = (e) => {
+    [query._sort, query._order] = e.target.value.split("-");
+    fetchDataSort("/products?" + queryString.stringify(query))
+  };
+  const selectPage = (i) => {
+    query._page = i;
+  };
+  const onChangeFilter = (e) => {
+    let categories = e.target.value
+    if(categories == "all"){
+        query.categories_like = ""
+    }else{
+        query.categories_like = categories
+    }
+  }
+  const fetchDataSort = (url) => {
+    dispatch(actions.productsSortInit(url));
+    history.push(url);
+  };
+  const filter = (e) => {
+    e.preventDefault();
+    fetchDataSort("/products?" + queryString.stringify(query));
+  };
 
- 
- for(let i = 1; i <= page; i++){
- renderButton.push(<Button classN={ _page == i ? "Button--page active" : "Button--page"} onClick={() => selectPage(i)}>{i}</Button>)
- }
+  for (let i = 1; i <= page; i++) {
+    renderButton.push(
+      <Button
+        classN={query._page == i ? "Button--page active" : "Button--page"}
+        onClick={() => selectPage(i)}
+      >
+        {i}
+      </Button>
+    );
+  }
   const clickedToCard = () => {};
 
   const onQuickView = (e, id) => {
@@ -69,6 +161,7 @@ function Products(props) {
     dispatch(actions.productsMiunsQuanlity());
   };
 
+  
   useEffect(() => {
     dispatch(actions.productsInit());
     window.scrollTo({
@@ -76,10 +169,10 @@ function Products(props) {
       behavior: "smooth",
     });
   }, []);
+  useEffect(() => {}, [dataProducts]);
   const turnOffModal = () => {
     dispatch(actions.productsTurnOffModal());
   };
-
 
   let renderProduct;
   if (dataProducts) {
@@ -146,13 +239,17 @@ function Products(props) {
         <Container>
           <Row>
             <Col xl={3} lg={3} md={12} sm={12} xs={12}>
-              <form className="Products__content__filter" >
+              <form className="Products__content__filter">
                 <Filter
                   title="Categories"
-                  subTitle={["Camera", "Speaker", "Laptop"]}
+                  subTitle={["All", "Camera", "Speaker", "Laptop"]}
+                  onChange={e => onChangeFilter(e)}
                 />
                 <div className="Products__content__filter__box">
-                  <button className="Products__content__filter__box__submit">
+                  <button
+                    onClick={(e) => filter(e)}
+                    className="Products__content__filter__box__submit"
+                  >
                     Filter
                   </button>
                   <button className="Products__content__filter__box__submit FilterOut">
@@ -169,10 +266,10 @@ function Products(props) {
                   </p>
                   <select
                     id="selectValue"
-                    onClick={handleSelect}
+                    onChange={handleSelect}
                     className="Products__content__list__filter__select"
                   >
-                    <option value="default" select="selected">
+                    <option value="id-asc" select="selected">
                       Mặc định
                     </option>
                     <option value="title-asc">A đến Z</option>
@@ -184,12 +281,11 @@ function Products(props) {
                 <div className="Products__content__list__content">
                   <Row>{renderProduct}</Row>
                   <Row>
-                      <Col>
-                      <div style={{textAlign: "center"}}>
-                       {renderButton && renderButton}
+                    <Col>
+                      <div style={{ textAlign: "center" }}>
+                        {renderButton && renderButton}
                       </div>
-                       
-                      </Col>
+                    </Col>
                   </Row>
                 </div>
               </div>
@@ -201,7 +297,7 @@ function Products(props) {
         <Container>
           <Row>
             <Col>
-              <Carousel data={dataProducts && dataProducts} />
+              <Carousel data={likeProducts && likeProducts} />
             </Col>
           </Row>
         </Container>

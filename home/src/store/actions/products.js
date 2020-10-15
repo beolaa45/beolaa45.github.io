@@ -98,16 +98,38 @@ export const productsMiunsQuanlity = () => {
   };
 };
 
-export const productsSortStart = (data) => {
+export const productsSortStart = () => {
   return {
-    type: actionTypes.FETCH_PRODUCTS_SORT,
-    data,
+    type: actionTypes.FETCH_PRODUCTS_SORT_START
   };
 };
 
+export const productsSortSuccess = (data) => {
+   
+    return {
+      type: actionTypes.FETCH_PRODUCTS_SORT_SUCCESS,
+      data,
+    };
+  };
 
-///////SELECT PAGE
+  export const productsSortFail = (error) => {
+    return {
+      type: actionTypes.FETCH_PRODUCTS_SORT_FAIL,
+      error,
+    };
+  };
 
-export const productSelectPage = (data) => {
+
+export const productsSelectPage = (data) => {
 
 }
+
+export const productsSortInit = (url) => {
+    return dispatch => {
+        dispatch(productsSortStart())
+        axios.get(url)
+        .then((data) => dispatch(productsSortSuccess(data)))
+        .catch(error => dispatch(productsSortFail(error)))
+    }
+}
+

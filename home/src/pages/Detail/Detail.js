@@ -107,7 +107,6 @@ function Detail(props) {
           </Row>
         </Container>
       </section>
-      <div>Quiz detail {id}</div>
       {renderDetaiItem}
     </Fragment>
   );
