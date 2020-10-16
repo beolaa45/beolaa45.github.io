@@ -1,16 +1,17 @@
-import React from "react";
+import React, { Fragment, useEffect } from "react";
 import "./ShoppingCart.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimesCircle, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faStoreAltSlash, faTimesCircle, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import ButtonAmount from "../UI/ButtonAmount/ButtonAmount";
 import Button from "../UI/Button/Button";
 import { toFix } from "../utiliti/utility";
 import { useDispatch } from "react-redux";
 import * as actions from '../../store/actions/index'
+import { useHistory } from "react-router-dom";
 function ShoppingCart({wanningChecked, data, closeBasket, viewCart, checkOut, changeChecked, checked }) {
     let dispatch = useDispatch();
-
-    let total = 0
+    let history = useHistory()
+    var total = null
     const cartDelete = (id) => {
         dispatch(actions.cartDelete(id));
       };
@@ -35,7 +36,7 @@ function ShoppingCart({wanningChecked, data, closeBasket, viewCart, checkOut, ch
     let render
     if(data.length){
         render = data.map(item => {
-            total += item.price
+            total += (item.quanlity * item.price)
             return (
               <div className="ShoppingCart__item" key={item.id}>
                 <div className="ShoppingCart__item__photo" >
@@ -58,9 +59,13 @@ function ShoppingCart({wanningChecked, data, closeBasket, viewCart, checkOut, ch
             );
         })
     }
+    
    
   return (
-    <div className="ShoppingCart">
+      <Fragment>
+
+    
+   {data.length ? (<div className="ShoppingCart">
       <div className="ShoppingCart__header">
         <p className="ShoppingCart__header__title">Shopping Cart</p>
         <div onClick={closeBasket}>
@@ -73,29 +78,10 @@ function ShoppingCart({wanningChecked, data, closeBasket, viewCart, checkOut, ch
         
       </div>
       {render}
-      {/* <div className="ShoppingCart__item">
-        <div className="ShoppingCart__item__photo">
-          <img
-            alt=""
-            src="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic8_0_120x.jpg?v=1582874107"
-          />
-        </div>
-        <div className="ShoppingCart__item__content">
-          <p className="ShoppingCart__item__content__title">
-            Contemporary design classic
-          </p>
-          <p className="ShoppingCart__item__content__price">$25.00</p>
-          <ButtonAmount />
-          <FontAwesomeIcon
-            className="ShoppingCart__item__content__icon"
-            icon={faTrashAlt}
-          />
-        </div>
-      </div> */}
       <div className="ShoppingCart__total">
         <div className="ShoppingCart__total__header" >
           <p className="ShoppingCart__total__header__title">Subtotal:</p>
-    <p className="ShoppingCart__total__header__price">{total && toFix(total)}</p>
+    <p className="ShoppingCart__total__header__price">{toFix(total)}</p>
         </div>
         <div>
             <p  className="ShoppingCart__total__text">Taxes, shipping and discounts codes calculated at checkout</p>
@@ -116,7 +102,20 @@ function ShoppingCart({wanningChecked, data, closeBasket, viewCart, checkOut, ch
         </Button>
         {wanningChecked ? wanningChecked : null}
       </div>
-    </div>
+    </div> ): (
+                <div style={{ textAlign: "center" }}>
+                  <FontAwesomeIcon
+                    icon={faStoreAltSlash}
+                    style={{ fontSize: "10rem", marginBottom: "2rem" }}
+                  />
+                  <p style={{ fontSize: "2.5rem", marginBottom: "2rem" }}>
+                    Your cart is empty.
+                  </p>
+                  <Button clicked={() => history.push("/products")} classN="Button--black">RETURN TO SHOP</Button>
+                </div>
+              )
+    }
+      </Fragment>
   );
 }
 

@@ -14,72 +14,98 @@ import ModalItem from "../../components/ModalItem/ModalItem";
 import Button from "../../components/UI/Button/Button";
 import { useHistory } from "react-router-dom";
 import queryString from "querystring";
-var likeProducts = [ {
-    "id": 1,
-    "title": "Lomo Sanremo Edition",
-    "images": ["https://i.imgur.com/JrH9udG.jpg", "https://i.imgur.com/PAsLFGS.jpg", "https://i.imgur.com/MxSUt53.jpg"],
-    "price": 120,
-    "sale": 20,
-    "status": false,
-    "producer": "Lomo",
-    "categories": "Camera",
-    "quanlity": 1
+var likeProducts = [
+  {
+    id: 1,
+    title: "Lomo Sanremo Edition",
+    images: [
+      "https://i.imgur.com/JrH9udG.jpg",
+      "https://i.imgur.com/PAsLFGS.jpg",
+      "https://i.imgur.com/MxSUt53.jpg",
+    ],
+    price: 120,
+    sale: 20,
+    status: false,
+    producer: "Lomo",
+    categories: "Camera",
+    quanlity: 1,
   },
   {
-    "id": 2,
-    "title": "Beats Solo3 Wireless",
-    "images": ["https://i.imgur.com/d4FAl7i.jpg", "https://i.imgur.com/dxK88Px.jpg", "https://i.imgur.com/65d518e.jpg","https://i.imgur.com/NCfPfbp.jpg"],
-    "price": 100,
-    "sale": 0,
-    "status": false,
-    "producer": "Lomo",
-    "categories": "Speaker",
-    "quanlity": 1
+    id: 2,
+    title: "Beats Solo3 Wireless",
+    images: [
+      "https://i.imgur.com/d4FAl7i.jpg",
+      "https://i.imgur.com/dxK88Px.jpg",
+      "https://i.imgur.com/65d518e.jpg",
+      "https://i.imgur.com/NCfPfbp.jpg",
+    ],
+    price: 100,
+    sale: 0,
+    status: false,
+    producer: "Lomo",
+    categories: "Speaker",
+    quanlity: 1,
   },
   {
-    "id": 3,
-    "title": "Ysamsung Camera",
-    "images": ["https://i.imgur.com/SM3VuHR.jpg", "https://i.imgur.com/SrVWY5F.jpg", "https://i.imgur.com/umasxMr.jpeg"],
-    "price": 100,
-    "sale": 0,
-    "status": false,
-    "producer": "Samsung",
-    "categories": "Camera",
-    "quanlity": 1
+    id: 3,
+    title: "Ysamsung Camera",
+    images: [
+      "https://i.imgur.com/SM3VuHR.jpg",
+      "https://i.imgur.com/SrVWY5F.jpg",
+      "https://i.imgur.com/umasxMr.jpeg",
+    ],
+    price: 100,
+    sale: 0,
+    status: false,
+    producer: "Samsung",
+    categories: "Camera",
+    quanlity: 1,
   },
   {
-    "id": 4,
-    "title": "Ygoogle Speaker",
-    "images": ["https://i.imgur.com/4mZgEYM.jpg","https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic4_1_720x.jpg?v=1582862216"],
-    "price": 120,
-    "sale": 0,
-    "status": false,
-    "producer": "Google",
-    "categories": "Speaker",
-    "quanlity": 1
+    id: 4,
+    title: "Ygoogle Speaker",
+    images: [
+      "https://i.imgur.com/4mZgEYM.jpg",
+      "https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic4_1_720x.jpg?v=1582862216",
+    ],
+    price: 120,
+    sale: 0,
+    status: false,
+    producer: "Google",
+    categories: "Speaker",
+    quanlity: 1,
   },
   {
-    "id": 5,
-    "title": "Ybeoplay H9i",
-    "images": ["https://i.imgur.com/7u8na5o.jpg","https://i.imgur.com/aIy3zgS.jpg", "https://i.imgur.com/2I8FVNh.jpg"],
-    "price": 150,
-    "sale": 29,
-    "status": false,
-    "producer": "Google",
-    "categories": "Speaker",
-    "quanlity": 1
+    id: 5,
+    title: "Ybeoplay H9i",
+    images: [
+      "https://i.imgur.com/7u8na5o.jpg",
+      "https://i.imgur.com/aIy3zgS.jpg",
+      "https://i.imgur.com/2I8FVNh.jpg",
+    ],
+    price: 150,
+    sale: 29,
+    status: false,
+    producer: "Google",
+    categories: "Speaker",
+    quanlity: 1,
   },
   {
-    "id": 6,
-    "title": "YApple MacBook",
-    "images": ["https://i.imgur.com/iJbjLaJ.jpg","https://i.imgur.com/iJbjLaJ.jpg", "https://i.imgur.com/jU5hrDm.jpg"],
-    "price": 130,
-    "sale": 0,
-    "status": false,
-    "producer": "apple",
-    "categories": "Laptop",
-    "quanlity": 1
-  }]
+    id: 6,
+    title: "YApple MacBook",
+    images: [
+      "https://i.imgur.com/iJbjLaJ.jpg",
+      "https://i.imgur.com/iJbjLaJ.jpg",
+      "https://i.imgur.com/jU5hrDm.jpg",
+    ],
+    price: 130,
+    sale: 0,
+    status: false,
+    producer: "apple",
+    categories: "Laptop",
+    quanlity: 1,
+  },
+];
 function Products() {
   let dataProducts = useSelector((state) => state.products.data);
   let loading = useSelector((state) => state.products.loading);
@@ -103,19 +129,21 @@ function Products() {
 
   const handleSelect = (e) => {
     [query._sort, query._order] = e.target.value.split("-");
-    fetchDataSort("/products?" + queryString.stringify(query))
+    fetchDataSort("/products?" + queryString.stringify(query));
   };
   const selectPage = (i) => {
+    console.log(i);
     query._page = i;
+    fetchDataSort("/products?" + queryString.stringify(query));
   };
   const onChangeFilter = (e) => {
-    let categories = e.target.value
-    if(categories == "all"){
-        query.categories_like = ""
-    }else{
-        query.categories_like = categories
+    let categories = e.target.value;
+    if (categories == "all") {
+      query.categories_like = "";
+    } else {
+      query.categories_like = categories;
     }
-  }
+  };
   const fetchDataSort = (url) => {
     dispatch(actions.productsSortInit(url));
     history.push(url);
@@ -127,12 +155,15 @@ function Products() {
 
   for (let i = 1; i <= page; i++) {
     renderButton.push(
-      <Button
-        classN={query._page == i ? "Button--page active" : "Button--page"}
-        onClick={() => selectPage(i)}
-      >
-        {i}
-      </Button>
+      <div key={i} style={{ display: "inline-block" }}>
+        <Button
+          key={i}
+          classN={query._page == i ? "Button--page active" : "Button--page"}
+          clicked={() => selectPage(i)}
+        >
+          {i}
+        </Button>
+      </div>
     );
   }
   const clickedToCard = () => {};
@@ -161,7 +192,6 @@ function Products() {
     dispatch(actions.productsMiunsQuanlity());
   };
 
-  
   useEffect(() => {
     dispatch(actions.productsInit());
     window.scrollTo({
@@ -243,7 +273,7 @@ function Products() {
                 <Filter
                   title="Categories"
                   subTitle={["All", "Camera", "Speaker", "Laptop"]}
-                  onChange={e => onChangeFilter(e)}
+                  onChange={(e) => onChangeFilter(e)}
                 />
                 <div className="Products__content__filter__box">
                   <button
@@ -251,9 +281,6 @@ function Products() {
                     className="Products__content__filter__box__submit"
                   >
                     Filter
-                  </button>
-                  <button className="Products__content__filter__box__submit FilterOut">
-                    Filter Out
                   </button>
                 </div>
               </form>

@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Banner from "../../components/Banner/Banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt, faStoreAltSlash } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Cart.scss";
 import ButtonAmount from "../../components/UI/ButtonAmount/ButtonAmount";
 import Button from "../../components/UI/Button/Button";
@@ -13,6 +13,7 @@ import * as actions from "../../store/actions/index";
 function Cart(props) {
   let data = useSelector((state) => state.cart.data);
   let dispatch = useDispatch();
+  let history = useHistory()
   const cartDelete = (id) => {
     dispatch(actions.cartDelete(id));
   };
@@ -162,7 +163,7 @@ function Cart(props) {
                   <p style={{ fontSize: "2.5rem", marginBottom: "2rem" }}>
                     Your cart is empty.
                   </p>
-                  <Button classN="Button--black">RETURN TO SHOP</Button>
+                  <Button  clicked={() => history.push("/products")} classN="Button--black">RETURN TO SHOP</Button>
                 </div>
               )}
             </Col>

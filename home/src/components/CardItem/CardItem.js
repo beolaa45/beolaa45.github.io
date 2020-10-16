@@ -11,7 +11,7 @@ import { toFix } from '../utiliti/utility'
 function CardItem({url, sale, price, title, clickedToCard, onQuickView, id, link}) {
 let dispatch = useDispatch();
 
-let loading = useSelector(state => state.cart.loading)
+
 let newPrice = price * (100 - sale) / 100
 const addToCard = (e, id) => {
   

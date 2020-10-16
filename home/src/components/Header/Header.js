@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import Navigation from "../Navigations/Navigations";
 import UserAction from "../UserAction/UserAction";
@@ -13,6 +13,8 @@ import ShoppingCart from "../ShopipngCart/ShoppingCart";
 import { useSelector } from "react-redux";
 
 function Header(props) {
+  let dataCart = useSelector(state => state.cart.data).length
+console.log(dataCart)
   const [show, setShow] = useState(false);
   const [showBasket, setShowBasket] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -58,7 +60,12 @@ function Header(props) {
       );
     }
   };
-
+  useEffect(() => {
+    if(dataCart){
+      setShowBasket(true)
+    }
+    
+  }, [dataCart])
   const changeChecked = () => {
     setChecked((prev) => !prev);
   };

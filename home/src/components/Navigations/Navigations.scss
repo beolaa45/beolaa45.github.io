@@ -1,3 +1,4 @@
+@import "../../sass/abstracts/variables";
 .Navigations {
     height: 100%;
 
@@ -17,6 +18,7 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
+          
 
         }
     }

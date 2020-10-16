@@ -5,7 +5,7 @@ function Button({children, classN, style={}, loading, clicked}) {
     if(classN) button.push(classN)
     return (
       
-            <button onClick={clicked} className={button.join(" ")} style={style}>
+            <button  onClick={clicked} className={button.join(" ")} style={style}>
             {children}
             </button>
         
