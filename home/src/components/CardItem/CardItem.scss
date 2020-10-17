@@ -20,6 +20,14 @@
         height: 27rem;
         -webkit-box-shadow: $box-shadow-2;
         box-shadow: $box-shadow-2;
+        @media screen and (max-width: $max-xs) {
+            height: 50rem;
+          }
+        @media screen and (max-width: 400px) {
+            height: 40rem;
+          }
+
+        
     }
 
     &__photo::before{
