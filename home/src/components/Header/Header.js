@@ -11,9 +11,12 @@ import { Link, useHistory } from "react-router-dom";
 import Navigations from "../Navigations/Navigations";
 import ShoppingCart from "../ShopipngCart/ShoppingCart";
 import { useSelector } from "react-redux";
+import Modal from "../UI/Modal/Modal";
+import { Tab, Tabs } from "react-bootstrap";
 
 function Header(props) {
   const [show, setShow] = useState(false);
+  const [showModalUser, setShowModalUser] = useState(false);
   const [showBasket, setShowBasket] = useState(false);
   const [checked, setChecked] = useState(false);
   let history = useHistory();
@@ -24,7 +27,12 @@ function Header(props) {
     basket += item.quanlity;
   });
 
-  const clickedUser = () => {};
+  const clickedUser = () => {
+    setShowModalUser(true)
+  };
+  const handleModalUser = () => {
+    setShowModalUser(false)
+  }
 
   const clickedBasket = () => {
     setShowBasket((prev) => !prev);
@@ -84,6 +92,18 @@ function Header(props) {
           wanningChecked={wanningChecked}
         />
       </SideDrawer>
+      
+      <Modal show={showModalUser} clicked={handleModalUser} >
+      <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+  <Tab eventKey="home" title="Home">
+   1232
+  </Tab>
+  <Tab eventKey="profile" title="Profile">
+    2323
+  </Tab>
+  
+</Tabs>
+      </Modal>
       <header className="Header">
         <div className="container Header__container">
           <div className="row  Header__row">
