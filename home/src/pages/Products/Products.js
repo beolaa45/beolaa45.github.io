@@ -142,7 +142,7 @@ function Products() {
     let categories = e.target.value;
     if (categories == "all") {
       query.categories_like = "";
-      setValueSelectPage(categories)
+      setValueSelectPage("")
     } else {
    
       query.categories_like = categories;
