@@ -1,13 +1,52 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Banner from "../../components/Banner/Banner";
 import "./Checkout.scss";
-import { Formik, Field, FastField, Form } from "formik";
+import { Formik, FastField, Form } from "formik";
 import * as Yup from "yup";
 import InputField from "../../components/Form/InputField";
 import Button from "../../components/UI/Button/Button";
 import "./Checkout.scss";
+import { useSelector } from "react-redux";
+import { toFix } from "../../components/utiliti/utility";
+import { useHistory } from "react-router-dom";
 function CheckOut() {
+  const data = useSelector((state) => state.cart.data);
+  let subTotal = 0;
+  let history = useHistory()
+  useEffect(() => {
+       
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+    let renderItem = data?.map(item => {
+        subTotal += item.price * item.quanlity
+        return (
+          <Fragment>
+            <div className="Checkout__content__products__list__item">
+              <div className="Checkout__content__products__list__item__image">
+                <div className="Checkout__content__products__list__item__image__photo">
+                  <img
+                    alt={item.title}
+                    src={item.images[0]}
+                  />
+                </div>
+                <span className="Checkout__content__products__list__item__image__quanlity">
+                  {item.quanlity}
+                </span>
+              </div>
+              <p className="Checkout__content__products__list__item__title">
+               {item.title}
+              </p>
+              <p className="Checkout__content__products__list__item__price">
+               {toFix(item.price * item.quanlity)}
+              </p>
+            </div>
+          </Fragment>
+        );
+    })
   return (
     <Fragment>
       <section className="Checkout__banner">
@@ -55,7 +94,8 @@ function CheckOut() {
                   })}
                   onSubmit={(values) => {
                     setTimeout(() => {
-                      alert(JSON.stringify(values, null, 2));
+                      alert("Success");
+                        history.push("/")
                     }, 500);
                   }}
                 >
@@ -136,42 +176,34 @@ function CheckOut() {
             <Col>
               <div className="Checkout__content__products">
                 <div className="Checkout__content__products__list">
-                  <div className="Checkout__content__products__list__item">
-                    <div className="Checkout__content__products__list__item__image">
-                      <div className="Checkout__content__products__list__item__image__photo">
-                        <img
-                          alt=""
-                          src="https://cdn.shopify.com/s/files/1/0332/6420/5963/products/prelic2_0_540x.jpg?v=1582860620"
-                        />
-                      </div>
-                      <span className="Checkout__content__products__list__item__image__quanlity">
-                        24
-                      </span>
-                    </div>
-                    <p className="Checkout__content__products__list__item__title">
-                      Lomo Sanremo Edition
-                    </p>
-                    <p className="Checkout__content__products__list__item__price">
-                      $65.00
-                    </p>
-                  </div>
+                    {renderItem && renderItem}
+            
                 </div>
+                
                 <div className="Checkout__content__products__subtotal">
                   <div className="Checkout__content__products__subtotal__title">
-                    <p>Subtotal</p>
+                    <p className="Checkout__content__products__subtotal__title__text">
+                      Subtotal
+                    </p>
 
-                    <p>$65.0</p>
+                    <p className="Checkout__content__products__subtotal__title__price">
+                     {subTotal &&  toFix(subTotal)}
+                    </p>
                   </div>
                   <div className="Checkout__content__products__subtotal__title">
-                    <p>Shipping</p>
+                    <p className="Checkout__content__products__subtotal__title__text">
+                      Shipping
+                    </p>
 
-                    <p>$5.0</p>
+                    <p className="Checkout__content__products__subtotal__title__price">
+                    {subTotal && toFix(subTotal * 0.05)}
+                    </p>
                   </div>
                   <div className="Checkout__content__products__subtotal__title"></div>
                 </div>
                 <div className="Checkout__content__products__total">
-                    <p>Total</p>
-                    <p>$70.00</p>
+                  <p>Total</p>
+                  <p>{subTotal && toFix(subTotal -  (subTotal * 0.05))}</p>
                 </div>
               </div>
             </Col>

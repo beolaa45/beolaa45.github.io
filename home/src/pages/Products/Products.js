@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Banner from "../../components/Banner/Banner";
 import Filter from "../../components/Filter/Filter";
@@ -132,7 +132,6 @@ function Products() {
     fetchDataSort("/products?" + queryString.stringify(query));
   };
   const selectPage = (i) => {
-    console.log(i);
     query._page = i;
     fetchDataSort("/products?" + queryString.stringify(query));
   };
@@ -320,7 +319,7 @@ function Products() {
           </Row>
         </Container>
       </section>
-      <section>
+      <section style={{ marginBottom: "5rem" }}>
         <Container>
           <Row>
             <Col>

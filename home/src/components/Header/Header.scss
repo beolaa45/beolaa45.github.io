@@ -1,67 +1,64 @@
 @import "../../sass/abstracts/variables";
-.Header{
-    height: 7rem;
-    display: block;
-    
-    background-color: $color-white;
-    &__container{
-        height: 100%;
-    }
+.Header {
+  height: 7rem;
+  display: block;
 
-    &__navigation{
-        height: 100%; 
-    }
-    &__icon{
-        height: 100%;
-    }
+  background-color: $color-white;
+  &__container {
+    height: 100%;
+  }
 
-    &__col{
-        height: 100%;
+  &__navigation {
+    height: 100%;
+  }
+  &__icon {
+    height: 100%;
+  }
+
+  &__col {
+    height: 100%;
+  }
+
+  &__bars {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.8rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 2.5rem;
     }
+  }
+  &__row {
+    height: 100%;
+  }
+  &__logo {
+    height: 100%;
+    width: 100%;
+    font-size: 4rem;
+    font-family: "Poppins", sans-serif;
 
-    &__bars{
-        height: 100%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: $color-black;
 
-        @media screen and (max-width: 768px) {
-            font-size: 2.5rem;
-          }
+    @media screen and (max-width: 768px) {
+      font-size: 3rem;
     }
-    &__row{
-        height: 100%;
-    }
-    &__logo{
-       
-        height: 100%;
-        width: 100%;
-        font-size: 4rem;
-        font-family: 'Poppins', sans-serif;
+  }
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        color: $color-black;
+  &__link:link,
+  &__link:visited,
+  &__link:active,
+  &__link:hover {
+    color: $color-black !important;
+    text-decoration: none;
+  }
 
-        @media screen and (max-width: 768px) {
-            font-size: 3rem;
-          }
-
-       
-    }
-
-    &__link:link,
-    &__link:visited,
-    &__link:active,
-    &__link:hover{
-        color: $color-black !important;
-        text-decoration: none;
-    }
-
-    &__user{
-        height: 100%;
-    }
+  &__user {
+    height: 100%;
+  }
 }

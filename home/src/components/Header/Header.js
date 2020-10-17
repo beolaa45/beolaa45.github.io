@@ -13,8 +13,6 @@ import ShoppingCart from "../ShopipngCart/ShoppingCart";
 import { useSelector } from "react-redux";
 
 function Header(props) {
-  let dataCart = useSelector(state => state.cart.data).length
-console.log(dataCart)
   const [show, setShow] = useState(false);
   const [showBasket, setShowBasket] = useState(false);
   const [checked, setChecked] = useState(false);
@@ -22,7 +20,6 @@ console.log(dataCart)
   let [wanningChecked, setWanningChecked] = useState(null);
   let data = useSelector((state) => state.cart.data);
   let basket = 0;
-  console.log(data)
   data.map((item) => {
     basket += item.quanlity;
   });
@@ -61,11 +58,10 @@ console.log(dataCart)
     }
   };
   useEffect(() => {
-    if(dataCart){
-      setShowBasket(true)
+    if (data?.length) {
+      setShowBasket(true);
     }
-    
-  }, [dataCart])
+  }, [data?.length]);
   const changeChecked = () => {
     setChecked((prev) => !prev);
   };

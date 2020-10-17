@@ -1,4 +1,4 @@
-import { faLeaf } from "@fortawesome/free-solid-svg-icons";
+
 import * as actionTypes from "../actions/actionTypes";
 import { immutableObject, storage } from "../actions/uilities";
 const initalState = {

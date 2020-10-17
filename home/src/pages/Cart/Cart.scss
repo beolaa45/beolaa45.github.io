@@ -27,6 +27,7 @@
 
         & td {
           border-bottom: 1px solid $color-black;
+          padding: 1rem 0;
         }
         &__box {
           display: inline-block;
@@ -36,6 +37,8 @@
         &__link:visited {
           text-decoration: none;
           transition: $transtion-1;
+          font-size: 1.8rem;
+          font-weight: 600;
         }
 
         &__link:hover,
@@ -45,6 +48,13 @@
 
         &__total {
           font-weight: 600;
+        }
+        &__icon {
+          color: $color-black;
+          transition: $transtion-1;
+        }
+        &__icon:hover {
+          color: $color-red;
         }
       }
     }

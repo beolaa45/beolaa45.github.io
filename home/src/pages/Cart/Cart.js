@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Banner from "../../components/Banner/Banner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +13,29 @@ import * as actions from "../../store/actions/index";
 function Cart(props) {
   let data = useSelector((state) => state.cart.data);
   let dispatch = useDispatch();
-  let history = useHistory()
+  let history = useHistory();
+  let [wanningChecked, setWanningChecked] = useState(null);
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+  const onChangeChecke = () => {
+    setChecked((prev) => !prev);
+  };
+  const checkOut = () => {
+    if (checked) {
+      history.push("/checkout");
+    } else {
+      setWanningChecked(
+        <p style={{ color: "red", fontSize: "1.6rem" }}>
+          You must agree with the terms and conditions of sales to check out.{" "}
+        </p>
+      );
+    }
+  };
   const cartDelete = (id) => {
     dispatch(actions.cartDelete(id));
   };
@@ -127,21 +149,25 @@ function Cart(props) {
                             type="text"
                           />
                         </div>
-                        <div className="Cart__content__checkout__coupon">
-                          <p>Coupon:</p>
-                          <input type="text" />
-                        </div>
                       </Col>
                       <Col xl={6} lg={6} md={6} sm={12} xs={12}>
                         <div className="Cart__content__checkout__content">
                           <p>SUBTOTAL: {subTotal && toFix(subTotal)}</p>
                           <div className="Cart__content__checkout__content__inputGroup">
-                            <input type="checkbox" id="checkout" />
+                            <input
+                              checked={checked}
+                              onChange={onChangeChecke}
+                              type="checkbox"
+                              id="checkout"
+                            />
                             <label htmlFor="checkout">
                               I agree with the terms and conditions.
                             </label>
                           </div>
-                          <Button classN="Button--black">Check Out</Button>
+                          {wanningChecked && wanningChecked}
+                          <Button clicked={checkOut} classN="Button--black">
+                            Check Out
+                          </Button>
                           <div>
                             <img
                               alt=""
@@ -163,7 +189,12 @@ function Cart(props) {
                   <p style={{ fontSize: "2.5rem", marginBottom: "2rem" }}>
                     Your cart is empty.
                   </p>
-                  <Button  clicked={() => history.push("/products")} classN="Button--black">RETURN TO SHOP</Button>
+                  <Button
+                    clicked={() => history.push("/products")}
+                    classN="Button--black"
+                  >
+                    RETURN TO SHOP
+                  </Button>
                 </div>
               )}
             </Col>

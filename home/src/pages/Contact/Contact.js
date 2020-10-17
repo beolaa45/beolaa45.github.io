@@ -5,13 +5,20 @@ import {
   faEnvelopeOpenText,
 } from "@fortawesome/free-solid-svg-icons";
 
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Banner from "../../components/Banner/Banner";
 import Button from "../../components/UI/Button/Button";
 import "./Contact.scss";
 
 function Contact(props) {
+    useEffect(() => {
+       
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, []);
   return (
     <Fragment>
       <section className="Contact__banner">
@@ -91,7 +98,7 @@ function Contact(props) {
         <Container>
           <Row>
             <Col>
-              <div>
+              <div style={{paddingBottom: "10rem"}}>
                 <h2
                   style={{
                     fontWeight: "600",

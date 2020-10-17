@@ -17,7 +17,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { toSlug } from "../../components/utiliti/utility";
 import Modal from "../../components/UI/Modal/Modal";
 import ModalItem from "../../components/ModalItem/ModalItem";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const data1 = [
   {

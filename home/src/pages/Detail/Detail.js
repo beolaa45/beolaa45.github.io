@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Banner from "../../components/Banner/Banner";
 import Carousel2 from "../../components/Carousel2/Carousel2";
 import DetailItem from "../../components/DetailItem/DetailItem";
@@ -15,7 +15,6 @@ function Detail(props) {
   let dataDetail = useSelector((state) => state.detail.data);
   let loading = useSelector((state) => state.detail.loading);
   let dispatch = useDispatch();
-  let history = useHistory();
 
   const onChangeQuanlity = (e) => {
     let quanlity = e.target.value;
