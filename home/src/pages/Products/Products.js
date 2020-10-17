@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Banner from "../../components/Banner/Banner";
 import Filter from "../../components/Filter/Filter";
@@ -108,6 +108,7 @@ var likeProducts = [
 ];
 function Products() {
   let dataProducts = useSelector((state) => state.products.data);
+  let [valueSelectPage, setValueSelectPage] = useState("")
   let loading = useSelector((state) => state.products.loading);
   let dispatch = useDispatch();
   let history = useHistory();
@@ -128,19 +129,24 @@ function Products() {
   };
 
   const handleSelect = (e) => {
+    
     [query._sort, query._order] = e.target.value.split("-");
-    fetchDataSort("/products?" + queryString.stringify(query));
+    fetchDataSort("/products?" + queryString.stringify({...query,  categories_like: valueSelectPage }));
   };
   const selectPage = (i) => {
     query._page = i;
+  
     fetchDataSort("/products?" + queryString.stringify(query));
   };
   const onChangeFilter = (e) => {
     let categories = e.target.value;
     if (categories == "all") {
       query.categories_like = "";
+      setValueSelectPage(categories)
     } else {
+   
       query.categories_like = categories;
+      setValueSelectPage(categories)
     }
   };
   const fetchDataSort = (url) => {
@@ -149,7 +155,7 @@ function Products() {
   };
   const filter = (e) => {
     e.preventDefault();
-    fetchDataSort("/products?" + queryString.stringify(query));
+    fetchDataSort("/products?" + queryString.stringify({...query, categories_like:valueSelectPage}));
   };
 
   for (let i = 1; i <= page; i++) {
