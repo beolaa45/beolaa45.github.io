@@ -101,4 +101,22 @@
       color: $color-white;
     }
   }
+
+  &--form{
+      font-weight: 600;
+      font-size: 2rem;
+      letter-spacing: 1.2rem;
+      color: $color-white;
+      background-color: $color-black;
+      border-radius: .5rem;
+      width: 20rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      &:hover{
+          background-color: $color-black-2;
+      }
+  }
 }

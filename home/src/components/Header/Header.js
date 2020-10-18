@@ -13,6 +13,10 @@ import ShoppingCart from "../ShopipngCart/ShoppingCart";
 import { useSelector } from "react-redux";
 import Modal from "../UI/Modal/Modal";
 import { Tab, Tabs } from "react-bootstrap";
+import { Formik, FastField, Form } from "formik";
+import * as Yup from "yup";
+import Button from "../UI/Button/Button";
+import InputField from "../Form/InputField";
 
 function Header(props) {
   const [show, setShow] = useState(false);
@@ -28,11 +32,11 @@ function Header(props) {
   });
 
   const clickedUser = () => {
-    setShowModalUser(true)
+    setShowModalUser(true);
   };
   const handleModalUser = () => {
-    setShowModalUser(false)
-  }
+    setShowModalUser(false);
+  };
 
   const clickedBasket = () => {
     setShowBasket((prev) => !prev);
@@ -92,17 +96,148 @@ function Header(props) {
           wanningChecked={wanningChecked}
         />
       </SideDrawer>
-      
-      <Modal show={showModalUser} clicked={handleModalUser} >
-      <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-  <Tab eventKey="home" title="Home">
-   1232
-  </Tab>
-  <Tab eventKey="profile" title="Profile">
-    2323
-  </Tab>
-  
-</Tabs>
+
+      <Modal
+        show={showModalUser}
+        classN="Modal--form"
+        clicked={handleModalUser}
+      >
+        <Tabs defaultActiveKey="LOGIN" id="uncontrolled-tab-example">
+          <Tab eventKey="LOGIN" title="LOGIN">
+            <div className="Form__login">
+              <Formik
+                initialValues={{
+                  email: "",
+                  password: "",
+                }}
+                validationSchema={Yup.object().shape({
+                  email: Yup.string()
+                    .email("Invalid email format")
+                    .required("This field is required"),
+                  password: Yup.string("Invalid number format")
+                    .min(9)
+                    .required("This field is required"),
+                })}
+                onSubmit={(values) => {
+                  setTimeout(() => {
+                    alert("Success");
+
+                    setShowModalUser(false);
+                  }, 500);
+                }}
+              >
+                {(props) => {
+                  return (
+                    <Form>
+                      <FastField
+                        name="email"
+                        component={InputField}
+                        lable="Email*"
+                        type="email"
+                      />
+
+                      <FastField
+                        name="password"
+                        component={InputField}
+                        lable="Password*"
+                        type="password"
+                      />
+                      <div style={{ textAlign: "center" }}>
+                        <Button type="submit" classN="Button--form">
+                          LOGIN
+                        </Button>
+                      </div>
+                    </Form>
+                  );
+                }}
+              </Formik>
+            </div>
+          </Tab>
+          <Tab eventKey="SIGNIN" title="SIGNIN">
+            <div className="Form__signin">
+              <Formik
+                initialValues={{
+                  firstName: "",
+                  lastName: "",
+                  email: "",
+                  password: "",
+                  confirmPassword: "",
+                }}
+                validationSchema={Yup.object().shape({
+                  firstName: Yup.string().required("This field is required"),
+                  lastName: Yup.string().required("This field is required"),
+                  email: Yup.string()
+                    .email("Invalid email format")
+                    .required("This field is required"),
+                  phone: Yup.string("Invalid number format")
+                    .min(9)
+                    .required("This field is required"),
+                  password: Yup.string()
+                    .min(9)
+                    .required("This field is required"),
+                  confirmPassword: Yup.string().when("password", {
+                    is: (val) => (val && val.length > 0 ? true : false),
+                    then: Yup.string().oneOf(
+                      [Yup.ref("password")],
+                      "Both password need to be the same"
+                    ),
+                  }),
+                })}
+                onSubmit={(values) => {
+                  console.log(values);
+                  setTimeout(() => {
+                    alert("Success");
+                    setShowModalUser(false);
+                  }, 500);
+                }}
+              >
+                {(props) => {
+                  return (
+                    <Form>
+                      <FastField
+                        name="firstName"
+                        component={InputField}
+                        lable="First Name*"
+                        type="text"
+                      />
+                      <FastField
+                        name="lastName"
+                        component={InputField}
+                        lable="Last Name*"
+                        type="text"
+                      />
+                      <FastField
+                        name="email"
+                        component={InputField}
+                        lable="Email*"
+                        type="email"
+                      />
+
+                      <FastField
+                        name="password"
+                        component={InputField}
+                        lable="Password*"
+                        type="password"
+                      />
+
+                      <FastField
+                        name="confirmPassword"
+                        component={InputField}
+                        lable="Confirm Password*"
+                        type="password"
+                      />
+                      <div style={{ textAlign: "center" }}>
+                        <Button type="submit" classN="Button--form">
+                          SIGNIN
+                        </Button>
+                      </div>
+                    </Form>
+                  );
+                }}
+              </Formik>
+            </div>
+          </Tab>
+        </Tabs>
       </Modal>
       <header className="Header">
         <div className="container Header__container">

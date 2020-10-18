@@ -7,4 +7,9 @@
     background-color: white;
     z-index: 20;
     transform: translate(-50%, -50%);
+
+    &--form{
+       padding: 0 15px 3rem 15px;
+       border-radius: .5rem;
+    }
 }
