@@ -26,7 +26,7 @@ export const productsInit = () => {
   return (dispatch) => {
     dispatch(productsStart());
     axios
-      .get("/products?_start=0&_limit=9")
+      .get("/products?categories_like=&_sort=id&_order=desc&_limit=9&_page=1")
       .then((data) => dispatch(productsSuccess(data)))
       .catch((error) => dispatch(productsFail(error)));
   };
