@@ -58,6 +58,8 @@ const data1 = [
   },
 ];
 function Blog(props) {
+  document.title = "Blog";
+  
   let lisBlog = data1.map((item) => {
     return (
       <Col

@@ -12,6 +12,8 @@ import Button from "../../components/UI/Button/Button";
 import "./Contact.scss";
 
 function Contact(props) {
+  document.title = "Contact";
+
     useEffect(() => {
        
         window.scrollTo({

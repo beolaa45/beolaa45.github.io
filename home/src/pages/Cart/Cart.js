@@ -11,6 +11,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { toFix, toSlug } from "../../components/utiliti/utility";
 import * as actions from "../../store/actions/index";
 function Cart(props) {
+  document.title = "Cart";
+
   let data = useSelector((state) => state.cart.data);
   let dispatch = useDispatch();
   let history = useHistory();

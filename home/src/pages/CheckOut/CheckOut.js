@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import { toFix } from "../../components/utiliti/utility";
 import { useHistory } from "react-router-dom";
 function CheckOut() {
+  document.title = "Checkout";
   const data = useSelector((state) => state.cart.data);
   let subTotal = 0;
   let history = useHistory()

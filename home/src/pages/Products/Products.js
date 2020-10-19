@@ -107,6 +107,8 @@ var likeProducts = [
   },
 ];
 function Products() {
+  document.title = "Products";
+
   let dataProducts = useSelector((state) => state.products.data);
   let [valueSelectPage, setValueSelectPage] = useState("")
   let loading = useSelector((state) => state.products.loading);

@@ -9,6 +9,8 @@ import * as actions from "../../store/actions/index";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import "./Detail.scss";
 function Detail(props) {
+  document.title = "Detail";
+
   let {
     state: { id },
   } = useLocation();
