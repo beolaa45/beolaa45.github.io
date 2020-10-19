@@ -117,7 +117,7 @@ function Products() {
   let showModalItem = useSelector((state) => state.products.showModal);
   let loadingShowModal = useSelector((state) => state.products.loadingModal);
   let dataModal = useSelector((state) => state.products.dataModal);
-
+  let [numberPage , setNumberPage] = useState(1)
   let totalItem = localStorage.getItem("x-total-count");
   let page = Math.ceil(totalItem / 8);
   let renderButton = [];
@@ -137,6 +137,7 @@ function Products() {
   };
   const selectPage = (i) => {
     query._page = i;
+    setNumberPage(i)
   
     fetchDataSort("/products?" + queryString.stringify(query));
   };
@@ -165,7 +166,7 @@ function Products() {
       <div key={i} style={{ display: "inline-block" }}>
         <Button
           key={i}
-          classN={query._page == i ? "Button--page active" : "Button--page"}
+          classN={numberPage == i ? "Button--page active" : "Button--page"}
           clicked={() => selectPage(i)}
         >
           {i}
