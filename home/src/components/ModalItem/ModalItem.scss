@@ -1,3 +1,4 @@
+@import "../../sass/abstracts/variables";
 .ModalItem{
     width: 80vw;
     
@@ -5,7 +6,7 @@
     overflow-x: hidden;
     padding: 5rem 0;
     max-height: 80vh;
-
+    position: relative;
     /* width */
 &::-webkit-scrollbar {
     width: 10px;
@@ -24,5 +25,20 @@
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
     background: #555; 
+  }
+
+  &__icon{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    &__delete{
+      font-size: 2.5rem;
+      transition: $transtion-1;
+      display: inline-block;
+      &:hover{
+        color: $color-red;
+      }
+    }
   }
 }

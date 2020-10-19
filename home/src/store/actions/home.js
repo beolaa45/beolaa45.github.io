@@ -58,7 +58,7 @@ export const homeInit = () => {
   return (dispatch) => {
     dispatch(homeStart());
     axios
-      .get("/products?_start=0&_end=8")
+      .get("/products?_start=0&_end=9")
       .then((data) => {
         dispatch(homeSuccess(data));
       })

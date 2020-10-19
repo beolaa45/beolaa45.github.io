@@ -205,6 +205,7 @@ function Products() {
     });
   }, []);
   useEffect(() => {}, [dataProducts]);
+
   const turnOffModal = () => {
     dispatch(actions.productsTurnOffModal());
   };
@@ -257,6 +258,7 @@ function Products() {
           onChangeQuanlity={onChangeQuanlity}
           loadingShowModal={loadingShowModal}
           dataModal={dataModal}
+          handleShowModal={turnOffModal}
         />
       </Modal>
       <section className="Products__banners">

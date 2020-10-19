@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Carousel2 from "../Carousel2/Carousel2";
@@ -11,6 +12,7 @@ function ModalItem({
   minus,
   onChangeQuanlity,
   link,
+  handleShowModal
 }) {
   let renderItem;
   if (dataModal) {
@@ -37,7 +39,12 @@ function ModalItem({
     renderItem = <Spinnerr style={{ height: "60vh" }} />;
   }
 
-  return <div className="ModalItem">{renderItem}</div>;
+  return <div className="ModalItem">
+    <div onClick={handleShowModal} className="ModalItem__icon">
+      <FontAwesomeIcon icon={"times-circle"} className="ModalItem__icon__delete"/>
+    </div>
+    {renderItem}
+    </div>;
 }
 
 export default ModalItem;

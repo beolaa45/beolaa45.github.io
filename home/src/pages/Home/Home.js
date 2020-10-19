@@ -64,6 +64,9 @@ function Home() {
 
   const clickedToCard = () => {};
 
+  const redirectProduct = () => {
+    history.push("/products")
+  }
   const onQuickView = (e, id) => {
     e.preventDefault();
     dispatch(actions.modalShowItemInit(id));
@@ -158,6 +161,7 @@ function Home() {
           link={true}
           loadingShowModal={loadingShowModal}
           dataModal={dataModal}
+          handleShowModal={turnOffModal}
         />
       </Modal>
       <section className="Banner">
@@ -183,7 +187,7 @@ function Home() {
         <Container>
           <Row>
             <Col xl={4} lg={4} md={12} sm={12} xs={12}>
-              <div className="Shipping__content">
+              <div  className="Shipping__content">
                 <ShippingType
                   icon={faLifeRing}
                   title="SUPPORT 24/7"
@@ -216,7 +220,7 @@ function Home() {
         <Container>
           <Row>
             <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-              <div className="Category__card">
+              <div  onClick={redirectProduct} className="Category__card">
                 <Card
                   title="Audio"
                   url="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cat15_720x.jpg?v=1582857819"
@@ -224,7 +228,7 @@ function Home() {
               </div>
             </Col>
             <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-              <div className="Category__card">
+              <div  onClick={redirectProduct} className="Category__card">
                 <Card
                   title="Speaker"
                   url="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/cat13_720x.jpg?v=1582796459"
@@ -232,7 +236,7 @@ function Home() {
               </div>
             </Col>
             <Col xl={4} lg={4} md={4} sm={12} xs={12}>
-              <div className="Category__card">
+              <div  onClick={redirectProduct} className="Category__card">
                 <Card
                   title="Hi-end"
                   url="https://cdn.shopify.com/s/files/1/0332/6420/5963/files/hi-end_720x.jpg?v=1583147788"
