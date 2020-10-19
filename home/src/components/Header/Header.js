@@ -184,7 +184,6 @@ function Header(props) {
                   }),
                 })}
                 onSubmit={(values) => {
-                  console.log(values);
                   setTimeout(() => {
                     alert("Success");
                     setShowModalUser(false);
