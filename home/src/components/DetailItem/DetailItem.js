@@ -17,7 +17,6 @@ import { toSlug } from "../utiliti/utility";
 function DetailItem({ data, onChangeQuanlity, plus, minus, link }) {
   const dispatch = useDispatch();
   let location = useLocation();
-  console.log(location?.pathname);
   const addToCard = (e, id) => {
     if (location.pathname.length > 10) {
       dispatch(actions.cartInit(id, quanlityDetail));
