@@ -17,6 +17,13 @@ const detailFail = (state, action) => {
   return immutableObject(state, { loading: false, error: action.error });
 };
 
+const detailReset = (state, action) => {
+  return {
+    data: null,
+  loading: false,
+  error: null,
+  }
+}
 const detailOnChangeQuanlity = (state, action) => {
   return immutableObject(state, {
     data: {
@@ -52,6 +59,8 @@ const reducer = (state = initalState, action) => {
       return detailSuccess(state, action);
     case actionTypes.FETCH_DETAIL_FAIL:
       return detailFail(state, action);
+    case actionTypes.FETCH_DETAIL_RESET:
+      return detailReset(state, action)
     case actionTypes.FETCH_DETAIL_ON_CHANGE_QUANLITY:
       return detailOnChangeQuanlity(state, action);
     case actionTypes.FETCH_DETAIL_PLUS_QUANLITY:

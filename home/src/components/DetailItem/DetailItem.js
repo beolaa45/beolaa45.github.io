@@ -12,15 +12,26 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./DetailItem.scss";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions/index";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { toSlug } from "../utiliti/utility";
 function DetailItem({ data, onChangeQuanlity, plus, minus, link }) {
   const dispatch = useDispatch();
-  const addToCard = (e, id, quanlityDetail) => {
-    dispatch(actions.cartInit(id, quanlityDetail));
+  let location = useLocation();
+  console.log(location?.pathname);
+  const addToCard = (e, id) => {
+    if (location.pathname.length > 10) {
+      dispatch(actions.cartInit(id, quanlityDetail));
+    } else if (location.pathname === "/products") {
+      dispatch(actions.cartInit(id, quanlityProducts));
+    } else {
+      dispatch(actions.cartInit(id, quanlityHome));
+    }
   };
   let quanlityDetail = useSelector((state) => state?.detail?.data?.quanlity);
-
+  let quanlityHome = useSelector((state) => state?.home?.dataModal?.quanlity);
+  let quanlityProducts = useSelector(
+    (state) => state?.products?.dataModal?.quanlity
+  );
   if (!data) return null;
   return (
     <div className="DetailItem">

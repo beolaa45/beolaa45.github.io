@@ -11,6 +11,7 @@ export {
   detaiOnChangeQuanlity,
   detailPlusQuanlity,
   detailMiunsQuanlity,
+  detailReset
 } from "./Detail";
 export {
   productsInit,

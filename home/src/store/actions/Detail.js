@@ -28,6 +28,12 @@ export const detaiOnChangeQuanlity = (quanlity) => {
   };
 };
 
+export const detailReset = (data) => {
+  return {
+    type: actionTypes.FETCH_DETAIL_RESET
+  };
+};
+
 export const detailPlusQuanlity = () => {
   return {
     type: actionTypes.FETCH_DETAIL_PLUS_QUANLITY,
