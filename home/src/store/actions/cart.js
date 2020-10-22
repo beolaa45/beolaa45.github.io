@@ -7,10 +7,10 @@ export const cartStart = () => {
   };
 };
 
-export const cartSuccess = (data) => {
+export const cartSuccess = (data, quanlityDetail = 1) => {
   return {
     type: actionTypes.FETCH_CART_ADD_SUCCESS,
-    data,
+    data : {...data, quanlity: quanlityDetail},
   };
 };
 
@@ -20,13 +20,13 @@ export const cartFail = (error) => {
     error,
   };
 };
-export const cartInit = (id) => {
+export const cartInit = (id, quanlityDetail) => {
   return (dispatch) => {
     dispatch(cartStart());
     axios
       .get("/products/" + id)
       .then((data) => {
-        dispatch(cartSuccess(data));
+        dispatch(cartSuccess(data, quanlityDetail));
       })
       .catch((error) => cartFail(error));
   };

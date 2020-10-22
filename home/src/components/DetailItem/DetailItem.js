@@ -10,15 +10,17 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./DetailItem.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions/index";
 import { NavLink } from "react-router-dom";
 import { toSlug } from "../utiliti/utility";
 function DetailItem({ data, onChangeQuanlity, plus, minus, link }) {
   const dispatch = useDispatch();
-  const addToCard = (e, id) => {
-    dispatch(actions.cartInit(id));
+  const addToCard = (e, id, quanlityDetail) => {
+    dispatch(actions.cartInit(id, quanlityDetail));
   };
+  let quanlityDetail = useSelector((state) => state?.detail?.data?.quanlity);
+
   if (!data) return null;
   return (
     <div className="DetailItem">
@@ -36,7 +38,10 @@ function DetailItem({ data, onChangeQuanlity, plus, minus, link }) {
           value={data.quanlity === 0 ? "" : data.quanlity}
           onChange={onChangeQuanlity}
         />
-        <Button clicked={(e) => addToCard(e, data.id)} classN="Button--detail">
+        <Button
+          clicked={(e) => addToCard(e, data.id, quanlityDetail)}
+          classN="Button--detail"
+        >
           Add To Cart{" "}
         </Button>
       </div>
